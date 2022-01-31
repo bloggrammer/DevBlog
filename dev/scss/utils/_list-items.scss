@@ -1,0 +1,20 @@
+.styled-list {
+  list-style: none;
+  counter-reset: steps;
+  margin-left: -2.5em;
+  li {
+    counter-increment: steps;
+    &::before {
+      content: counter(steps);
+      margin: 0.25rem;
+      background: #212529;
+      color: $light-gray;
+      width: 1.2em;
+      height: 1.2em;
+      border-radius: 50%;
+      display: inline-grid;
+      place-items: center;
+      line-height: 1.2em;
+    }
+  }
+}

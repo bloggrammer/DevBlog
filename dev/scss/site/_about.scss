@@ -1,0 +1,55 @@
+#about {
+	padding: 5% 5% 5% 0;
+	overflow-x: hidden;
+	h1,
+	h2 {
+		padding: 0 0 0 5%;
+	}
+	.about-info {
+		display: grid;
+		gap: 1rem;
+		grid-auto-rows: auto;
+		grid-template-columns: repeat(3, 1fr);
+		padding: 1rem;
+		.bio-image {
+			margin: auto 5em;
+			border-radius: 50%;
+			border: $secondary-color 3px solid;
+			height: 100%;
+			width: 60%;
+		}
+		.bio {
+			grid-column: span 2;
+			background: lighten($primary-color, 5);
+			padding: 0.5rem;
+			border-bottom: $secondary-color 5px solid;
+		}
+		article {
+			grid-column: span 3;
+		}
+		.skill {
+			background: lighten($primary-color, 5);
+			padding: 0.5rem;
+			h3 {
+				font-size: 1.3rem;
+			}
+			border-bottom: $secondary-color 5px solid;
+		}
+	}
+}
+
+@mixin about-m {
+	.about-info {
+		display: block !important;
+		article,
+		.bio-image,
+		.bio,
+		.skill {
+			margin: 1.5rem;
+		}
+		.bio-image {
+			// margin: auto 30% !important;
+			// margin-left: 25%;
+		}
+	}
+}

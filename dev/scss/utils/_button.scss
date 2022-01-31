@@ -1,0 +1,32 @@
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: setTextColor($secondary-color);
+  }
+  svg {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: $white-color;
+  svg {
+    fill: $white-color;
+  }
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: $primary-color;
+  svg {
+    fill: $black-color;
+  }
+}

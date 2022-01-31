@@ -1,0 +1,7 @@
+<div class="category">
+	<select>
+		<option value="1">Articles</option>
+		<option value="2">Tutorials</option>
+		<option value="3">Videos</option>
+	</select>
+</div>

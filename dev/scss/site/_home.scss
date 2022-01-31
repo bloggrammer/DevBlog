@@ -1,0 +1,26 @@
+#bg-img {
+  overflow: hidden;
+  main {
+    padding: 8rem 5rem;
+    &#home {
+      h1 {
+        margin-top: 10vh;
+      }
+    }
+  }
+}
+
+@mixin home-m {
+  #bg-img {
+    main {
+      padding: 8rem 2rem;
+    }
+  }
+}
+@mixin home-s {
+  #bg-img {
+    main {
+      text-align: center;
+    }
+  }
+}
