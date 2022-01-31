@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-**Blogrammer/blogrammer** is ✨ _my dev blog_ ✨ repository. `()=>` [Visit Blog](https://bloggrammer.com/).
+This is ✨ _My Dev Blog_ ✨ repository. `()=>` [Check me out](https://bloggrammer.com/).
 
 Here are some ideas to get you started:
 
