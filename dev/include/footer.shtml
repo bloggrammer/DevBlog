@@ -1,1 +1,4 @@
-<footer id="main-footer">Copyright &copy; <span id="year"></span></footer>
+<footer id="main-footer"
+	>&copy; <span id="year"></span>
+	<a href="index.html">Bloggrammer</a>
+</footer>
