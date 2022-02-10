@@ -30,16 +30,16 @@
 	<h4>Stay in touch</h4>
 	<!--#include virtual="include/social-icons.shtml" -->
 	<br />
-	<a href="#" class="primary-button">BOOK A CONSULTATION</a>
-	<br />
+	<!-- <a href="#" class="primary-button">BOOK A CONSULTATION</a> -->
+	<!-- <br /> -->
 	<h4>Categories</h4>
 	<div class="sb-widget">
 		<ul>
 			<li>
-				<a href="blog.html">Articles</a>
+				<a href="blog.html">Blog</a>
 			</li>
 			<li>
-				<a href="blog.html">Tutorials</a>
+				<a href="blog.html">Articles</a>
 			</li>
 			<li>
 				<a href="videos.html">Videos</a>
@@ -118,5 +118,16 @@
 				</a>
 			</li>
 		</ol>
+	</div>
+	<h4>Policy</h4>
+	<div class="sb-widget">
+		<ul>
+			<li>
+				<a href="blog.html">Privacy Policy</a>
+			</li>
+			<li>
+				<a href="blog.html">Terms of Use</a>
+			</li>
+		</ul>
 	</div>
 </aside>

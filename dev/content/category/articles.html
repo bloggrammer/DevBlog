@@ -1,160 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/img/favicon.ico" />
-    <link rel="apple-touch-icon" href="assets/img/favicon.ico" />
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <title>EduAnsa</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./assets/css/main.css" />
+		<link rel="shortcut icon" href="./assets/img/favicon.png" />
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+	</head>
+	<body>
+		<!--#include virtual="include/header.shtml" -->
+		<!--#include virtual="include/nav-menu.shtml" -->
+		<main id="container">
+			<article class="article">
+				<div>
+					<!--#include virtual="include/category.shtml" -->
+					<div id="post">
+						<!--#include virtual="include/b-list1.shtml" -->
+						<!--#include virtual="include/b-list2.shtml" -->
+					</div>
+					<!--#include virtual="include/pagination.shtml" -->
+				</div>
+				<!--#include virtual="include/sidebar.shtml" -->
+			</article>
+		</main>
 
-    <style>
-      .tabset > input[type='radio'] {
-        position: absolute;
-        left: -200vw;
-      }
+		<!--#include virtual="include/footer.shtml" -->
 
-      .tabset .tab-panel {
-        display: none;
-      }
-
-      .tabset
-        > input:first-child:checked
-        ~ .tab-panels
-        > .tab-panel:first-child,
-      .tabset
-        > input:nth-child(3):checked
-        ~ .tab-panels
-        > .tab-panel:nth-child(2),
-      .tabset
-        > input:nth-child(5):checked
-        ~ .tab-panels
-        > .tab-panel:nth-child(3),
-      .tabset
-        > input:nth-child(7):checked
-        ~ .tab-panels
-        > .tab-panel:nth-child(4),
-      .tabset
-        > input:nth-child(9):checked
-        ~ .tab-panels
-        > .tab-panel:nth-child(5),
-      .tabset
-        > input:nth-child(11):checked
-        ~ .tab-panels
-        > .tab-panel:nth-child(6) {
-        display: block;
-      }
-
-      .tabset > label {
-        position: relative;
-        display: inline-block;
-        padding: 5px 15px 25px;
-        border: 1px solid transparent;
-        border-bottom: 0;
-        cursor: pointer;
-        font-weight: 600;
-      }
-
-      .tabset > label::after {
-        content: '';
-        position: absolute;
-        left: 15px;
-        bottom: 10px;
-        width: 22px;
-        height: 4px;
-        background: #8d8d8d;
-      }
-
-      .tabset > label:hover,
-      .tabset > input:focus + label {
-        color: #ffce00;
-      }
-
-      .tabset > label:hover::after,
-      .tabset > input:focus + label::after,
-      .tabset > input:checked + label::after {
-        background: #ffce00;
-      }
-
-      .tabset > input:checked + label {
-        border-color: #ccc;
-        /* border-bottom: 1px solid #ccc; */
-        /* margin-bottom: -1px; */
-      }
-
-      .tab-panel {
-        padding: 15px 0;
-        border-top: 1px solid #ccc;
-      }
-
-      .tabset {
-        max-width: 65em;
-      }
-
-      .pages > .page:target ~ .page:last-child,
-      .pages > .page {
-        display: none;
-      }
-      .pages > :last-child,
-      .pages > .page:target {
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <!--#include virtual="include/header.shtml" -->
-    <!--#include virtual="include/nav-menu.shtml" -->
-    <main id="container">
-      <h3 class="lg-heading">Blog <span class="txt-secondary">Posts</span></h3>
-      <h2 class="sm-heading">Check out some of my projects...</h2>
-      <article class="article">
-        <div>
-          <div id="post">
-            <div class="tabset">
-              <!-- Tab 1 -->
-              <input
-                type="radio"
-                name="tabset"
-                onclick="articleNav()"
-                id="tab1"
-                aria-controls="articles"
-                checked
-              />
-              <label for="tab1">Articles</label>
-              <!-- Tab 2 -->
-              <input
-                type="radio"
-                name="tabset"
-                id="tab2"
-                onclick="tutorialNav()"
-                aria-controls="tutorials"
-              />
-              <label for="tab2">Tutorials</label>
-              <!-- Tab 3 -->
-              <input
-                type="radio"
-                name="tabset"
-                onclick="clearNav()"
-                id="tab3"
-                aria-controls="videos"
-              />
-              <label for="tab3">Videos</label>
-
-              <div class="tab-panels">
-                <!--#include virtual="content/blog/articles/article-pages.shtml" -->
-                <!--#include virtual="content/blog/tutorials/tutorial-pages.shtml" -->
-                <!--#include virtual="content/blog/videos/video-pages.shtml" -->
-              </div>
-            </div>
-          </div>
-          <!--#include virtual="include/pagination-lg.shtml" -->
-          <!--#include virtual="include/pagination-sm.shtml" -->
-        </div>
-        <!--#include virtual="include/sidebar.shtml" -->
-      </article>
-    </main>
-    <!--#include virtual="include/footer.shtml" -->
-
-    <script src="assets/js/main.js"></script>
-  </body>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/pagination.js"></script>
+		<script>
+			window.onload = document.getElementById(
+				'ca-selector'
+			)[1].selected = true;
+		</script>
+	</body>
 </html>

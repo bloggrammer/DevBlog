@@ -1,5 +1,6 @@
-<div class="category">
-	<select>
+<div id="category">
+	<select id="ca-selector">
+		<option value="0">Recent Posts</option>
 		<option value="1">Articles</option>
 		<option value="2">Tutorials</option>
 		<option value="3">Videos</option>

@@ -1,209 +1,495 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/img/favicon.ico" />
-    <link rel="apple-touch-icon" href="assets/img/favicon.ico" />
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <title>EduAnsa</title>
-
-    <style>
-      .tabset > input[type='radio'] {
-        position: absolute;
-        left: -200vw;
-      }
-
-      .tabset .tab-panel {
-        display: none;
-      }
-
-      .tabset
-        > input:first-child:checked
-        ~ .tab-panels
-        > .tab-panel:first-child,
-      .tabset
-        > input:nth-child(3):checked
-        ~ .tab-panels
-        > .tab-panel:nth-child(2),
-      .tabset
-        > input:nth-child(5):checked
-        ~ .tab-panels
-        > .tab-panel:nth-child(3),
-      .tabset
-        > input:nth-child(7):checked
-        ~ .tab-panels
-        > .tab-panel:nth-child(4),
-      .tabset
-        > input:nth-child(9):checked
-        ~ .tab-panels
-        > .tab-panel:nth-child(5),
-      .tabset
-        > input:nth-child(11):checked
-        ~ .tab-panels
-        > .tab-panel:nth-child(6) {
-        display: block;
-      }
-
-      .tabset > label {
-        position: relative;
-        display: inline-block;
-        padding: 5px 15px 25px;
-        border: 1px solid transparent;
-        border-bottom: 0;
-        cursor: pointer;
-        font-weight: 600;
-      }
-
-      .tabset > label::after {
-        content: '';
-        position: absolute;
-        left: 15px;
-        bottom: 10px;
-        width: 22px;
-        height: 4px;
-        background: #8d8d8d;
-      }
-
-      .tabset > label:hover,
-      .tabset > input:focus + label {
-        color: #ffce00;
-      }
-
-      .tabset > label:hover::after,
-      .tabset > input:focus + label::after,
-      .tabset > input:checked + label::after {
-        background: #ffce00;
-      }
-
-      .tabset > input:checked + label {
-        border-color: #ccc;
-        /* border-bottom: 1px solid #ccc; */
-        /* margin-bottom: -1px; */
-      }
-
-      .tab-panel {
-        padding: 15px 0;
-        border-top: 1px solid #ccc;
-      }
-
-      .tabset {
-        max-width: 65em;
-      }
-
-      .pages > .page:target ~ .page:last-child,
-      .pages > .page {
-        display: none;
-      }
-      .pages > :last-child,
-      .pages > .page:target {
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <header class="typist">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./assets/css/main.css" />
+		<link rel="shortcut icon" href="./assets/img/favicon.png" />
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+	</head>
+	<body>
+		<header class="typist">
   <div>
     Coding is <span class="typed-text"></span><span class="cursor">&nbsp;</span>
   </div>
 </header>
 
-    <nav class="nav-menu">
-  <div class="menu-btn">
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-  </div>
+		<nav class="nav-menu">
+	<div class="menu-btn">
+		<div class="btn-line"></div>
+		<div class="btn-line"></div>
+		<div class="btn-line"></div>
+	</div>
 
-  <nav id="main-nav" class="menu">
-    <div class="menu-branding">
-      <div class="portrait"></div>
-    </div>
-    <ul class="menu-nav">
-      <li class="nav-item">
-        <div class="site-search__box">
-          <input type="search" placeholder="search Bloggrammer" />
-          <svg class="site-search__icon" viewBox="0 0 20 20">
-            <path
-              d="M19.129,18.164l-4.518-4.52c1.152-1.373,1.852-3.143,1.852-5.077c0-4.361-3.535-7.896-7.896-7.896
+	<nav id="main-nav" class="menu">
+		<div class="menu-branding">
+			<div class="portrait"></div>
+		</div>
+		<ul class="menu-nav">
+			<li class="nav-item">
+				<div class="site-search__box">
+					<input type="search" placeholder="search Bloggrammer" />
+					<svg class="site-search__icon" viewBox="0 0 20 20">
+						<path
+							d="M19.129,18.164l-4.518-4.52c1.152-1.373,1.852-3.143,1.852-5.077c0-4.361-3.535-7.896-7.896-7.896
                    c-4.361,0-7.896,3.535-7.896,7.896s3.535,7.896,7.896,7.896c1.934,0,3.705-0.698,5.078-1.853l4.52,4.519
                    c0.266,0.268,0.699,0.268,0.965,0C19.396,18.863,19.396,18.431,19.129,18.164z M8.567,15.028c-3.568,0-6.461-2.893-6.461-6.461
                    s2.893-6.461,6.461-6.461c3.568,0,6.46,2.893,6.46,6.461S12.135,15.028,8.567,15.028z"
-            ></path>
-          </svg>
-        </div>
-      </li>
+						></path>
+					</svg>
+				</div>
+			</li>
 
-      <li class="nav-item">
-        <a href="index">Home</a>
-      </li>
+			<li class="nav-item">
+				<a href="index.html">Home</a>
+			</li>
 
-      <li class="nav-item">
-        <a href="blog">Blog</a>
-      </li>
+			<li class="nav-item">
+				<a href="blog.html">Blog</a>
+			</li>
 
-      <li class="nav-item">
-        <a href="about">About</a>
-      </li>
+			<li class="nav-item">
+				<a href="about.html">About</a>
+			</li>
 
-      <li class="nav-item">
-        <a href="contact">Contact</a>
-      </li>
+			<li class="nav-item">
+				<a href="contact.html">Contact</a>
+			</li>
 
-      <li class="nav-item">
-        <a href="project">Projects</a>
-      </li>
-    </ul>
-  </nav>
+			<li class="nav-item">
+				<a href="project.html">Projects</a>
+			</li>
+		</ul>
+	</nav>
 </nav>
 
-    <main id="container">
-      <h3 class="lg-heading">Blog <span class="txt-secondary">Posts</span></h3>
-      <h2 class="sm-heading">Check out some of my projects...</h2>
-      <article class="article">
-        <div>
-          <div id="post">
-            <div class="tabset">
-              <!-- Tab 1 -->
-              <input
-                type="radio"
-                name="tabset"
-                onclick="articleNav()"
-                id="tab1"
-                aria-controls="articles"
-                checked
-              />
-              <label for="tab1">Articles</label>
-              <!-- Tab 2 -->
-              <input
-                type="radio"
-                name="tabset"
-                id="tab2"
-                onclick="tutorialNav()"
-                aria-controls="tutorials"
-              />
-              <label for="tab2">Tutorials</label>
-              <!-- Tab 3 -->
-              <input
-                type="radio"
-                name="tabset"
-                onclick="clearNav()"
-                id="tab3"
-                aria-controls="videos"
-              />
-              <label for="tab3">Videos</label>
+		<main id="container">
+			<article class="article">
+				<div>
+					<div id="category">
+	<select id="ca-selector">
+		<option value="0">Recent Posts</option>
+		<option value="1">Articles</option>
+		<option value="2">Tutorials</option>
+		<option value="3">Videos</option>
+	</select>
+</div>
 
-              <div class="tab-panels">
-                <!--#include virtual="content/blog/articles/article-pages.shtml" -->
-                <!--#include virtual="content/blog/tutorials/tutorial-pages.shtml" -->
-                <!--#include virtual="content/blog/videos/video-pages.shtml" -->
-              </div>
-            </div>
-          </div>
-          <!--#include virtual="include/pagination-lg.shtml" -->
-          <!--#include virtual="include/pagination-sm.shtml" -->
-        </div>
-        <aside class="sidebar">
+					<div id="post">
+						<section id="page1" class="blog-list">
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>1 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Feb 9, 2022 </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>1 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Feb 9, 2022 </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>1 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Feb 9, 2022 </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>1 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Feb 9, 2022 </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>1 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Feb 9, 2022 </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>1 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Feb 9, 2022 </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>1 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Feb 9, 2022 </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+</section>
+
+						<section id="page2" class="blog-list">
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+</section>
+
+					</div>
+					<ul class="pagination pagi-lg">
+	<li><a href="#" class="prev">&laquo;</a></li>
+	<li><a href="#" onclick="showPage(1);">1</a></li>
+	<li><a href="#" onclick="showPage(2);">2</a></li>
+	<li><a href="#" onclick="showPage(3);">3</a></li>
+	<li><a href="#" onclick="showPage(4);">4</a></li>
+	<li><a href="#" onclick="showPage(5);">5</a></li>
+	<li><a href="#" onclick="showPage(6);">6</a></li>
+	<li><a href="#" onclick="showPage(7);">7</a></li>
+	<li><a href="#" onclick="showPage(8);">8</a></li>
+	<li><a href="#" onclick="showPage(9);">9</a></li>
+	<li><a href="#" onclick="showPage(10);">10</a></li>
+	<li><a href="#" class="next">&raquo;</a></li>
+</ul>
+
+<ul class="pagination pagi-sm">
+	<li><a href="#" class="prev">&laquo;</a></li>
+	<li><a href="#" onclick="showPage(1);">1</a></li>
+	<li><a href="#" onclick="showPage(2);">2</a></li>
+	<li><a href="#" onclick="showPage(3);">3</a></li>
+	<li><a href="#" onclick="showPage(4);">4</a></li>
+	<li><a href="#" onclick="showPage(5);">5</a></li>
+	<li><a href="#" class="next">&raquo;</a></li>
+</ul>
+
+				</div>
+				<aside class="sidebar">
 	<form class="search-box" onsubmit="event.preventDefault();" role="search">
 		<input
 			id="search"
@@ -292,16 +578,16 @@
 </div>
 
 	<br />
-	<a href="#" class="primary-button">BOOK A CONSULTATION</a>
-	<br />
+	<!-- <a href="#" class="primary-button">BOOK A CONSULTATION</a> -->
+	<!-- <br /> -->
 	<h4>Categories</h4>
 	<div class="sb-widget">
 		<ul>
 			<li>
-				<a href="blog.html">Articles</a>
+				<a href="blog.html">Blog</a>
 			</li>
 			<li>
-				<a href="blog.html">Tutorials</a>
+				<a href="blog.html">Articles</a>
 			</li>
 			<li>
 				<a href="videos.html">Videos</a>
@@ -381,16 +667,34 @@
 			</li>
 		</ol>
 	</div>
+	<h4>Policy</h4>
+	<div class="sb-widget">
+		<ul>
+			<li>
+				<a href="blog.html">Privacy Policy</a>
+			</li>
+			<li>
+				<a href="blog.html">Terms of Use</a>
+			</li>
+		</ul>
+	</div>
 </aside>
 
-      </article>
-    </main>
-    <footer id="main-footer"
+			</article>
+		</main>
+
+		<footer id="main-footer"
 	>&copy; <span id="year"></span>
 	<a href="index.html">Bloggrammer</a>
 </footer>
 
 
-    <script src="assets/js/main.js"></script>
-  </body>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/pagination.js"></script>
+		<script>
+			window.onload = document.getElementById(
+				'ca-selector'
+			)[1].selected = true;
+		</script>
+	</body>
 </html>
