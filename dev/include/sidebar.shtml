@@ -30,8 +30,8 @@
 	<h4>Stay in touch</h4>
 	<!--#include virtual="include/social-icons.shtml" -->
 	<br />
-	<!-- <a href="#" class="primary-button">BOOK A CONSULTATION</a> -->
-	<!-- <br /> -->
+	<a href="contact.html" class="primary-button">BOOK A CONSULTATION</a>
+	<br />
 	<h4>Categories</h4>
 	<div class="sb-widget">
 		<ul>

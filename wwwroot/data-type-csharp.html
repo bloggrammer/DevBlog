@@ -187,41 +187,29 @@
 		<main id="container">
 			<article class="article">
 				<div>
-					<!--#include virtual="include/mobile-categories.shtml" -->
+					<div id="category">
+	<select id="ca-selector">
+		<option value="0">Recent Posts</option>
+		<option value="1">Articles</option>
+		<option value="2">Tutorials</option>
+		<option value="3">Videos</option>
+	</select>
+</div>
+
 					<div id="post">
 						<section>
 							<h1 class="sm-heading">
-								This is How to Write a Blog Post Title Write a
-								Blog Post Title
+								Why Every Developer Should Have A Blog
 							</h1>
-							<pre><code class="language-css">
-	@import url(http://fonts.googleapis.com/css?family=Questrial);
-	@import url(http://fonts.googleapis.com/css?family=Arvo);
- 
-	@font-face {
-	 src: url(http://lea.verou.me/logo.otf);
-	 font-family: 'LeaVerou';
-	}
- 
-	/*
-	   Shared styles
-	*/
-  
-	section h1,
-	#features li strong,
-	header h2,
-	footer p {
-	 font: 100% Rockwell, Arvo, serif;
-	}
- </code></pre>
 							<span class="author">
 								<img
-									src="./assets/img/authors/img_avatar.png"
+									src="assets/img/authors/img_avatar.png"
 									alt="Avatar of John Ansa"
-								/><a href="./john-ansa.html">John Ansa</a> on
-								Nov 18, 2020</span
+								/><a href="about.html">John Ansa</a> on Jan 18,
+								2022</span
 							>
 						</section>
+
 						<section>
 							<h1>Headeing H1</h1>
 							<h2>Headeing H2</h2>
@@ -229,7 +217,34 @@
 							<h4>Headeing H4</h4>
 							<h5>Headeing H5</h5>
 							<h6>Headeing H6</h6>
-							<p>Welcome to the EduAnsa Educational site.</p>
+							<figure>
+								<a href="https://made4dev.com"
+									><img
+										class="center-img"
+										src="assets/img/blog/blog-post-banner.jpg"
+										alt="image"
+								/></a>
+								<figcaption
+									class="mt-2 text-center image-caption"
+									>Image Credit:
+									<a
+										href="https://made4dev.com?ref=devblog"
+										target="_blank"
+										>made4dev.com (Premium Programming
+										T-shirts)</a
+									></figcaption
+								>
+							</figure>
+							<p
+								>Lorem ipsum dolor sit amet, consectetuer
+								adipiscing elit. Aenean commodo ligula eget
+								dolor. Aenean massa. Cum sociis natoque
+								penatibus et magnis dis parturient montes,
+								nascetur ridiculus mus. Donec quam felis,
+								ultricies nec, pellentesque eu, pretium quis,
+								sem. Nulla consequat massa quis enim.</p
+							>
+
 							<blockquote cite="John Ansa">
 								The Semantic Web is not a separate Web but an
 								extension of the current one, in which
@@ -237,19 +252,69 @@
 								better enabling computers and people to work in
 								cooperation.
 							</blockquote>
+							<h2>Code Block Example</h2>
+							<p
+								>You can get more info at
+								<a
+									href="https://highlightjs.org/"
+									target="_blank"
+									>https://highlightjs.org/</a
+								>. Lorem ipsum dolor sit amet, consectetuer
+								adipiscing elit. Aenean commodo ligula eget
+								dolor. Aenean massa. Cum sociis natoque
+								penatibus et magnis dis parturient montes,
+								nascetur ridiculus mus.
+							</p>
+
+							<h4>JavaScript Code Example</h4>
+							<pre
+								class="line-numbers"
+							><code class="language-javascript">
+function $initHighlight(block, cls) {
+	try {
+	if (cls.search(/\bno\-highlight\b/) != -1)
+		return process(block, true, 0x0F) +
+				` class="${cls}"`;
+	} catch (e) {
+	/* handle exception */
+	}
+	for (var i = 0 / 2; i < classes.length; i++) {
+	if (checkCondition(classes[i]) === undefined)
+		console.log('undefined');
+	}
+}
+
+export  $initHighlight;
+</code></pre>
 							<p>
 								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Voluptatum ratione soluta,
-								quos quia maxime eos? Unde nisi hic amet ipsa
-								quam distinctio porro laboriosam nam odio
-								impedit non officiis sint, atque enim numquam
-								nesciunt vero, cumque incidunt.
+								adipisicing elit.
+								<a href="#">Voluptatum ratione</a> soluta, quos
+								quia maxime eos? Unde nisi hic amet ipsa quam
+								distinctio porro laboriosam nam odio impedit non
+								officiis sint, atque enim numquam nesciunt vero,
+								cumque incidunt.
 							</p>
-							<img
-								class="center-img"
-								src="./assets/img/blog/google-analytics.png"
-								alt="google-analytics"
-							/>
+							<h4>CSS Code Example</h4>
+							<pre><code class="language-css">
+@import url(http://fonts.googleapis.com/css?family=Questrial);
+@import url(http://fonts.googleapis.com/css?family=Arvo);
+
+@font-face {
+	src: url(http://lea.verou.me/logo.otf);
+	font-family: 'LeaVerou';
+}
+
+/*
+	Shared styles
+*/
+
+section h1,
+#features li strong,
+header h2,
+footer p {
+	font: 100% Rockwell, Arvo, serif;
+} </code></pre>
 						</section>
 						<br />
 						<section>
@@ -373,6 +438,32 @@
 							</svg>
 						</a>
 					</div>
+					<div style="width: 100%">
+	<!-- <script
+		src="https://utteranc.es/client.js"
+		repo="Blogrammer/blogrammer"
+		issue-term="url"
+		theme="github-dark"
+		crossorigin="anonymous"
+		asyn
+	></script> -->
+	<script
+		src="https://giscus.app/client.js"
+		data-repo="Blogrammer/blogrammer"
+		data-repo-id="R_kgDOGw7seQ"
+		data-category="Announcements"
+		data-category-id="DIC_kwDOGw7sec4CBEOW"
+		data-mapping="pathname"
+		data-reactions-enabled="1"
+		data-emit-metadata="0"
+		data-input-position="top"
+		data-theme="dark"
+		data-lang="en"
+		crossorigin="anonymous"
+		async
+	></script>
+</div>
+
 				</div>
 				<aside class="sidebar">
 	<form class="search-box" onsubmit="event.preventDefault();" role="search">
@@ -574,5 +665,10 @@
 
 		<script src="assets/js/main.js"></script>
 		<script src="assets/js/prism.js"></script>
+		<script>
+			window.onload = document.getElementById(
+				'ca-selector'
+			)[2].selected = true;
+		</script>
 	</body>
 </html>
