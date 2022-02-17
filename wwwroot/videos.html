@@ -73,10 +73,11 @@
 				<div>
 					<div id="category">
 	<select id="ca-selector">
-		<option value="0">Recent Posts</option>
-		<option value="1">Articles</option>
-		<option value="2">Tutorials</option>
-		<option value="3">Videos</option>
+		<option value="1">Select Category</option>
+		<option value="2">Recent Posts</option>
+		<option value="3">Articles</option>
+		<option value="4">Tutorials</option>
+		<option value="5">Videos</option>
 	</select>
 </div>
 
@@ -547,9 +548,7 @@
 					},
 				});
 			});
-			window.onload = document.getElementById(
-				'ca-selector'
-			)[3].selected = true;
+			window.onload = updateSelectedCategory(4);
 		</script>
 	</body>
 </html>

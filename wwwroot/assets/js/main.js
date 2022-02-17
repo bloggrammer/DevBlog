@@ -92,16 +92,20 @@ function openPopupWindow(url, win) {
 
 document.getElementById('ca-selector').addEventListener('change', (e) => {
 	switch (e.target.value) {
-		case '1':
-			location.href = 'articles.html';
-			break;
 		case '2':
-			location.href = 'tutorials.html';
+			location.href = 'blog.html';
+			console.log(e.target.value);
 			break;
 		case '3':
-			location.href = 'videos.html';
+			location.href = 'articles.html';
 			break;
-		default:
-			location.href = 'blog.html';
+		case '4':
+			location.href = 'tutorials.html';
+			break;
+		case '5':
+			location.href = 'videos.html';
 	}
 });
+function updateSelectedCategory(value) {
+	document.getElementById('ca-selector')[value].selected = true;
+}
