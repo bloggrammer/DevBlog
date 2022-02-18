@@ -1,32 +1,47 @@
 .btn {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem;
-  &:hover {
-    background: $secondary-color;
-    color: setTextColor($secondary-color);
-  }
-  svg {
-    height: 1.5rem;
-    width: 1.5rem;
-  }
+	display: block;
+	padding: 0.5rem 1rem;
+	border: 0;
+	margin-bottom: 0.3rem;
+	&:hover {
+		background: $secondary-color;
+		color: setTextColor($secondary-color);
+	}
+	svg {
+		height: 1.5rem;
+		width: 1.5rem;
+	}
 }
 
 .btn-dark {
-  @extend .btn;
-  background: darken($primary-color, 50);
-  color: $white-color;
-  svg {
-    fill: $white-color;
-  }
+	@extend .btn;
+	background: darken($primary-color, 50);
+	color: $white-color;
+	svg {
+		fill: $white-color;
+	}
 }
 
 .btn-light {
-  @extend .btn;
-  background: lighten($primary-color, 50);
-  color: $primary-color;
-  svg {
-    fill: $black-color;
-  }
+	@extend .btn;
+	background: lighten($primary-color, 50);
+	color: $primary-color;
+	svg {
+		fill: $black-color;
+	}
+}
+#top-btn {
+	all: unset;
+	position: fixed;
+	bottom: 3rem;
+	right: 2.5rem;
+	cursor: pointer;
+	transform: scale(1.8);
+	opacity: 0;
+	transition: 0.3s;
+	svg {
+		fill: $secondary-color;
+		width: 1rem;
+		height: 1rem;
+	}
 }

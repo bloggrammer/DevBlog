@@ -109,3 +109,14 @@ document.getElementById('ca-selector').addEventListener('change', (e) => {
 function updateSelectedCategory(value) {
 	document.getElementById('ca-selector')[value].selected = true;
 }
+
+let topBtn = document.getElementById('top-btn');
+
+topBtn.addEventListener('click', () => {
+	window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+});
+window.addEventListener('scroll', () => {
+	window.scrollY > 500
+		? (topBtn.style.opacity = 1)
+		: (topBtn.style.opacity = 0);
+});

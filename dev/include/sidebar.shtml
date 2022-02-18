@@ -1,4 +1,5 @@
 <aside class="sidebar">
+	
 	<form class="search-box" onsubmit="event.preventDefault();" role="search">
 		<input
 			id="search"
@@ -33,17 +34,49 @@
 	<a href="contact.html" class="primary-button">BOOK A CONSULTATION</a>
 	<br />
 	<h4>Categories</h4>
-	<div class="sb-widget">
-		<ul>
+	<div class="sb-widget" style="display: flex">
+		<!-- <ul>
 			<li>
 				<a href="blog.html">Blog</a>
 			</li>
 			<li>
-				<a href="blog.html">Articles</a>
+				<a href="articles.html">Articles</a>
+			</li>
+			<li>
+				<a href="tutorials.html">Tutorials</a>
 			</li>
 			<li>
 				<a href="videos.html">Videos</a>
 			</li>
+		</ul> -->
+		<ul>
+			<li>
+				<a href="programming-tutorials.html">Programming</a>
+			</li>
+			<li>
+				<a href="natural-language-processing.html">NLP</a>
+			</li>
+			<li>
+				<a href="database-tutorials.html">Database</a>
+			</li>
+			<li>
+				<a href="wordpress-articles.html">WordPress</a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="web-hosting-articles.html">Web Hosting</a>
+			</li>
+			<li>
+				<a href="interview-questions.html">Tech Interviews</a>
+			</li>
+			<li>
+				<a href="data-science-tutorials.html">Data Science</a>
+			</li>
+			<li>
+				<a href="wordpress-articles.html">WordPress</a>
+			</li>
+		</ul>
 		</ul>
 	</div>
 	<!-- <h4>Ad Space</h4>
@@ -130,4 +163,6 @@
 			</li>
 		</ul>
 	</div>
+	
 </aside>
+
