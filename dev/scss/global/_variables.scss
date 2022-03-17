@@ -17,10 +17,11 @@ $code-color: $pink;
 $gray-900: #212529 !default;
 $gray-600: #6c757d !default;
 $gray-300: #c4c4c4 !default;
-$font-stack: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,
-	Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell,
-	Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji,
-	Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+// $font-stack: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,
+// 	Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell,
+// 	Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji,
+// 	Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+$font-stack: Roboto, Verdana, Arial, Helvetic;
 $show-home-image: true !default;
 $home-image: url(../img/background.jfif);
 $portrait-image: url(../img/portrait.png);

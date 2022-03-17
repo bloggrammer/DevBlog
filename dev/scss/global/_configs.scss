@@ -126,6 +126,9 @@ button,
 	}
 }
 @mixin config-m {
+	#container {
+		width: 92%;
+	}
 	h1,
 	h2,
 	h3 {
