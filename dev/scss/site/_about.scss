@@ -55,7 +55,7 @@
 // }
 
 #about {
-	padding: 2rem 10rem;
+	padding: 2rem 0;
 	.bio {
 		// border-bottom: $secondary-color 5px solid;
 		height: 300px;
@@ -63,6 +63,7 @@
 	.inner {
 		background: lighten($primary-color, 5);
 		// margin: 0.5rem;
+		border-radius: .8rem;
 	}
 	// .left-column {
 	// 	box-sizing: border-box;
