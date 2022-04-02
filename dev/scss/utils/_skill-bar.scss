@@ -34,6 +34,10 @@
 	}
 	list-style-type: none;
 }
+.c90 {
+	background-color: #cc0000;
+	animation: c90 2s forwards;
+}
 
 .c95 {
 	background-color: #4caf50;
@@ -56,10 +60,14 @@
 	animation: c70 2s forwards;
 	background-color: #ae8a33;
 }
-
 @keyframes c95 {
 	100% {
 		width: 95%;
+	}
+}
+@keyframes c90 {
+	100% {
+		width: 90%;
 	}
 }
 @keyframes c80 {

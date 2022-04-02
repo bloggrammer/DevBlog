@@ -30,7 +30,7 @@ h3 {
 	}
 	&.sm-heading {
 		margin-bottom: 2rem;
-		padding: 0.2rem 1rem;
+		padding: 0.2rem 0.5rem;
 		background: rgba(lighten($color: $primary-color, $amount: 5), 0.5);
 	}
 }
@@ -73,13 +73,9 @@ button,
 	}
 }
 
-#container {
-	margin: 0.5em auto;
-	max-width: 100%;
-	width: 85%;
-	box-sizing: border-box;
-	overflow: hidden;
-	margin-top: 4em;
+.inner {
+	background: lighten($primary-color, 5);
+	border-radius: .8rem;
 }
 
 .article {
