@@ -198,37 +198,48 @@
 					</div>
 				</div>
 				<aside class="sidebar">
-	
-	<form class="search-box" onsubmit="event.preventDefault();" role="search">
-		<input
-			id="search"
-			type="search"
-			placeholder="Search Bloggrammer"
-			autofocus
-			required
-		/>
-		<button type="submit">Go</button>
-	</form>
-	<br />
-	<h4>About Me</h4>
-	<div class="sb-widget social-link">
-		<p>
-			John Ansa is a "blogger" + "programmer" with a degree in petroleum
-			engineering, who loves to learn, collaborate and create.
-		</p>
-		<p>
-			When asked what he likes to do in his spare time, he replies,
-			"Programming".
-		</p>
-		<p>
-			You can read more about me at the
-			<span>“<a href="about.html">About</a>”</span>
-			page.
-		</p>
+	<div class="row">
+		<div class="col mb-3">
+			<form class="search-box" onsubmit="event.preventDefault();" role="search">
+				<input
+					id="search"
+					type="search"
+					placeholder="Search Bloggrammer"
+					autofocus
+					required
+				/>
+				<button type="submit">Go</button>
+			</form>
+		</div>
 	</div>
-	<br />
-	<h4>Stay in touch</h4>
-	<div class="social-icons">
+	<div class="row">
+		<div class="col mb-3">
+			<h4>About Me</h4>
+			<div class="sb-widget social-link">
+				<p>
+					John Ansa is a full-stack developer with over
+					five years of hands-on professional experience
+					creating REST APIs, .NET web, and desktop
+					applications.
+				</p>
+				<p>
+					When asked what he likes to do in his spare time, he replies,
+					"Programming".
+				</p>
+				<p>
+					You can read more about me at the
+					<span>“<a href="about.html">About</a>”</span>
+					page.
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col mb-3 ">
+			<h4>Stay in touch</h4>
+	<div class="ml-4">
+		<div class="social-icons">
   <a
     href="https://www.linkedin.com/in/johnansa/"
     target="_blank"
@@ -286,61 +297,78 @@
   </a>
 </div>
 
-	<br />
+	</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col mb-3">
 	<a href="contact.html" class="primary-button">BOOK A CONSULTATION</a>
-	<br />
-	<h4>Categories</h4>
-	<div class="sb-widget" style="display: flex">
-		<!-- <ul>
-			<li>
-				<a href="blog.html">Blog</a>
-			</li>
-			<li>
-				<a href="articles.html">Articles</a>
-			</li>
-			<li>
-				<a href="tutorials.html">Tutorials</a>
-			</li>
-			<li>
-				<a href="videos.html">Videos</a>
-			</li>
-		</ul> -->
-		<ul>
-			<li>
-				<a href="programming-tutorials.html">Programming</a>
-			</li>
-			<li>
-				<a href="natural-language-processing.html">NLP</a>
-			</li>
-			<li>
-				<a href="database-tutorials.html">Database</a>
-			</li>
-			<li>
-				<a href="wordpress-articles.html">WordPress</a>
-			</li>
-		</ul>
-		<ul>
-			<li>
-				<a href="web-hosting-articles.html">Web Hosting</a>
-			</li>
-			<li>
-				<a href="interview-questions.html">Tech Interviews</a>
-			</li>
-			<li>
-				<a href="data-science-tutorials.html">Data Science</a>
-			</li>
-			<li>
-				<a href="wordpress-articles.html">WordPress</a>
-			</li>
-		</ul>
-		</ul>
+		</div>
 	</div>
-	<!-- <h4>Ad Space</h4>
-  <div class="sb-widget">
-    <img src="./assets/img/banner/300x250.jpg" alt="" />
-  </div> -->
 
-	<h4>Recent Posts</h4>
+	<div class="row">
+		<div class="col mb-3">
+			<h4>Categories</h4>
+			<div class="sb-widget" style="display: flex">
+				<!-- <ul>
+					<li>
+						<a href="blog.html">Blog</a>
+					</li>
+					<li>
+						<a href="articles.html">Articles</a>
+					</li>
+					<li>
+						<a href="tutorials.html">Tutorials</a>
+					</li>
+					<li>
+						<a href="videos.html">Videos</a>
+					</li>
+				</ul> -->
+				<ul>
+					<li>
+						<a href="programming-tutorials.html">Programming</a>
+					</li>
+					<li>
+						<a href="natural-language-processing.html">NLP</a>
+					</li>
+					<li>
+						<a href="database-tutorials.html">Database</a>
+					</li>
+					<li>
+						<a href="wordpress-articles.html">WordPress</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="web-hosting-articles.html">Web Hosting</a>
+					</li>
+					<li>
+						<a href="interview-questions.html">Tech Interviews</a>
+					</li>
+					<li>
+						<a href="data-science-tutorials.html">Data Science</a>
+					</li>
+					<li>
+						<a href="wordpress-articles.html">WordPress</a>
+					</li>
+				</ul>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col mb-3">
+			<h4>Ad Space</h4>
+  <div class="sb-widget">
+    <img style="width: 90%; height: 90%;" src="./assets/img/banner/300x250.jpg" alt="" />
+  </div>
+		</div>
+	</div>
+	
+  <div class="row">
+	<div class="col mb-3">
+		<h4>Recent Posts</h4>
 	<div class="sb-widget">
 		<ol>
 			<li>
@@ -374,41 +402,11 @@
 			</li>
 		</ol>
 	</div>
-	<h4>Projects</h4>
-	<div class="sb-widget">
-		<ol>
-			<li>
-				<a class="widget-list-link">
-					<img src="./assets/img/banner/300x250.jpg" />
-					<div class="post">
-						<div class="title">Developer 3</div>
-						<div class="date">January 3, 2022</div>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a class="widget-list-link">
-					<img src="./assets/img/banner/300x250.jpg" />
-					<div class="post">
-						<div class="title"
-							>Lorem ipsum dolor sit amet consectetur</div
-						>
-						<div class="date">January 3, 2022</div>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a class="widget-list-link">
-					<img src="./assets/img/banner/300x250.jpg" />
-					<div class="post">
-						<div class="title">Developer 3</div>
-						<div class="date">January 3, 2022</div>
-					</div>
-				</a>
-			</li>
-		</ol>
 	</div>
-	<h4>Policy</h4>
+</div>
+	<div class="row">
+		<div class="col mb-3">
+			<h4>Policy</h4>
 	<div class="sb-widget">
 		<ul>
 			<li>
@@ -419,7 +417,8 @@
 			</li>
 		</ul>
 	</div>
-	
+		</div>
+	</div>
 </aside>
 
 
