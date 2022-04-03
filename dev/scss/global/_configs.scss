@@ -78,6 +78,14 @@ button,
 	border-radius: .8rem;
 }
 
+#container {
+	margin: 0.5em auto;
+	max-width: 100%;
+	width: 85%;
+	box-sizing: border-box;
+	overflow: hidden;
+	margin-top: 4em;
+}
 .article {
 	display: grid;
 	grid-template-columns: 70% 30%;
@@ -109,10 +117,7 @@ button,
 		margin-left: 0.5rem;
 	}
 }
-.d-flex {
-	display: flex;
-	box-sizing: border-box;
-}
+
 
 @media (max-width: 768px) {
 }
