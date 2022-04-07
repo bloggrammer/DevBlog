@@ -76,6 +76,7 @@ button,
 .inner {
 	background: lighten($primary-color, 5);
 	border-radius: .8rem;
+	padding: 1rem;
 }
 
 #container {
@@ -87,9 +88,9 @@ button,
 	margin-top: 4em;
 }
 .article {
-	display: grid;
-	grid-template-columns: 70% 30%;
-
+	// display: grid;
+	// grid-template-columns: 70% 30%;
+	display: flex;
 	#post {
 		background: lighten($primary-color, 7);
 		border-radius: 1rem;
@@ -118,9 +119,6 @@ button,
 	}
 }
 
-
-@media (max-width: 768px) {
-}
 @mixin config-l {
 	.article {
 		display: block;

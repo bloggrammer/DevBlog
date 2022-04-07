@@ -47,6 +47,7 @@
 }
 @include media-l {
 	@include config-l;
+	@include about-l;
 }
 // Small devices (landscape phones, less than 768px)
 @include media-m {
