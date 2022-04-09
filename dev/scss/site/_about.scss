@@ -1,12 +1,10 @@
-
 .about {
-	// padding: 4rem 0 0 0;
 	.center{
 		.bio-img{
 			height: 30%;
 			width: 30%;
 		}
-		img
+		.img
 		{
 		  border-radius: 50%;
 		  border: $secondary-color 3px solid;
@@ -29,7 +27,7 @@
 		text-align: center;
 		height: auto !important;
 		width: auto !important;
-		img{
+		.img{
 			margin-top: 1rem !important;
 			margin-bottom: 1rem !important;
 			height: 30% !important;

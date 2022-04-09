@@ -88,9 +88,9 @@ button,
 	margin-top: 4em;
 }
 .article {
-	// display: grid;
-	// grid-template-columns: 70% 30%;
-	display: flex;
+	display: grid;
+	grid-template-columns: 70% 30%;
+	// display: flex;
 	#post {
 		background: lighten($primary-color, 7);
 		border-radius: 1rem;
@@ -120,7 +120,7 @@ button,
 }
 
 @mixin config-l {
-	.article {
+	.article,.d-flex {
 		display: block;
 	}
 }
