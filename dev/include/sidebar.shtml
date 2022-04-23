@@ -38,17 +38,17 @@
 			<!--#include virtual="include/social-icons.shtml" -->
 		</div>
 	</div>
-	<!-- <div class="mb-3">
-		<a href="contact.html" class="primary-button">BOOK A CONSULTATION</a>
-	</div> -->
 	<div class="mb-3">
+		<a href="contact.html" class="primary-button">BOOK A CONSULTATION</a>
+	</div>
+	<!-- <div class="mb-3">
 		<a href="https://www.codementor.io/@johnansa1?refer=badge"
 			><img
 				style="width: 100%; height: auto"
 				src="https://www.codementor.io/m-badges/johnansa1/get-help.svg"
 				alt="Codementor badge"
 		/></a>
-	</div>
+	</div> -->
 	<div class="mb-3">
 		<h4>Categories</h4>
 		<div class="sb-widget" style="display: flex">
