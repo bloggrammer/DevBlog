@@ -36,3 +36,18 @@
 	}
 }
 
+.side_view{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.side_view img{
+	width: 9rem;
+	height: 7rem;
+	object-fit: cover;
+	cursor: pointer;
+	margin:0.5rem;
+}
+ul li{
+	padding: 5px;
+}
