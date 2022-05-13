@@ -13,7 +13,7 @@
 @mixin home-m {
   #bg-img {
     main {
-      padding: 8rem 2rem;
+      padding: 8rem 1rem;
     }
   }
 }
@@ -21,6 +21,9 @@
   #bg-img {
     main {
       text-align: center;
+      h1{
+        font-size: 2.5rem;
+      }
     }
   }
 }

@@ -1,7 +1,3 @@
-#contact {
-  overflow: hidden;
-}
-
 .boxes {
   display: flex;
   flex-wrap: wrap;
@@ -24,9 +20,3 @@
 .boxes div:hover span {
   color: $primary-color;
 }
-
-// @media (max-width: 480px) {
-//   #contact {
-//     overflow: visible;
-//   }
-// }
