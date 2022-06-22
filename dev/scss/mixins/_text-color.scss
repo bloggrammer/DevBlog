@@ -1,7 +1,0 @@
-@function setTextColor($color) {
-  @if (lightness($color) > 40) {
-    @return $black-color;
-  } @else {
-    @return $white-color;
-  }
-}

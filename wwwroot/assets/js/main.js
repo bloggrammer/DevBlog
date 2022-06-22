@@ -1,32 +1,3 @@
-const menuBtn = document.querySelector('.menu-btn');
-const menu = document.querySelector('.menu');
-const menuNav = document.querySelector('.menu-nav');
-const menuBranding = document.querySelector('.menu-branding');
-const navItems = document.querySelectorAll('.nav-item');
-
-menuBtn.addEventListener('click', toggleMenu);
-
-function toggleMenu() {
-	menuBtn.classList.toggle('close');
-	menu.classList.toggle('show');
-	menuNav.classList.toggle('show');
-	menuBranding.classList.toggle('show');
-	navItems.forEach((item) => item.classList.toggle('show'));
-}
-
-function setActiveMenu() {
-	var aObj = document.getElementById('main-nav').getElementsByTagName('a');
-	for (var i = 0; i < aObj.length; i++) {
-		if (aObj[i].href === document.location.href) {
-			aObj[i].className = 'current-menu';
-		}
-	}
-}
-
-window.onload = setActiveMenu;
-
-document.getElementById('year').innerText = new Date().getFullYear();
-
 // Typewritter
 const typedTextSpan = document.querySelector('.typed-text');
 const cursorSpan = document.querySelector('.cursor');
@@ -75,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (textArray.length) setTimeout(type, newTextDelay + 250);
 });
 // Typewritter
-
 let topBtn = document.getElementById('top-btn');
 
 topBtn.addEventListener('click', () => {
@@ -86,3 +56,4 @@ window.addEventListener('scroll', () => {
 		? (topBtn.style.opacity = 1)
 		: (topBtn.style.opacity = 0);
 });
+document.getElementById('year').innerText = new Date().getFullYear();

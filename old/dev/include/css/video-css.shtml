@@ -1,0 +1,5 @@
+<link rel="stylesheet" href="./assets/css/main.css" />
+<link rel="stylesheet" href="./assets/css/playlist.css" />
+<link rel="shortcut icon" href="./assets/img/favicon.png" />
+<script src="./assets/js/jQuery.js"></script>
+<script src="./assets/js/playlist.js"></script>

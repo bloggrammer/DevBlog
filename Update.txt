@@ -1,5 +1,0 @@
-About page: https://themes.getbootstrap.com/preview/?theme_id=19799
-
-BrandMidfy: https://startbootstrap.com/previews/sb-admin-pro
-https://themes.getbootstrap.com/preview/?theme_id=55924
-https://startbootstrap.com/previews/sb-admin-pro-angular
