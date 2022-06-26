@@ -1,0 +1,72 @@
+.overview-section .item {
+	margin-bottom: 2rem;
+}
+.overview-section .item-desc {
+	color: #4f4f4f;
+	font-size: 0.875rem;
+}
+.overview-section .item-icon {
+	font-size: 1.875rem;
+	color: $bs-primary;
+	.fa-angular {
+		color: #ca3327;
+	}
+	.fa-js-square {
+		color: #f1de4f;
+	}
+	.fa-react {
+		color: #62d4fa;
+	}
+	.fa-vuejs {
+		color: #64b687;
+	}
+	.fa-node-js {
+		color: #55ac63;
+	}
+	.fa-python {
+		color: #456e9c;
+	}
+	.fa-php {
+		color: #777baf;
+	}
+	.fa-java {
+		color: #2e68ab;
+	}
+	.fa-html5-alt {
+		color: #de6e3c;
+	}
+	.fa-css3-alt,
+	.fa-cloud-arrow-up,
+	.fa-wordpress {
+		color: #53a7dc;
+	}
+	.fa-sass {
+		color: #bf6b97;
+	}
+	.fa-less {
+		color: #324b7c;
+	}
+	.fa-gulp {
+		color: #c9514e;
+	}
+	.fa-grunt {
+		color: #efac42;
+	}
+	.fa-npm {
+		color: #bb443e;
+	}
+	.fa-database,
+	.fa-server {
+		color: #324b7c;
+	}
+	.fa-mongodb {
+		fill: #198754;
+	}
+	.fa-elementor {
+		color: #92003b;
+	}
+}
+
+.overview-section .item-title {
+	font-size: 1rem;
+}

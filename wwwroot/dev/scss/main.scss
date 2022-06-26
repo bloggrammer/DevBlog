@@ -10,71 +10,9 @@
 @import 'global';
 @import 'bs-grid';
 @import 'bs-main';
+@import 'util';
+@import 'icons';
 
-.typist {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	// z-index: 2;
-}
-.typist div {
-	padding: 0.5rem;
-	font-weight: bold;
-	letter-spacing: 0.1rem;
-	text-align: center;
-	overflow: hidden;
-}
-.typist div span.typed-text,
-.blog-grama {
-	font-weight: bold;
-	color: rgba(0, 0, 0, 0.5);
-}
-
-.typist div span.cursor {
-	display: inline-block;
-	background-color: $bs-white;
-	margin-left: 0.1rem;
-	width: 3px;
-	animation: blink 1s infinite;
-}
-.typist div span.cursor.typing {
-	animation: none;
-}
-@keyframes blink {
-	0% {
-		background-color: $bs-white;
-	}
-	49% {
-		background-color: $bs-white;
-	}
-	50% {
-		background-color: transparent;
-	}
-	99% {
-		background-color: transparent;
-	}
-	100% {
-		background-color: $bs-white;
-	}
-}
-.me-link {
-	color: rgba(0, 0, 0, 0.5);
-}
-#top-btn {
-	all: unset;
-	position: fixed;
-	bottom: 3rem;
-	right: 2.5rem;
-	cursor: pointer;
-	transform: scale(1.8);
-	opacity: 0;
-	transition: 0.3s;
-	svg {
-		fill: $bs-primary;
-		width: 1rem;
-		height: 1rem;
-	}
-}
 .header {
 	position: fixed;
 	left: 0;
@@ -343,67 +281,7 @@
 	font-size: 1.5rem;
 	font-weight: 300;
 }
-.overview-section .item {
-	margin-bottom: 2rem;
-}
-.overview-section .item-desc {
-	color: #4f4f4f;
-	font-size: 0.875rem;
-}
-.overview-section .item-icon {
-	font-size: 1.875rem;
-	color: $bs-primary;
-}
-.overview-section .item-icon .fa-angular {
-	color: #ca3327;
-}
-.overview-section .item-icon .fa-js-square {
-	color: #f1de4f;
-}
-.overview-section .item-icon .fa-react {
-	color: #62d4fa;
-}
-.overview-section .item-icon .fa-vuejs {
-	color: #64b687;
-}
-.overview-section .item-icon .nodejs {
-	color: #55ac63;
-}
-.overview-section .item-icon .fa-python {
-	color: #456e9c;
-}
-.overview-section .item-icon .fa-php {
-	color: #777baf;
-}
-.overview-section .item-icon .fa-java {
-	color: #2e68ab;
-}
-.overview-section .item-icon .fa-html5,
-.overview-section .item-icon .fa-html5-alt {
-	color: #de6e3c;
-}
-.overview-section .item-icon .fa-css3,
-.overview-section .item-icon .fa-css3-alt {
-	color: #53a7dc;
-}
-.overview-section .item-icon .fa-sass {
-	color: #bf6b97;
-}
-.overview-section .item-icon .fa-less {
-	color: #324b7c;
-}
-.overview-section .item-icon .fa-gulp {
-	color: #c9514e;
-}
-.overview-section .item-icon .fa-grunt {
-	color: #efac42;
-}
-.overview-section .item-icon .fa-npm {
-	color: #bb443e;
-}
-.overview-section .item-title {
-	font-size: 1rem;
-}
+
 .testimonial-carousel .item-inner {
 	padding: 1.5rem;
 	padding-left: 3rem;
@@ -893,10 +771,10 @@ a.resume-link:hover {
 	position: relative;
 }
 .blog-nav .nav-link:hover {
-	background: #c7572f;
+	background: $blog-nav-hover;
 }
 .blog-nav .nav-link-prev {
-	border-right: 1px solid #9d4526;
+	border-right: 1px solid $blog-nav;
 }
 .blog-nav .arrow-prev {
 	position: absolute;
@@ -954,12 +832,12 @@ a.resume-link:hover {
 .blog-post .image-caption a:hover {
 	color: #4f4f4f;
 }
-.blog-post .blockquote {
+.blockquote {
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	border-left: 2px solid $bs-dark;
 	font-size: 1.5rem;
 }
-.blog-post .blockquote p {
+.blockquote p {
 	font-size: 1.5rem;
 }
 @media (min-width: 768px) {
@@ -1210,7 +1088,7 @@ body.dark-mode .blog-post-card {
 	background: #151e29;
 	border: none;
 }
-body.dark-mode .blog-post .blockquote {
+body.dark-mode .blockquote {
 	border-color: $bs-primary;
 }
 body.dark-mode .filters .type {
@@ -1288,135 +1166,4 @@ body.dark-mode .testiomonial-carousel-container .tns-nav button:hover {
 }
 body {
 	overflow-x: hidden;
-}
-.config-trigger {
-	position: absolute;
-	top: 30px;
-	left: -36px;
-	width: 36px;
-	height: 36px;
-	background: #223142;
-	color: $bs-white;
-	text-align: center;
-	border-radius: 4px;
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-	text-decoration: none;
-}
-.config-trigger:hover {
-	background: #111820;
-	text-decoration: none;
-}
-.config-trigger:hover .fa-gear {
-	color: $bs-white;
-}
-.config-trigger .fa-gear {
-	font-size: 1.25rem;
-	display: block;
-	color: $bs-white;
-}
-.dark-mode .config-trigger {
-	background: $bs-black;
-}
-.config-panel {
-	position: fixed;
-	top: 50px;
-	z-index: 30;
-	width: 190px;
-	transition: all 0.4s ease-in-out;
-}
-@media (prefers-reduced-motion: reduce) {
-	.config-panel {
-		transition: none;
-	}
-}
-.config-panel.config-panel-hide {
-	right: -190px;
-}
-.config-panel.config-panel-open {
-	right: 0;
-}
-.config-panel .panel-inner {
-	position: relative;
-	background: #223142;
-	color: $bs-white;
-	padding: 15px;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-.dark-mode .config-panel .panel-inner {
-	background: $bs-black;
-}
-.config-panel .panel-title {
-	font-weight: 600;
-	margin-bottom: 10px;
-	font-size: 14px;
-	text-transform: uppercase;
-	color: $bs-white;
-}
-.config-panel label {
-	color: $bs-white;
-}
-.config-panel #color-options {
-	margin-bottom: 0px;
-}
-.config-panel #color-options li a {
-	display: block;
-	width: 20px;
-	height: 20px;
-	border: 2px solid transparent;
-	margin-top: 5px;
-}
-.config-panel #color-options li a:hover {
-	-webkit-opacity: 0.9;
-	-moz-opacity: 0.9;
-	opacity: 0.9;
-	border: 2px solid rgba(255, 255, 255, 0.9);
-}
-.config-panel #color-options li.list-inline-item {
-	margin-right: 5px;
-}
-.config-panel #color-options li.active a {
-	border: 2px solid $bs-white;
-}
-.config-panel #color-options li.theme-1 a {
-	background: #54b689;
-}
-.config-panel #color-options li.theme-2 a {
-	background-color: #5bc3d5;
-}
-.config-panel #color-options li.theme-3 a {
-	background-color: #3b7eeb;
-}
-.config-panel #color-options li.theme-4 a {
-	background-color: #5ecca9;
-}
-.config-panel #color-options li.theme-5 a {
-	background-color: #eea73b;
-}
-.config-panel #color-options li.theme-6 a {
-	background-color: #5469c9;
-}
-.config-panel #color-options li.theme-7 a {
-	background-color: #5d6ba7;
-}
-.config-panel #color-options li.theme-8 a {
-	background-color: #6c51a4;
-}
-.config-panel #color-options li.theme-9 a {
-	background-color: $bs-primary;
-}
-.config-panel #color-options li.theme-10 a {
-	background-color: #5fcb71;
-}
-.config-panel .close {
-	position: absolute;
-	right: 5px;
-	top: 5px;
-	color: $bs-white;
-}
-.config-panel .close .fa {
-	color: $bs-white;
 }
