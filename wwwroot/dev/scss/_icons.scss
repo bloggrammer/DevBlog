@@ -65,8 +65,20 @@
 	.fa-elementor {
 		color: #92003b;
 	}
+	.fa-magnifying-glass-dollar {
+		color: #efac42;
+	}
+	.fa-chart-line {
+		color: #55ac63;
+	}
+	.fa-rectangle-ad {
+		color: #0072c6;
+	}
 }
 
 .overview-section .item-title {
 	font-size: 1rem;
+}
+.rating {
+	color: $bs-primary;
 }

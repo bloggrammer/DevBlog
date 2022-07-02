@@ -1,0 +1,8 @@
+<!-- Javascript -->
+<script src="assets/js/main.js?v=1"></script>
+<script src="assets/plugins/popper.min.js?v=1"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js?v=1"></script>
+
+<!-- Dark Mode -->
+<script src="assets/plugins/js-cookie.min.js?v=1"></script>
+<script src="assets/js/dark-mode.js?v=1"></script>
