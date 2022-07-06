@@ -82,3 +82,80 @@
 .rating {
 	color: $bs-primary;
 }
+
+// Sticky Social Buttons
+.social-btn_sticky {
+	position: fixed;
+	top: 50%;
+	right: 0rem;
+	transform: translateY(-50%);
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+	a {
+		display: block;
+		text-align: center;
+		padding: 16px;
+		transition: all 0.3s ease;
+		color: $bs-white;
+		font-size: 20px;
+		opacity: 1;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+	.facebook {
+		background: #3b5998;
+	}
+
+	.twitter {
+		background-color: #55acee;
+	}
+	.linkedin {
+		background: #0077b5;
+	}
+	.whatsapp {
+		background: #25d366;
+	}
+	.pinterest {
+		background: #bb0000;
+	}
+}
+@media (max-width: 768px) {
+	.social-btn_sticky {
+		display: none !important;
+	}
+}
+
+#share {
+	width: 100%;
+	margin: 10px auto;
+	text-align: center;
+	.facebook {
+		background: #3b5998;
+	}
+
+	.twitter {
+		background-color: #55acee;
+	}
+	.linkedin {
+		background: #0077b5;
+	}
+	.whatsapp {
+		background: #25d366;
+	}
+	.pinterest {
+		background: #bb0000;
+	}
+	.social {
+		color: #fff;
+	}
+	a {
+		opacity: 1;
+		&:hover {
+			opacity: 0.7;
+			transition: all 0.3s ease;
+		}
+	}
+}

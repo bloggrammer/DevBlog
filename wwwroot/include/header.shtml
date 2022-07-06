@@ -61,12 +61,6 @@
 						<a class="nav-link" href="http://localhost:8000/tutorials"><i
 								class="fas fa-video fa-fw me-2"></i>Tutorials</a>
 					</li>
-					<!-- <li class="nav-item">
-						<a class="nav-link" href="blog-home.html"
-							><i class="fas fa-envelope-open-text fa-fw me-2"></i
-							>Contact</a
-						>
-					</li> -->
 				</ul>
 
 				<div class="my-2">
@@ -81,9 +75,8 @@
 					<input class="toggle" id="darkmode" type="checkbox" checked />
 					<label class="toggle-btn mx-auto mb-0" for="darkmode"></label>
 				</div>
-				<!--//dark-mode-toggle-->
+
 			</div>
 		</nav>
 	</div>
-	<!--//force-overflow-->
 </header>

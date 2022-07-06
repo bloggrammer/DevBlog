@@ -1,0 +1,11 @@
+<ul class="social-list list-inline py-2 mx-auto" id="share">
+    <li class="list-inline-item"><a class="twitter" href="#"><i class="fab fa-twitter fa-fw social"></i></a>
+    </li>
+    <li class="list-inline-item"><a class="linkedin" href="#"><i class="fab fa-linkedin-in fa-fw social"></i></a></li>
+    <li class="list-inline-item"><a class="facebook" href="#"><i class="fab fa-facebook-f fa-fw social"></i></a></li>
+    <li class="list-inline-item"><a class="whatsapp" href="#"><i class="fab fa-whatsapp fa-fw social"></i></a></li>
+    <li class="list-inline-item"><a class="pinterest"
+            href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fcss-tricks.com%2F" rel="noopener noreferrer"
+            target="_blank"><i class="fab fa-pinterest-p fa-fw social"></i></a>
+    </li>
+</ul>
