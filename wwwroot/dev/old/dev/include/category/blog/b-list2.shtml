@@ -1,0 +1,191 @@
+<section id="page2" class="blog-list">
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+	<div class="item">
+		<img
+			class="thumbnail"
+			src="assets/img/blog/blog-post-thumb-9.jpg"
+			alt="image"
+		/>
+		<div class="item-body">
+			<h3 class="title">
+				<a href="blog-post.html"
+					>2 Why Every Developer Should Have A Blog
+				</a>
+			</h3>
+			<div class="meta">
+				<span class="date">Published 4 months ago </span>
+				<span class="time">8 min read</span>
+				<span class="comment">
+					<a href="#">7 comments</a>
+				</span>
+			</div>
+			<div class="intro"
+				>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+				natoque penatibus et magnis dis...
+			</div>
+			<a class="more-link" href="blog-post.html"> Read more &rarr; </a>
+		</div>
+	</div>
+</section>

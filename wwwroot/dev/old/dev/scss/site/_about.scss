@@ -1,0 +1,62 @@
+.about {
+	.center{
+		.bio-img{
+			height: 30%;
+			width: 30%;
+		}
+		.img
+		{
+		  border-radius: 50%;
+		  border: $secondary-color 3px solid;
+		  max-width: 100%;
+		  max-height: 100%;
+		  object-fit: contain;
+		}
+	}
+	.bio-banner{
+		height: 150px;
+		border-radius: 0.8rem 0.8rem 0 0;
+		z-index: 1;
+		position: relative;
+		float: right;
+	}
+	.side_view{
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.side_view img{
+		width: 9rem;
+		height: 7rem;
+		object-fit: cover;
+		cursor: pointer;
+		margin:0.5rem;
+	}
+	ul li{
+		padding: 5px;
+	}
+	.nuget{
+		display: flex;
+		justify-items: center;
+		justify-content: space-between;
+		.nuget-img{
+			margin: .5rem;
+		}
+	}
+	
+}
+
+@mixin about-l {
+	.center .bio-img{
+		text-align: center;
+		height: auto !important;
+		width: auto !important;
+		.img{
+			margin-top: 1rem !important;
+			margin-bottom: 1rem !important;
+			height: 30% !important;
+			width: 30% !important;
+		}
+	}
+}
+

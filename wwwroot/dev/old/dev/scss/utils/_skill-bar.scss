@@ -1,0 +1,92 @@
+#skill-bar {
+	width: 100%;
+	max-width: 960px;
+	margin-left: -30px !important;
+	li {
+		position: relative;
+		margin-bottom: 22px;
+		/* padding-left: 6px; */
+		.bar-container,
+		.bar {
+			position: absolute;
+			left: 0;
+			height: 5px;
+			border-radius: 5px;
+			content: '';
+			width: 0;
+		}
+		.bar-container {
+			bottom: -10px;
+			width: 100%;
+			background-color: #333;
+			text-align: right;
+			.pct {
+				position: absolute;
+				top: -19px;
+				right: 0;
+				opacity: 1;
+				transition: opacity 0.3s linear;
+			}
+		}
+		.bar {
+			top: 0;
+		}
+	}
+	list-style-type: none;
+}
+.c90 {
+	background-color: #cc0000;
+	animation: c90 2s forwards;
+}
+
+.c95 {
+	background-color: #4caf50;
+	animation: c95 2s forwards;
+}
+.c80 {
+	background-color: #2196f3;
+	animation: c80 2s forwards;
+}
+
+.c50 {
+	animation: c50 2s forwards;
+	background-color: #9b59b6;
+}
+.c30 {
+	animation: c30 2s forwards;
+	background-color: #f44336;
+}
+.c70 {
+	animation: c70 2s forwards;
+	background-color: #ae8a33;
+}
+@keyframes c95 {
+	100% {
+		width: 95%;
+	}
+}
+@keyframes c90 {
+	100% {
+		width: 90%;
+	}
+}
+@keyframes c80 {
+	100% {
+		width: 80%;
+	}
+}
+@keyframes c50 {
+	100% {
+		width: 50%;
+	}
+}
+@keyframes c30 {
+	100% {
+		width: 30%;
+	}
+}
+@keyframes c70 {
+	100% {
+		width: 70%;
+	}
+}

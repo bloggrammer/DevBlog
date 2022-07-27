@@ -1,0 +1,44 @@
+.typist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.typist div {
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.typist div span.typed-text {
+  font-weight: normal;
+  color: $secondary-color;
+}
+.typist div span.cursor {
+  display: inline-block;
+  background-color: $light-gray;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.typist div span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0% {
+    background-color: $light-gray;
+  }
+  49% {
+    background-color: $light-gray;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: $light-gray;
+  }
+}
