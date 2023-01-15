@@ -1,0 +1,603 @@
+<aside
+  id="secondary"
+  class="widget-area sidebar"
+  role="complementary"
+  aria-label="Blog Sidebar"
+  style="
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box;
+    min-height: 1px;
+  "
+>
+  <div
+    class="theiaStickySidebar"
+    style="
+      padding-top: 0px;
+      padding-bottom: 1px;
+      position: static;
+      transform: none;
+    "
+  >
+    <div class="widget widget_social_icons">
+      <div class="about-widget">
+        <div class="about-img">
+          <figure class="author">
+            <img
+              alt="author-image"
+              src="http://localhost/assets/img/author-image.jpg"
+            />
+          </figure>
+        </div>
+
+        <div class="about-description">
+          <p>
+            This is the profile widget. Here you can set your profile image
+            (square or circle), name, bio, and social links.
+          </p>
+          <div class="social-icons">
+            <ul>
+              <li>
+                <a href="#" title="Facebook" target="_blank">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="fa-facebook"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="twitter">
+                <a href="#" title="Twitter" target="_blank">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="fa-twitter"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                    />
+                  </svg>
+                </a>
+              </li>
+
+              <li class="youtube">
+                <a href="#" title="Youtube" target="_blank">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="fa-youtube"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.122C.002 7.343.01 6.6.064 5.78l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="instagram">
+                <a href="#" title="Instagram" target="_blank">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="fa-instagram"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" title="LinkedIn" target="_blank">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="fa-linkedin"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                    />
+                  </svg>
+                </a>
+              </li>
+
+              <li class="rss">
+                <a href="#" title="Feed" target="_blank">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="fa-rss"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                    />
+                    <path
+                      d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="vt-newsletter-widget-2" class="widget widget_newsletter">
+      <h3 class="widget-title"><span>Subscribe Form</span></h3>
+      <div class="newsletter-widget">
+        Subscribe to our newsletter for the latest updates and exclusive
+        content.
+
+        <form id="subscribe-form" action="#" method="get">
+          <input id="form-name" type="text" placeholder="Your Name" />
+          <input id="form-email" type="email" placeholder="Your Email" />
+          <input id="form-submit" type="submit" value="Subscribe" />
+        </form>
+      </div>
+    </div>
+    <div class="widget widget_posts_thumbnail">
+      <ul id="widget-tab" class="clearfix widget-tab-nav">
+        <li class="active">
+          <a href="#widget-tab-popular">
+            <span class="tab-icon">
+              <svg
+                class="svg-icon"
+                aria-hidden="true"
+                role="img"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 611.999 611.999"
+              >
+                <path
+                  fill="currentColor"
+                  d="M216.02,611.195c5.978,3.178,12.284-3.704,8.624-9.4c-19.866-30.919-38.678-82.947-8.706-149.952c49.982-111.737,80.396-169.609,80.396-169.609s16.177,67.536,60.029,127.585c42.205,57.793,65.306,130.478,28.064,191.029c-3.495,5.683,2.668,12.388,8.607,9.349c46.1-23.582,97.806-70.885,103.64-165.017c2.151-28.764-1.075-69.034-17.206-119.851c-20.741-64.406-46.239-94.459-60.992-107.365c-4.413-3.861-11.276-0.439-10.914,5.413c4.299,69.494-21.845,87.129-36.726,47.386c-5.943-15.874-9.409-43.33-9.409-76.766c0-55.665-16.15-112.967-51.755-159.531c-9.259-12.109-20.093-23.424-32.523-33.073c-4.5-3.494-11.023,0.018-10.611,5.7c2.734,37.736,0.257,145.885-94.624,275.089c-86.029,119.851-52.693,211.896-40.864,236.826C153.666,566.767,185.212,594.814,216.02,611.195z"
+                ></path>
+              </svg>
+            </span>
+            Popular
+          </a>
+        </li>
+        <li>
+          <a href="#widget-tab-latest">
+            <span class="tab-icon">
+              <svg
+                class="svg-icon"
+                aria-hidden="true"
+                role="img"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 612 612"
+              >
+                <path
+                  fill="currentColor"
+                  d="M286.363,607.148l195.851-325.636c7.954-13.225-1.571-30.069-17.003-30.069H334.436L479.335,30.732C487.998,17.537,478.532,0,462.748,0H237.426c-8.806,0-16.558,5.804-19.039,14.253l-90.655,308.81c-3.73,12.706,5.796,25.431,19.039,25.431h176.915l-55.512,251.4C265.75,610.872,280.57,616.781,286.363,607.148z"
+                ></path>
+              </svg> </span
+            >Latest
+          </a>
+        </li>
+        <li>
+          <a href="#widget-tab-tags">
+            <span class="tab-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
+                />
+                <path
+                  d="M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043-7.457-7.457z"
+                />
+              </svg>
+            </span>
+            Tags
+          </a>
+        </li>
+      </ul>
+
+      <div class="widget-tab-content">
+        <div class="tab-pane active" id="widget-tab-popular">
+          <ul>
+            <li class="clearfix">
+              <div class="thumbnail-wrap">
+                <a
+                  href="#"
+                  title="Tech Trends 2020’s Predictions Most Impactful"
+                  ><img
+                    width="80"
+                    height="60"
+                    src="http://localhost/assets/img/thumbnail/1.jpg"
+                    class="wp-post-image"
+                    alt="tech trend"
+                    title="Tech Trends 2020’s Predictions Most Impactful"
+                /></a>
+              </div>
+              <div class="entry-wrap">
+                <h4>
+                  <a
+                    href="#"
+                    title="Tech Trends 2020’s Predictions Most Impactful"
+                    rel="bookmark"
+                    >Tech Trends 2020’s Predictions Most Impactful</a
+                  >
+                </h4>
+                <div class="entry-meta">4 Comments</div>
+              </div>
+            </li>
+
+            <li class="clearfix">
+              <div class="thumbnail-wrap">
+                <a href="#" title="If Only Life Was Simple"
+                  ><img
+                    width="80"
+                    height="60"
+                    src="http://localhost/assets/img/thumbnail/blog-image-11.jpg"
+                    class="wp-post-image"
+                    alt=""
+                    title="If Only Life Was Simple"
+                /></a>
+              </div>
+              <div class="entry-wrap">
+                <h4>
+                  <a href="#" title="If Only Life Was Simple" rel="bookmark"
+                    >If Only Life Was Simple</a
+                  >
+                </h4>
+                <div class="entry-meta">3 Comments</div>
+              </div>
+            </li>
+
+            <li class="clearfix">
+              <div class="thumbnail-wrap">
+                <a href="#" title="Here’s how each browser’s privacy stacks up"
+                  ><img
+                    width="80"
+                    height="60"
+                    src="http://localhost/assets/img/thumbnail/5e540527fee23d1ee13b7a26.png"
+                    class="wp-post-image"
+                    alt=""
+                    title="Here’s how each browser’s privacy stacks up"
+                /></a>
+              </div>
+              <div class="entry-wrap">
+                <h4>
+                  <a
+                    href="#"
+                    title="Here’s how each browser’s privacy stacks up"
+                    rel="bookmark"
+                    >Here’s how each browser’s privacy stacks up</a
+                  >
+                </h4>
+                <div class="entry-meta">1 Comment</div>
+              </div>
+            </li>
+
+            <li class="clearfix">
+              <div class="thumbnail-wrap">
+                <a href="#" title="Walking Towards Union Square in SF"
+                  ><img
+                    width="80"
+                    height="60"
+                    src="http://localhost/assets/img/thumbnail/San-Francisco-Intersection-at-The-End-of-Lombard-Street.jpg"
+                    class="wp-post-image"
+                    alt=""
+                    title="Walking Towards Union Square in SF"
+                /></a>
+              </div>
+              <div class="entry-wrap">
+                <h4>
+                  <a
+                    href="#"
+                    title="Walking Towards Union Square in SF"
+                    rel="bookmark"
+                    >Walking Towards Union Square in SF</a
+                  >
+                </h4>
+                <div class="entry-meta">No Comments</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- #widget-tab-popular -->
+
+        <div class="tab-pane" id="widget-tab-latest">
+          <ul>
+            <li class="clearfix">
+              <div class="thumbnail-wrap">
+                <a href="#" title="Here’s how each browser’s privacy stacks up"
+                  ><img
+                    width="80"
+                    height="60"
+                    src="http://localhost/assets/img/thumbnail/5e540527fee23d1ee13b7a26.png"
+                    class="wp-post-image"
+                    alt=""
+                    title="Here’s how each browser’s privacy stacks up"
+                /></a>
+              </div>
+              <div class="entry-wrap">
+                <h4>
+                  <a
+                    href="#"
+                    title="Here’s how each browser’s privacy stacks up"
+                    rel="bookmark"
+                    >Here’s how each browser’s privacy stacks up</a
+                  >
+                </h4>
+                <div class="entry-meta">March 22, 2020</div>
+              </div>
+            </li>
+            <li class="clearfix">
+              <div class="thumbnail-wrap">
+                <a href="#" title="Ways To Analyse Logs Using The File Analyser"
+                  ><img
+                    width="80"
+                    height="60"
+                    src="http://localhost/assets/img/thumbnail/blog_5.jpg"
+                    class="wp-post-image"
+                    alt=""
+                    title="Ways To Analyse Logs Using The File Analyser"
+                /></a>
+              </div>
+              <div class="entry-wrap">
+                <h4>
+                  <a
+                    href="#"
+                    title="Ways To Analyse Logs Using The File Analyser"
+                    rel="bookmark"
+                    >Ways To Analyse Logs Using The File Analyser</a
+                  >
+                </h4>
+                <div class="entry-meta">February 22, 2020</div>
+              </div>
+            </li>
+            <li class="clearfix">
+              <div class="thumbnail-wrap">
+                <a
+                  href="#"
+                  title="Tech Trends 2020’s Predictions Most Impactful"
+                  ><img
+                    width="80"
+                    height="60"
+                    src="http://localhost/assets/img/thumbnail/marvin-meyer-SYTO3xs06fU-unsplash.jpg"
+                    class="wp-post-image"
+                    alt="tech trend"
+                    title="Tech Trends 2020’s Predictions Most Impactful"
+                /></a>
+              </div>
+              <div class="entry-wrap">
+                <h4>
+                  <a
+                    href="#"
+                    title="Tech Trends 2020’s Predictions Most Impactful"
+                    rel="bookmark"
+                    >Tech Trends 2020’s Predictions Most Impactful</a
+                  >
+                </h4>
+                <div class="entry-meta">February 22, 2020</div>
+              </div>
+            </li>
+            <li class="clearfix">
+              <div class="thumbnail-wrap">
+                <a href="#" title="Blog Post with SoundCloud Audio"
+                  ><img
+                    width="80"
+                    height="60"
+                    src="http://localhost/assets/img/thumbnail/SoundCloud_Homepage.jpeg"
+                    class="wp-post-image"
+                    alt=""
+                    title="Blog Post with SoundCloud Audio"
+                /></a>
+              </div>
+              <div class="entry-wrap">
+                <h4>
+                  <a
+                    href="#"
+                    title="Blog Post with SoundCloud Audio"
+                    rel="bookmark"
+                    >Blog Post with SoundCloud Audio</a
+                  >
+                </h4>
+                <div class="entry-meta">December 22, 2019</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- #widget-tab-latest -->
+
+        <div class="tab-pane tagcloud" id="widget-tab-tags">
+          <a
+            href="https://volthemes.com/demo/vt-blogging-pro/default/tag/post-formats/"
+            class="tag-cloud-link tag-link-80 tag-link-position-1"
+            style="font-size: 1.6em"
+            aria-label="Post Formats (12 items)"
+            >Post Formats</a
+          >
+          <a
+            href="https://volthemes.com/demo/vt-blogging-pro/default/tag/lifestyle/"
+            class="tag-cloud-link tag-link-78 tag-link-position-2"
+            style="font-size: 1.3529411764706em"
+            aria-label="Lifestyle (7 items)"
+            >Lifestyle</a
+          >
+          <a
+            href="https://volthemes.com/demo/vt-blogging-pro/default/tag/demo/"
+            class="tag-cloud-link tag-link-17 tag-link-position-3"
+            style="font-size: 1.2117647058824em"
+            aria-label="Demo (5 items)"
+            >Demo</a
+          >
+          <a
+            href="https://volthemes.com/demo/vt-blogging-pro/default/tag/content/"
+            class="tag-cloud-link tag-link-11 tag-link-position-4"
+            style="font-size: 1.2117647058824em"
+            aria-label="Content (5 items)"
+            >Content</a
+          >
+          <a
+            href="https://volthemes.com/demo/vt-blogging-pro/default/tag/marketing/"
+            class="tag-cloud-link tag-link-79 tag-link-position-5"
+            style="font-size: 1em"
+            aria-label="Marketing (3 items)"
+            >Marketing</a
+          >
+        </div>
+        <!-- #widget-tab-tags -->
+      </div>
+    </div>
+    <div class="widget most-viewed-widget widget_posts_thumbnail">
+      <h3 class="widget-title"><span>Most Viewed Posts</span></h3>
+      <ul>
+        <li class="clear">
+          <a href="#" rel="bookmark"
+            ><div class="thumbnail-wrap">
+              <img
+                width="80"
+                height="60"
+                src="http://localhost/assets/img/thumbnail/5e540527fee23d1ee13b7a26.png"
+                class="wp-post-image"
+                alt=""
+              /></div
+          ></a>
+          <div class="entry-wrap">
+            <a href="#" rel="bookmark"
+              >Here’s how each browser’s privacy stacks up</a
+            >
+            <div class="entry-meta">
+              <span class="entry-date">March 22, 2020</span
+              ><span class="view-count"><i class="fa fa-eye"></i>2.1K</span>
+            </div>
+          </div>
+        </li>
+        <li class="clear">
+          <a href="#" rel="bookmark"
+            ><div class="thumbnail-wrap">
+              <img
+                width="80"
+                height="60"
+                src="http://localhost/assets/img/thumbnail/marvin-meyer-SYTO3xs06fU-unsplash.jpg?resize=80%2C60&amp;ssl=1"
+                class="wp-post-image"
+                alt="tech trend"
+              /></div
+          ></a>
+          <div class="entry-wrap">
+            <a href="#" rel="bookmark"
+              >Tech Trends 2020’s Predictions Most Impactful</a
+            >
+            <div class="entry-meta">
+              <span class="entry-date">February 22, 2020</span
+              ><span class="view-count"><i class="fa fa-eye"></i>1.4K</span>
+            </div>
+          </div>
+        </li>
+        <li class="clear">
+          <a
+            href="http://localhost/assets/img/thumbnail/ways-to-analyse-logs-using-the-file-analyser/"
+            rel="bookmark"
+            ><div class="thumbnail-wrap">
+              <img
+                width="80"
+                height="60"
+                src="http://localhost/assets/img/thumbnail/blog_5.jpg?"
+                class="wp-post-image"
+                alt=""
+              /></div
+          ></a>
+          <div class="entry-wrap">
+            <a href="#" rel="bookmark"
+              >Ways To Analyse Logs Using The File Analyser</a
+            >
+            <div class="entry-meta">
+              <span class="entry-date">February 22, 2020</span
+              ><span class="view-count"><i class="fa fa-eye"></i>1.2K</span>
+            </div>
+          </div>
+        </li>
+        <li class="clear">
+          <a href="#" rel="bookmark"
+            ><div class="thumbnail-wrap">
+              <img
+                width="80"
+                height="60"
+                src="http://localhost/assets/img/thumbnail/blog-image-11.jpg"
+                class="wp-post-image"
+                alt=""
+              /></div
+          ></a>
+          <div class="entry-wrap">
+            <a href="#" rel="bookmark">If Only Life Was Simple</a>
+            <div class="entry-meta">
+              <span class="entry-date">November 13, 2019</span
+              ><span class="view-count"><i class="fa fa-eye"></i>1.1K</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!--#include file="/include/ads/sidebar-300by250.shtml" -->
+
+    <div class="widget widget_tag_cloud">
+      <h3 class="widget-title"><span>Categories</span></h3>
+      <div class="tagcloud">
+        <a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/tag/content/"
+          class="tag-cloud-link tag-link-11 tag-link-position-1"
+          style="font-size: 12.941176470588pt"
+          aria-label="Content (5 items)"
+          >Blogging<span class="tag-link-count"> (5)</span></a
+        >
+        <a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/tag/demo/"
+          class="tag-cloud-link tag-link-17 tag-link-position-2"
+          style="font-size: 12.941176470588pt"
+          aria-label="Demo (5 items)"
+          >WordPress<span class="tag-link-count"> (5)</span></a
+        >
+        <a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/tag/lifestyle/"
+          class="tag-cloud-link tag-link-78 tag-link-position-3"
+          style="font-size: 16.235294117647pt"
+          aria-label="Lifestyle (7 items)"
+          >SEO<span class="tag-link-count"> (7)</span></a
+        >
+        <a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/tag/marketing/"
+          class="tag-cloud-link tag-link-79 tag-link-position-4"
+          style="font-size: 8pt"
+          aria-label="Marketing (3 items)"
+          >Web Hosting<span class="tag-link-count"> (3)</span></a
+        >
+        <a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/tag/post-formats/"
+          class="tag-cloud-link tag-link-80 tag-link-position-5"
+          style="font-size: 22pt"
+          aria-label="Post Formats (12 items)"
+          >Marketing<span class="tag-link-count"> (12)</span></a
+        >
+      </div>
+    </div>
+  </div>
+</aside>

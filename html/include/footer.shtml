@@ -1,0 +1,7 @@
+<footer class="footer">
+  <div>
+    &copy; <span id="year"></span>
+    <a href="index.html">Bloggrammer</a>
+  </div>
+  <div><a href="index.html">About</a> / <a href="index.html">Privacy</a></div>
+</footer>
