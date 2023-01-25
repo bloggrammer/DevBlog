@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  a:
+    build: ./a
+    container_name: a_app
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./a/html:/usr/share/nginx/html
+
+  b:
+    build: ./b
+    container_name: b_app
+    ports:
+      - 3001:3001
+    volumes:
+      - ./b/html:/usr/share/nginx/html
+# networks:
+#   default:
+#     external:
+#       name: nginx-proxy

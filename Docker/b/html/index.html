@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>
+      Solutions to all your technical questions | Tech Interview Solutions
+    </title>
+    <!--#include file="/include/static/site-css.shtml" -->
+
+    <style>
+      /* Controls */
+
+      .controls {
+        margin: 30px -10px;
+      }
+      .control {
+        position: relative;
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+      }
+      @media (max-width: 600px) {
+        .control {
+          float: none;
+          width: auto;
+          margin: 0 0 15px 0;
+        }
+        .control.layout {
+          margin: 0;
+        }
+      }
+      .control-icon {
+        position: absolute;
+        left: 10px;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        z-index: 2;
+        pointer-events: none;
+      }
+      .control-field {
+        position: relative;
+        padding-left: 40px;
+        z-index: 1;
+      }
+      /* Forms */
+
+      .form-control {
+        display: block;
+        width: 100%;
+        height: 40px;
+        padding: 5px 15px;
+        font-size: 16px;
+        line-height: 26px;
+        color: inherit;
+        /* background: #fff; */
+        /* border: 2px solid #e5e5e5; */
+        border-radius: 4px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+      }
+      select.form-control {
+        padding-right: 40px;
+        cursor: pointer;
+      }
+      select.form-control::-ms-expand {
+        display: none;
+      }
+      .select-arrow {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        z-index: 2;
+        pointer-events: none;
+      }
+      .form-control:focus {
+        outline: 0;
+        border-color: #4a9ff9;
+      }
+
+      .control-field {
+        position: relative;
+        padding-left: 40px;
+        z-index: 1;
+      }
+
+      /* Grid */
+
+      @import url(//fonts.googleapis.com/css?family=Montserrat:9000);
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      .filter-controls {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .filter-controls .control {
+        display: inline-block;
+        width: 240px;
+        margin: 0 10px;
+      }
+      .filter-controls .control * {
+        box-sizing: border-box;
+      }
+      .filter-controls .control .form-control {
+        width: 100%;
+        height: 40px;
+        padding: 0 20px;
+        /* border: 2px solid #ccc; */
+        border-radius: 3px;
+        /* background-color: #fff; */
+        /* color: #666; */
+        font-size: 16px;
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+      .filter-controls .control .form-control:focus {
+        outline: 0;
+        border-color: #0caaf5;
+      }
+      .grid {
+        position: relative;
+        width: 878px;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      .item {
+        position: absolute;
+        /* width: 99px;
+       height: 99px;*/
+        width: 14.715rem;
+        height: auto;
+        margin: 5px;
+        z-index: 1;
+        transition: transform 0.6s ease;
+      }
+
+      .item.blue .custom-content {
+        border-color: #0caaf5;
+        color: #0caaf5;
+      }
+      .item.red .custom-content {
+        border-color: #f54487;
+        color: #f54487;
+      }
+      .item.green .custom-content {
+        border-color: #00de73;
+      }
+      .bg-success {
+        background-color: #00de73;
+      }
+      .bg-info {
+        background-color: #f54487;
+      }
+      .item.w2 {
+        width: 14.715rem;
+      }
+      .item.h2 {
+        height: 208px;
+        height: 208px;
+      }
+      .item-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: table;
+      }
+      .custom-content {
+        display: table-cell;
+        /* vertical-align: middle; */
+        /* text-align: center; */
+        /* background: #fff; */
+        /* color: #666; */
+        border: 2px solid;
+        border-radius: 3px;
+      }
+      .item.muuri-item-dragging {
+        z-index: 3;
+        transition: none;
+      }
+      .item.muuri-item-releasing {
+        z-index: 2;
+      }
+      @media (max-width: 877px) {
+        .item {
+          width: calc(33.33% - 11px);
+          height: calc(33.33vw - 11px);
+        }
+        .item.w2 {
+          width: calc(33.33% - 11px);
+        }
+        .item.h2 {
+          height: calc(33.33vw - 11px);
+        }
+      }
+      @media (max-width: 640px) {
+        .item {
+          width: calc(50% - 10px);
+          height: calc(50vw - 10px);
+        }
+        .item.w2 {
+          width: calc(50% - 10px);
+        }
+        .item.h2 {
+          height: calc(50vw - 10px);
+        }
+      }
+
+      /* Grid Footer */
+
+      .grid-footer {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .grid-footer .btn .material-icons {
+        margin-right: 10px;
+        font-size: 24px;
+      }
+
+      /* Icons in the selector */
+      /* fallback */
+      @font-face {
+        font-family: 'Material Icons';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://fonts.gstatic.com/s/materialicons/v29/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2)
+          format('woff2');
+      }
+
+      .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Clearfix */
+
+      .cf:before,
+      .cf:after {
+        content: ' ';
+        display: table;
+      }
+      .cf:after {
+        clear: both;
+      }
+
+      /* Material icons */
+
+      .material-icons {
+        display: inline-block;
+        vertical-align: top;
+        line-height: inherit;
+        font-size: inherit;
+      }
+
+      /* Buttons */
+
+      .l-btn {
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        margin: 0;
+        border: 0;
+        outline: 0;
+        padding: 0px 15px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 40px;
+        height: 40px;
+        text-align: center;
+        white-space: nowrap;
+        /* background: #4a9ff9; */
+        /* color: #fff; */
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border-radius: 5px;
+      }
+      .l-btn:focus,
+      .l-btn:hover,
+      .l-btn:active {
+        outline: 0;
+      }
+      /* .l-btn:hover {
+       background: #3989de;
+     }
+     .l-btn:active {
+       background: #3075bf;
+     }
+     .l-btn.active {
+       background: #60ca47;
+     }
+     .l-btn.active:hover {
+       background: #40b325;
+     }
+     .l-btn.active:active {
+       background: #309818;
+     } */
+      .card-body > a {
+        text-decoration: none;
+        line-height: 200% !important;
+      }
+      .card-body a:hover {
+        color: #4a9ff9 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!--#include file="/include/header.shtml" -->
+    <main class="container mt-5">
+      <div class="row">
+        <!-- Post content-->
+        <article class="grid-wrapper col-lg-8">
+          <div
+            class="d-flex flex-wrap justify-content-between align-items-center"
+          >
+            <div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio1"
+                  value="Status"
+                />
+                <label class="form-check-label" for="inlineRadio1"
+                  >Status</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio2"
+                  value="Topics"
+                />
+                <label class="form-check-label" for="inlineRadio2"
+                  >Topics</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio3"
+                  value="Difficulty"
+                />
+                <label class="form-check-label" for="inlineRadio3"
+                  >Difficulty</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio4"
+                  value="Companies"
+                />
+                <label class="form-check-label" for="inlineRadio4"
+                  >Companies</label
+                >
+              </div>
+            </div>
+            <div class="progress" style="width: 40%">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 25%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+          <div class="controls cf">
+            <div class="control search">
+              <div class="control-icon">
+                <i class="material-icons">&#xE8B6;</i>
+              </div>
+              <input
+                class="control-field search-field form-control"
+                type="text"
+                name="search"
+                placeholder="Search..."
+              />
+            </div>
+            <div class="control filter">
+              <div class="control-icon">
+                <i class="material-icons">&#xE152;</i>
+              </div>
+              <div class="select-arrow">
+                <i class="material-icons">&#xE313;</i>
+              </div>
+              <select class="control-field filter-field form-control">
+                <option value="" selected>All</option>
+                <option value="red">Difficulty</option>
+                <option value="blue">Type</option>
+                <option value="blue">Status</option>
+                <option value="green">Company</option>
+                <option value="green">Platform</option>
+              </select>
+            </div>
+            <div class="control sort">
+              <div class="control-icon">
+                <i class="material-icons">&#xE164;</i>
+              </div>
+              <div class="select-arrow">
+                <i class="material-icons">&#xE313;</i>
+              </div>
+              <select class="control-field sort-field form-control">
+                <option value="order" selected>Drag</option>
+                <option value="title">Title (drag disabled)</option>
+                <option value="color">Color (drag disabled)</option>
+              </select>
+            </div>
+            <div class="control layout">
+              <div class="control-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-shuffle"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"
+                  />
+                  <path
+                    d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"
+                  />
+                </svg>
+              </div>
+              <button class="control-field layout-field form-control">
+                Random Select
+              </button>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div
+              class="item blue w2"
+              data-color="blue"
+              data-color="blue"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <span class="badge bg-warning text-dark">Medium</span>
+                        </div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Repeat"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a
+                        href="/post.html"
+                        class="card-text fs-6 text-secondary text-center"
+                      >
+                        Find First and Last Position of Element in Sorted Array
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item blue w2"
+              data-color="blue"
+              data-color="blue"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div><span class="badge bg-success">Easy</span></div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a
+                        href="/"
+                        class="card-text fs-6 text-secondary text-center"
+                      >
+                        Two Sum
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item green w2"
+              data-color="green"
+              data-color="green"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div><span class="badge bg-danger">Hard</span></div>
+
+                        <!-- <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-info-circle"
+                            viewBox="0 0 16 16"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Freq. AZM (45), Google (76), MST (67)"
+                          >
+                            <path
+                              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                            />
+                            <path
+                              d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                            />
+                          </svg> -->
+                        <small>345</small>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a
+                        href="/"
+                        class="card-text fs-6 text-secondary text-center"
+                      >
+                        Longest Substring Without
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item red w2"
+              data-color="red"
+              data-color="red"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div><span class="badge bg-warning">Easy</span></div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a href="/" class="card-text fs-6 text-secondary">
+                        Longest Substring Without
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item blue w2"
+              data-color="blue"
+              data-color="blue"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <span class="badge bg-warning">Medium</span>
+                        </div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a
+                        href="/"
+                        class="card-text fs-6 text-secondary text-center"
+                      >
+                        Find First and Last Position of Element in Sorted Array
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item blue w2"
+              data-color="blue"
+              data-color="blue"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div><span class="badge bg-success">Easy</span></div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a
+                        href="/"
+                        class="card-text fs-6 text-secondary text-center"
+                      >
+                        Two Sum
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item green w2"
+              data-color="green"
+              data-color="green"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div><span class="badge bg-danger">Hard</span></div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a
+                        href="/"
+                        class="card-text fs-6 text-secondary text-center"
+                      >
+                        Longest Substring Without
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item red w2"
+              data-color="red"
+              data-color="red"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div><span class="badge bg-warning">Easy</span></div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a href="/" class="card-text fs-6 text-secondary">
+                        Longest Substring Without
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item blue w2"
+              data-color="blue"
+              data-color="blue"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <span class="badge bg-warning">Medium</span>
+                        </div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a
+                        href="/"
+                        class="card-text fs-6 text-secondary text-center"
+                      >
+                        Find First and Last Position of Element in Sorted Array
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item blue w2"
+              data-color="blue"
+              data-color="blue"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div><span class="badge bg-success">Easy</span></div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a
+                        href="/"
+                        class="card-text fs-6 text-secondary text-center"
+                      >
+                        Two Sum
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item green w2"
+              data-color="green"
+              data-color="green"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div><span class="badge bg-danger">Hard</span></div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a
+                        href="/"
+                        class="card-text fs-6 text-secondary text-center"
+                      >
+                        Longest Substring Without
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item red w2"
+              data-color="red"
+              data-color="red"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div><span class="badge bg-warning">Easy</span></div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a href="/" class="card-text fs-6 text-secondary">
+                        Longest Substring Without
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item blue w2"
+              data-color="blue"
+              data-color="blue"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <span class="badge bg-warning">Medium</span>
+                        </div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a
+                        href="/"
+                        class="card-text fs-6 text-secondary text-center"
+                      >
+                        Find First and Last Position of Element in Sorted Array
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item blue w2"
+              data-color="blue"
+              data-color="blue"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div><span class="badge bg-success">Easy</span></div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a
+                        href="/"
+                        class="card-text fs-6 text-secondary text-center"
+                      >
+                        Two Sum
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item green w2"
+              data-color="green"
+              data-color="green"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div><span class="badge bg-danger">Hard</span></div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a
+                        href="/"
+                        class="card-text fs-6 text-secondary text-center"
+                      >
+                        Longest Substring Without
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item red w2"
+              data-color="red"
+              data-color="red"
+              data-title="grapefruit"
+            >
+              <div class="item-content">
+                <div class="custom-content">
+                  <div class="card border-0" style="max-width: 18rem">
+                    <div class="card-header bg-transparent">
+                      <div class="d-flex justify-content-between">
+                        <div><span class="badge bg-warning">Easy</span></div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-info-circle"
+                          viewBox="0 0 16 16"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67) Freq. AZM (45), Google (76), MST (67)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <a href="/" class="card-text fs-6 text-secondary">
+                        Longest Substring Without
+                      </a>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-footer">
+            <button class="add-more-items btn l-btn btn-primary">
+              <i class="material-icons">&#xE145;</i>Load more items
+            </button>
+          </div>
+        </article>
+        <!--#include file="/include/sidebar.shtml" -->
+      </div>
+    </main>
+
+    <!--#include file="/include/footer.shtml" -->
+
+    <!--#include file="/include/static/site-js.shtml" -->
+    <!--#include file="/include/static/app-js.shtml" -->
+  </body>
+</html>
