@@ -1,9 +1,0 @@
-passphrase.txt
-logs/
-.git
-*.md
-.cache
-
-*.scss
-html/scss/
-scss/

@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  techinterviewsolutions.net:
+    build:
+      context: .
+      dockerfile: ../shared/Dockerfile
+      args:
+        - HTML_FOLDER=html
+        - NGINX_CONFIG=nginx.conf
+    # image: nginx:alpine-slim
+    container_name: techinterviewsolutions.net
+
+    restart: always
+
+    networks:
+      - proxy
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+    environment:
+      - VIRTUAL_HOST=techinterviewsolutions.net, www.techinterviewsolutions.net
+      - ENABLE_IPV6=true
+networks:
+  proxy:
+    external: true
