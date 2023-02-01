@@ -1,5 +1,5 @@
-<link rel="shortcut icon" href="http://127.0.0.1/favicon.ico" />
-<link rel="apple-touch-icon" href="http://127.0.0.1/favicon.ico" />
+<link rel="shortcut icon" href="https://bloggrammer.com/favicon.ico" />
+<link rel="apple-touch-icon" href="https://bloggrammer.com/favicon.ico" />
 <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
 <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
 <link
@@ -10,6 +10,6 @@
 <!-- @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,500,600,700&subset=latin-ext');  -->
 <!-- @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700&subset=latin-ext');  -->
 
-<link rel="stylesheet" href="http://127.0.0.1/assets/css/site.css?v=1" />
+<link rel="stylesheet" href="http://bloggrammer.com/assets/css/site.css?v=1" />
 
 <link rel="sitemap" type="application/xml" title="sitemap" href="sitemap.xml" />

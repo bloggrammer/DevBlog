@@ -1,7 +1,7 @@
 <header class="profile">
-  <a href="http://localhost"
+  <a href="https://bloggrammer.com"
     ><img
-      src="http://localhost/assets/img/profile.png"
+      src="https://bloggrammer.com/assets/img/profile.png"
       class="profile-image"
       alt="bloggrammer logo"
   /></a>
@@ -97,9 +97,9 @@
 
     <br />
     Software Engineer, SEO<br />
-    <a href="http://localhost/contact" class="h-link">Contact</a>
+    <a href="https://bloggrammer.com/contact" class="h-link">Contact</a>
     <br />
-    <a href="http://localhost/about" class="h-link">About</a>
+    <a href="https://bloggrammer.com/about" class="h-link">About</a>
     <br />
     <div class="mode" id="mode-switcher" onclick="toggleNightMode();">
       <span></span>
