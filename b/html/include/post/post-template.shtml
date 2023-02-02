@@ -1,0 +1,570 @@
+<article class="post hentry">
+  <!-- breadcrumbs -->
+  <div class="breadcrumbs">
+    <span class="breadcrumbs-nav">
+      <a href="https://volthemes.com/demo/vt-blogging-pro/default">Home</a>
+      <span class="post-category"
+        ><a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/category/featured/"
+          >Featured</a
+        >
+      </span>
+      <span class="post-title">If Only Life Was Simple</span>
+    </span>
+  </div>
+
+  <!-- Author meta  -->
+  <header class="entry-header">
+    <h1 class="entry-title">If Only Life Was Simple</h1>
+    <div class="entry-meta clear">
+      <span
+        class="entry-author"
+        itemprop="author"
+        itemscope=""
+        itemtype="http://schema.org/Person"
+      >
+        <a
+          itemprop="name"
+          href="https://volthemes.com/demo/vt-blogging-pro/default/author/admin/"
+        >
+          <img
+            alt=""
+            src="https://secure.gravatar.com/avatar/60b290644cd70ce2cbe63940acd8bbe2?s=23&amp;d=mm&amp;r=g"
+            class="avatar avatar-23 photo jetpack-lazy-image jetpack-lazy-image--handled"
+            height="23"
+            width="23"
+            srcset="
+              https://secure.gravatar.com/avatar/60b290644cd70ce2cbe63940acd8bbe2?s=46&amp;d=mm&amp;r=g 2x
+            "
+            data-lazy-loaded="1"
+            loading="eager" /><noscript
+            ><img
+              data-lazy-fallback="1"
+              alt=""
+              src="https://secure.gravatar.com/avatar/60b290644cd70ce2cbe63940acd8bbe2?s=23&#038;d=mm&#038;r=g"
+              srcset="
+                https://secure.gravatar.com/avatar/60b290644cd70ce2cbe63940acd8bbe2?s=46&#038;d=mm&#038;r=g 2x
+              "
+              class="avatar avatar-23 photo"
+              height="23"
+              width="23"
+              loading="lazy" /></noscript
+        ></a>
+        Posted by
+        <a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/author/admin/"
+          title="Posts by Jane Doe"
+          rel="author"
+          >Jane Doe</a
+        >
+      </span>
+      <span class="entry-date"
+        ><a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/2019/11/"
+          rel="bookmark"
+          ><time
+            class="entry-date published"
+            datetime="2019-11-13T10:44:47+00:00"
+            >November 13, 2019</time
+          ><time class="updated" datetime="2020-08-11T05:40:04+00:00"
+            >August 11, 2020</time
+          ></a
+        ></span
+      >
+      <span class="entry-category"
+        >in
+        <a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/category/featured/"
+          >Featured</a
+        >
+      </span>
+      <span class="post-view"
+        ><span class="view-count"><i class="fa fa-eye"></i>1.1K</span></span
+      >
+    </div>
+  </header>
+
+  <!-- Content  -->
+  <div class="entry-content">
+    <!-- featured image  -->
+    <div class="post-format post-standard">
+      <div class="post-thumbnail">
+        <img
+          src="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/11/blog-image-11-850x503.jpg"
+          alt=""
+        />
+        <span class="vt-format-icon"></span>
+      </div>
+    </div>
+
+    <!-- Ads banner  -->
+    <!--#include file="/include/ads/728by90.shtml" -->
+
+    <!-- Intro  -->
+    <p>
+      Donec venenatis purus eu turpis ullamcorper blandit. Integer orci leo,
+      congue id porttitor et, ornare ac mauris. Integer sollicitudin eleifend
+      tortor non imperdiet. Suspendisse potenti. Donec pellentesque ultrices
+      tellus, nec commodo neque placerat eget. Phasellus ac orci nisl, quis
+      blandit velit. <span id="more-2059"></span>
+    </p>
+
+    <h1>Heading 1</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lectus
+      neque, congue nec pretium et, tristique et augue. Quisque eleifend
+      bibendum quam a lacinia. Sed ac diam urna. Nulla elit massa, pellentesque
+      vulputate ultricies vel, porta non enim. Quisque lacinia tristique
+      scelerisque. Donec id arcu quam. Ut quis congue arcu. Donec sodales a sem
+      eu bibendum. Nam a quam id risus lacinia volutpat. Donec vel massa est.
+    </p>
+    <h2>Heading 2</h2>
+
+    <h3>Heading 3</h3>
+
+    <h4>Heading 4</h4>
+
+    <h5>Heading 5</h5>
+
+    <h6>Heading 6</h6>
+    <p>
+      Mauris ultricies, odio a ultricies blandit, lorem mauris tincidunt tortor,
+      et aliquet enim neque quis turpis. Nunc neque diam, porta ac, accumsan ut,
+      tristique in, nibh. Ut ac justo sit amet dolor.
+    </p>
+
+    <!-- Image  -->
+    <hr />
+    <h3>
+      The second-tier for browser privacy was a three-way tie, beginning with
+      Chrome.
+    </h3>
+    <figure
+      id="attachment_4044"
+      aria-describedby="caption-attachment-4044"
+      style="width: 800px"
+      class="wp-caption alignnone"
+    >
+      <img
+        data-attachment-id="4044"
+        data-permalink="https://volthemes.com/demo/vt-blogging-pro/default/heres-how-each-browsers-privacy-stacks-up/edge-browser/"
+        data-orig-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?fit=800%2C460&amp;ssl=1"
+        data-orig-size="800,460"
+        data-comments-opened="1"
+        data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}'
+        data-image-title="Edge-browser"
+        data-image-description=""
+        data-image-caption="<p>Microsoft Edge</p>
+        "
+        data-medium-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?fit=300%2C173&amp;ssl=1"
+        data-large-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?fit=800%2C460&amp;ssl=1"
+        class="size-full wp-image-4044 jetpack-lazy-image jetpack-lazy-image--handled"
+        src="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?resize=800%2C460&amp;ssl=1"
+        alt=""
+        width="800"
+        height="460"
+        data-recalc-dims="1"
+        srcset="
+          https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?w=800&amp;ssl=1            800w,
+          https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?resize=300%2C173&amp;ssl=1 300w,
+          https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?resize=768%2C442&amp;ssl=1 768w,
+          https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?resize=610%2C351&amp;ssl=1 610w,
+          https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?resize=600%2C345&amp;ssl=1 600w,
+          https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?resize=150%2C86&amp;ssl=1  150w
+        "
+        data-lazy-loaded="1"
+        sizes="(max-width: 800px) 100vw, 800px"
+        loading="eager"
+      /><noscript
+        ><img
+          data-lazy-fallback="1"
+          data-attachment-id="4044"
+          data-permalink="https://volthemes.com/demo/vt-blogging-pro/default/heres-how-each-browsers-privacy-stacks-up/edge-browser/"
+          data-orig-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?fit=800%2C460&amp;ssl=1"
+          data-orig-size="800,460"
+          data-comments-opened="1"
+          data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}'
+          data-image-title="Edge-browser"
+          data-image-description=""
+          data-image-caption="&lt;p&gt;Microsoft Edge&lt;/p&gt;
+        "
+          data-medium-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?fit=300%2C173&amp;ssl=1"
+          data-large-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?fit=800%2C460&amp;ssl=1"
+          loading="lazy"
+          class="size-full wp-image-4044"
+          src="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?resize=800%2C460&#038;ssl=1"
+          alt=""
+          width="800"
+          height="460"
+          srcset="
+            https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?w=800&amp;ssl=1            800w,
+            https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?resize=300%2C173&amp;ssl=1 300w,
+            https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?resize=768%2C442&amp;ssl=1 768w,
+            https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?resize=610%2C351&amp;ssl=1 610w,
+            https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?resize=600%2C345&amp;ssl=1 600w,
+            https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/Edge-browser.jpg?resize=150%2C86&amp;ssl=1  150w
+          "
+          sizes="(max-width: 800px) 100vw, 800px"
+          data-recalc-dims="1"
+      /></noscript>
+      <figcaption id="caption-attachment-4044" class="wp-caption-text">
+        Microsoft Edge
+      </figcaption>
+    </figure>
+    <h2>Tables</h2>
+    <table>
+      <tbody>
+        <tr>
+          <th>Employee</th>
+          <th class="views">Salary</th>
+          <th></th>
+        </tr>
+        <tr class="odd">
+          <td>
+            <a href="http://example.org/" rel="nofollow ugc">John Saddington</a>
+          </td>
+          <td>$1</td>
+          <td>Because that’s all Steve Job’ needed for a salary.</td>
+        </tr>
+        <tr class="even">
+          <td>
+            <a href="http://example.org/" rel="nofollow ugc">Tom McFarlin</a>
+          </td>
+          <td>$100K</td>
+          <td>For all the blogging he does.</td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <a href="http://example.org/" rel="nofollow ugc">Jared Erickson</a>
+          </td>
+          <td>$100M</td>
+          <td>Pictures are worth a thousand words, right? So Tom x 1,000.</td>
+        </tr>
+        <tr class="even">
+          <td>
+            <a href="http://example.org/" rel="nofollow ugc">Chris Ames</a>
+          </td>
+          <td>$100B</td>
+          <td>With hair like that?! Enough said…</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <h3>List</h3>
+    <ul>
+      <li>
+        Some web browsers are sending users’ browsing history and identifying
+        information to external servers in a “worrisome” trend revealed in a
+        report.
+      </li>
+      <li>
+        Some of these features can be turned off, according to the recent study,
+        but most browsers silently transmit data as their default setting.
+      </li>
+      <li>
+        Chrome, Firefox, and Safari were each ranked in the second-lowest
+        privacy tier, while Microsoft Edge and Yandex were ranked as “least
+        private.”
+      </li>
+      <li>
+        “For users of Edge and Yandex … my advice would be to change the
+        browser,” the study’s author told Business Insider.
+      </li>
+      <li>Visit Business Insider’s homepage for more stories.</li>
+    </ul>
+    <h3>Quote</h3>
+    <blockquote>
+      <p>
+        Donec velit quam, ultricies pharetra elit ut, pharetra vulputate libero.
+        Proin ac justo aliquam, egestas felis vel, feugiat lectus. Nulla vel
+        consequat lacus, ut congue nisl. Fusce sit amet ipsum sit amet dolor
+        imperdiet congue. Vestibulum blandit vel metus vitae vehicula.
+      </p>
+      <p>– Jane Doe</p>
+    </blockquote>
+    <!-- Ads banner  -->
+    <!--#include file="/include/ads/728by90.shtml" -->
+  </div>
+  <!-- Tags  -->
+  <span class="entry-tags">
+    <span class="tag-title">Tags:</span>
+    <span class="tagcloud">
+      <a class="tag-cloud-link" href="#">Content</a
+      ><a class="tag-cloud-link" href="#">Demo</a>
+    </span>
+  </span>
+</article>
+
+<!-- Post Share  -->
+<div class="entry-footer">
+  <div class="wrap-meta">
+    <div class="social-share share-buttons">
+      <span class="shareto">Share :</span>
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u=https://volthemes.com/demo/vt-blogging-pro/default/tech-trends-2020s-predictions-most-impactful/"
+        target="_blank"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+          />
+        </svg>
+      </a>
+      <a
+        href="https://twitter.com/home?status=Check%20out%20this%20article:%20http://Tech+Trends+2020%E2%80%99s+Predictions+Most+Impactful%20-%20https://volthemes.com/demo/vt-blogging-pro/default/tech-trends-2020s-predictions-most-impactful/"
+        target="_blank"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+          />
+        </svg>
+      </a>
+      <a
+        href="#share"
+        data-toggle="tooltip"
+        data-placement="bottom"
+        data-trigger="hover"
+        onclick="window.open('https://pinterest.com/pin/create/button/?url=https://volthemes.com/demo/vt-blogging-pro/default/tech-trends-2020s-predictions-most-impactful/&amp;media=https://volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2018/12/marvin-meyer-SYTO3xs06fU-unsplash.jpg&amp;description=Tech Trends 2020’s Predictions Most Impactful', 'popupPinterest', 'width=750, height=265, resizable=0, toolbar=0, menubar=0, status=0, location=0, scrollbars=0'); return false;"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+          />
+        </svg>
+      </a>
+      <a
+        href="mailto:?subject=Default%20-%20VT%20Blogging%20Pro%20-%20Tech%20Trends%202020’s%20Predictions%20Most%20Impactful&amp;body=Default+-+VT+Blogging+Pro%20https://volthemes.com/demo/vt-blogging-pro/default/tech-trends-2020s-predictions-most-impactful/"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.313l6.709 3.933L8 8.928l1.291.717L16 5.715V5.4a2 2 0 0 0-1.059-1.765l-6-3.2zM16 6.873l-5.693 3.337L16 13.372v-6.5zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516zM0 13.373l5.693-3.163L0 6.873v6.5z"
+          />
+        </svg>
+      </a>
+      <a
+        href="https://vk.com/share.php?url=https://volthemes.com/demo/vt-blogging-pro/default/tech-trends-2020s-predictions-most-impactful/"
+        target="_blank"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Related Post  -->
+<div class="entry-related clear">
+  <h3>You May Also Like</h3>
+  <div class="related-loop clear">
+    <div class="hentry">
+      <a
+        class="thumbnail-link"
+        href="https://volthemes.com/demo/vt-blogging-pro/default/heres-how-each-browsers-privacy-stacks-up/"
+      >
+        <div class="thumbnail-wrap">
+          <img
+            width="80"
+            height="76"
+            src="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/5e540527fee23d1ee13b7a26.png?resize=80%2C76&amp;ssl=1"
+            class="attachment-vt_blogging_pro_related_post size-vt_blogging_pro_related_post wp-post-image jetpack-lazy-image jetpack-lazy-image--handled"
+            alt=""
+            data-attachment-id="4037"
+            data-permalink="https://volthemes.com/demo/vt-blogging-pro/default/heres-how-each-browsers-privacy-stacks-up/5e540527fee23d1ee13b7a26/"
+            data-orig-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/5e540527fee23d1ee13b7a26.png?fit=1200%2C900&amp;ssl=1"
+            data-orig-size="1200,900"
+            data-comments-opened="1"
+            data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}'
+            data-image-title="5e540527fee23d1ee13b7a26"
+            data-image-description=""
+            data-image-caption=""
+            data-medium-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/5e540527fee23d1ee13b7a26.png?fit=300%2C225&amp;ssl=1"
+            data-large-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/5e540527fee23d1ee13b7a26.png?fit=1000%2C750&amp;ssl=1"
+            srcset="
+              https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/5e540527fee23d1ee13b7a26.png?resize=80%2C76&amp;ssl=1             80w,
+              https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/5e540527fee23d1ee13b7a26.png?zoom=2&amp;resize=80%2C76&amp;ssl=1 160w,
+              https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/02/5e540527fee23d1ee13b7a26.png?zoom=3&amp;resize=80%2C76&amp;ssl=1 240w
+            "
+            data-lazy-loaded="1"
+            sizes="(max-width: 80px) 100vw, 80px"
+            loading="eager"
+          />
+        </div>
+        <!-- .thumbnail-wrap -->
+      </a>
+
+      <h2 class="entry-title">
+        <a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/heres-how-each-browsers-privacy-stacks-up/"
+          >Here’s how each browser’s privacy stacks up</a
+        >
+      </h2>
+    </div>
+    <!-- .grid -->
+    <div class="hentry last">
+      <a
+        class="thumbnail-link"
+        href="https://volthemes.com/demo/vt-blogging-pro/default/the-largest-natural-lake-in-the-dolomites/"
+      >
+        <div class="thumbnail-wrap">
+          <img
+            width="80"
+            height="76"
+            src="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2017/03/lago-di-braies-preview-2-1570x1047-1.jpg?resize=80%2C76&amp;ssl=1"
+            class="attachment-vt_blogging_pro_related_post size-vt_blogging_pro_related_post wp-post-image jetpack-lazy-image jetpack-lazy-image--handled"
+            alt=""
+            data-attachment-id="2953"
+            data-permalink="https://volthemes.com/demo/vt-blogging-pro/default/lago-di-braies-preview-2-1570x1047/"
+            data-orig-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2017/03/lago-di-braies-preview-2-1570x1047-1.jpg?fit=784%2C524&amp;ssl=1"
+            data-orig-size="784,524"
+            data-comments-opened="1"
+            data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}'
+            data-image-title="lago-di-braies-preview-2-1570×1047"
+            data-image-description=""
+            data-image-caption=""
+            data-medium-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2017/03/lago-di-braies-preview-2-1570x1047-1.jpg?fit=300%2C201&amp;ssl=1"
+            data-large-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2017/03/lago-di-braies-preview-2-1570x1047-1.jpg?fit=784%2C524&amp;ssl=1"
+            data-lazy-loaded="1"
+            loading="eager"
+          />
+        </div>
+        <!-- .thumbnail-wrap -->
+      </a>
+
+      <h2 class="entry-title">
+        <a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/the-largest-natural-lake-in-the-dolomites/"
+          >The largest natural lake in the Dolomites</a
+        >
+      </h2>
+    </div>
+    <!-- .grid -->
+    <div class="hentry">
+      <a
+        class="thumbnail-link"
+        href="https://volthemes.com/demo/vt-blogging-pro/default/if-only-life-was-simple/"
+      >
+        <div class="thumbnail-wrap">
+          <img
+            width="80"
+            height="76"
+            src="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/11/blog-image-11.jpg?resize=80%2C76&amp;ssl=1"
+            class="attachment-vt_blogging_pro_related_post size-vt_blogging_pro_related_post wp-post-image jetpack-lazy-image jetpack-lazy-image--handled"
+            alt=""
+            data-attachment-id="4134"
+            data-permalink="https://volthemes.com/demo/vt-blogging-pro/default/if-only-life-was-simple/father-and-son-using-a-phone/"
+            data-orig-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/11/blog-image-11.jpg?fit=1000%2C503&amp;ssl=1"
+            data-orig-size="1000,503"
+            data-comments-opened="1"
+            data-image-meta='{"aperture":"1.6","credit":"Getty Images","camera":"Canon EOS 5DS","caption":"Close up of father and son using a phone","created_timestamp":"1473811200","copyright":"Geber86","focal_length":"35","iso":"160","shutter_speed":"0.00625","title":"Father and son using a phone","orientation":"1"}'
+            data-image-title=""
+            data-image-description=""
+            data-image-caption=""
+            data-medium-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/11/blog-image-11.jpg?fit=300%2C151&amp;ssl=1"
+            data-large-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/11/blog-image-11.jpg?fit=1000%2C503&amp;ssl=1"
+            srcset="
+              https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/11/blog-image-11.jpg?resize=80%2C76&amp;ssl=1             80w,
+              https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/11/blog-image-11.jpg?zoom=2&amp;resize=80%2C76&amp;ssl=1 160w,
+              https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/11/blog-image-11.jpg?zoom=3&amp;resize=80%2C76&amp;ssl=1 240w
+            "
+            data-lazy-loaded="1"
+            sizes="(max-width: 80px) 100vw, 80px"
+            loading="eager"
+          />
+        </div>
+        <!-- .thumbnail-wrap -->
+      </a>
+
+      <h2 class="entry-title">
+        <a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/if-only-life-was-simple/"
+          >If Only Life Was Simple</a
+        >
+      </h2>
+    </div>
+    <!-- .grid -->
+    <div class="hentry last">
+      <a
+        class="thumbnail-link"
+        href="https://volthemes.com/demo/vt-blogging-pro/default/lets-take-a-chance-and-hope-for-the-best/"
+      >
+        <div class="thumbnail-wrap">
+          <img
+            width="80"
+            height="76"
+            src="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/10/StockSnap_SHCRVOAB5V.jpg?resize=80%2C76&amp;ssl=1"
+            class="attachment-vt_blogging_pro_related_post size-vt_blogging_pro_related_post wp-post-image jetpack-lazy-image jetpack-lazy-image--handled"
+            alt=""
+            data-attachment-id="4131"
+            data-permalink="https://volthemes.com/demo/vt-blogging-pro/default/lets-take-a-chance-and-hope-for-the-best/stocksnap_shcrvoab5v/"
+            data-orig-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/10/StockSnap_SHCRVOAB5V.jpg?fit=1000%2C647&amp;ssl=1"
+            data-orig-size="1000,647"
+            data-comments-opened="1"
+            data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}'
+            data-image-title="StockSnap_SHCRVOAB5V"
+            data-image-description=""
+            data-image-caption=""
+            data-medium-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/10/StockSnap_SHCRVOAB5V.jpg?fit=300%2C194&amp;ssl=1"
+            data-large-file="https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/10/StockSnap_SHCRVOAB5V.jpg?fit=1000%2C647&amp;ssl=1"
+            srcset="
+              https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/10/StockSnap_SHCRVOAB5V.jpg?resize=80%2C76&amp;ssl=1             80w,
+              https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/10/StockSnap_SHCRVOAB5V.jpg?zoom=2&amp;resize=80%2C76&amp;ssl=1 160w,
+              https://i0.wp.com/volthemes.com/demo/vt-blogging-pro/default/wp-content/uploads/sites/3/2019/10/StockSnap_SHCRVOAB5V.jpg?zoom=3&amp;resize=80%2C76&amp;ssl=1 240w
+            "
+            data-lazy-loaded="1"
+            sizes="(max-width: 80px) 100vw, 80px"
+            loading="eager"
+          />
+        </div>
+        <!-- .thumbnail-wrap -->
+      </a>
+
+      <h2 class="entry-title">
+        <a
+          href="https://volthemes.com/demo/vt-blogging-pro/default/lets-take-a-chance-and-hope-for-the-best/"
+          >Let’s take a chance and hope for the best</a
+        >
+      </h2>
+    </div>
+    <!-- .grid -->
+  </div>
+  <!-- .related-posts -->
+</div>
+
+<!-- Author Bio  -->
+<!--#include file="/include/author-bio.shtml" -->
+<!--#include file="/include/disqus-comment.shtml" -->
+<!-- Comment  -->
