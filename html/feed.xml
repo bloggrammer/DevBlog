@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+   <title>About Me</title>
+  <link>https://bloggrammer.com/about</link>
+  <description>About Bloggrammer</description>
+  <category>Web Development</category>
+  <item>
+   <title>Contact Me</title>
+  <link>https://bloggrammer.com/contact</link>
+  <description>Contact Bloggrammer</description>
+  <category>Web Development</category>
+  </item>
+</channel>
+
+</rss>

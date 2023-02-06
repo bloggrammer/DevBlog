@@ -1,5 +1,21 @@
-<link rel="shortcut icon" href="https://bloggrammer.com/favicon.ico" />
-<link rel="apple-touch-icon" href="https://bloggrammer.com/favicon.ico" />
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="http://localhost/assets/img/fav/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="http://localhost/assets/img/fav/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="http://localhost/assets/img/fav/favicon-16x16.png"
+/>
+<link rel="manifest" href="http://localhost/assets/img/fav/site.webmanifest" />
 <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
 <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
 <link
@@ -10,6 +26,6 @@
 <!-- @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,500,600,700&subset=latin-ext');  -->
 <!-- @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700&subset=latin-ext');  -->
 
-<link rel="stylesheet" href="http://bloggrammer.com/assets/css/site.css?v=1" />
+<link rel="stylesheet" href="http://localhost//assets/css/site.css?v=1" />
 
 <link rel="sitemap" type="application/xml" title="sitemap" href="sitemap.xml" />

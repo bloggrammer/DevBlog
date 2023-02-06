@@ -25,7 +25,7 @@
       </svg>
     </a>
     <a
-      href="https://facebook.com/onepase"
+      href="https://facebook.com/"
       target="_blank"
       rel="noopener noreferrer"
       class="icon-link"
@@ -97,9 +97,9 @@
 
     <br />
     Software Engineer, SEO<br />
-    <a href="https://bloggrammer.com/contact" class="h-link">Contact</a>
+    <a href="http://localhost/contact" class="h-link">Contact</a>
     <br />
-    <a href="https://bloggrammer.com/about" class="h-link">About</a>
+    <a href="http://localhost.com/about" class="h-link">About</a>
     <br />
     <div class="mode" id="mode-switcher" onclick="toggleNightMode();">
       <span></span>

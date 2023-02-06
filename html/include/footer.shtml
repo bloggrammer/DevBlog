@@ -9,7 +9,10 @@
 <footer class="footer">
   <div>
     &copy; <span id="year"></span>
-    <a href="index.html">Bloggrammer</a>
+    <a href="http://localhost">Bloggrammer</a>
   </div>
-  <div><a href="index.html">About</a> / <a href="index.html">Privacy</a></div>
+  <div>
+    <a href="http://localhost/about">About</a> /
+    <a href="http://localhost/privacy">Privacy</a>
+  </div>
 </footer>
