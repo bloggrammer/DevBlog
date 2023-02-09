@@ -5,6 +5,7 @@
       class="profile-image"
       alt="bloggrammer logo"
   /></a>
+
   <div class="profile-about">
     <h2 style="margin-bottom: 0; font-weight: 700">John Ansa</h2>
     <a
@@ -96,14 +97,20 @@
     </a>
 
     <br />
-    Software Engineer, SEO<br />
+    Software Engineer
+    <br />
     <a href="http://localhost/contact" class="h-link">Contact</a>
     <br />
     <a href="http://localhost/about" class="h-link">About</a>
     <br />
     <a href="http://localhost/skills" class="h-link">Skills</a>
     <br />
-    <div class="mode" id="mode-switcher" onclick="toggleNightMode();">
+    <div
+      class="mode"
+      id="mode-switcher"
+      style="margin-top: 0.5rem"
+      onclick="toggleNightMode();"
+    >
       <span></span>
     </div>
   </div>

@@ -1,12 +1,4 @@
 <div style="width: 100%">
-  <!-- <script
-		src="https://utteranc.es/client.js"
-		repo="Blogrammer/blogrammer"
-		issue-term="url"
-		theme="github-dark"
-		crossorigin="anonymous"
-		asyn
-	></script> -->
   <script
     src="https://giscus.app/client.js"
     data-repo="Bloggrammer/DevBlog"
