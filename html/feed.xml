@@ -12,6 +12,31 @@
   <description>Contact Bloggrammer</description>
   <category>Web Development</category>
   </item>
+   <item>
+   <title>Skills</title>
+  <link>https://bloggrammer.com/skills</link>
+  <description>Software Engineer Skills</description>
+  <category>Software Engineer</category>
+  </item>
+   <item>
+   <title>Projects</title>
+  <link>https://bloggrammer.com/projects</link>
+  <description>Software developer portfolio</description>
+  <category>Portfolio</category>
+  </item>
+   <item>
+   <title>Linux Commands for Beginners</title>
+  <link>https://bloggrammer.com/linux-commands</link>
+  <description>Looking to get started with Linux? Check out our beginner's guide to Linux commands! Learn how to navigate the file system, copy and move files, create and delete directories, view file contents, and more. Master the basics of the Linux command line and take your skills to the next level.</description>
+  <category>Linux</category>
+  </item>
+  <item>
+   <title>HTML5 Data Attributes and JavaScript: How to Use Custom Element Data for
+      Improved Functionality</title>
+  <link>https://bloggrammer.com/html-data-attributes.html</link>
+  <description>Discover the power of HTML5 data attributes and JavaScript in this ultimate guide to using custom element data for improved functionality, performance, and dynamic web development. Learn how to create interactive web pages, enhance user experience, and employ advanced techniques for customizing your web elements in modern web development.</description>
+  <category>HTML</category>
+  </item>
 </channel>
 
 </rss>
