@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn how to implement retry logic in your C# applications to handle errors gracefully, improve the user experience, and increase reliability and scalability. This guide outlines the steps involved, including identifying the operation to retry, defining the retry parameters, implementing the retry logic, testing and refining the logic, and monitoring and logging retries. Follow these best practices to build resilient and scalable applications that meet the needs of your users."
+    />
+    <meta
+      name="keywords"
+      content="C# retry logic, Retry logic implementation, Handling errors in C#, C# application reliability, Scalable C# applications, C# code optimization, Retry pattern, C# error handling best practices, Resilient C# applications, C# exception handling."
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to Implement Retry Logic in C#" />
+    <meta
+      property="og:description"
+      content="Learn how to implement retry logic in your C# applications to handle errors gracefully, improve the user experience, and increase reliability and scalability. This guide outlines the steps involved, including identifying the operation to retry, defining the retry parameters, implementing the retry logic, testing and refining the logic, and monitoring and logging retries. Follow these best practices to build resilient and scalable applications that meet the needs of your users."
+    />
+    <meta
+      property="og:url"
+      content="https://bloggrammer.com/implement-retry-logic-csharp.html"
+    />
+    <meta property="og:site_name" content="Bloggrammer" />
+    <meta
+      property="article:published_time"
+      content="2023-04-19T02:00:00+01:00"
+    />
+    <meta
+      property="article:modified_time"
+      content="2023-04-19T02:00:00+01:00"
+    />
+    <meta
+      property="og:image"
+      content="https://bloggrammer.com/assets/img/post/retry-policy.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="John Ansa" />
+    <meta name="twitter:label2" content="read" />
+    <meta name="twitter:data2" content="3 min" />
+    <meta property="twitter:type" content="article" />
+    <meta
+      property="twitter:title"
+      content="How to Implement Retry Logic in C#"
+    />
+    <meta
+      property="twitter:description"
+      content="Learn how to implement retry logic in your C# applications to handle errors gracefully, improve the user experience, and increase reliability and scalability. This guide outlines the steps involved, including identifying the operation to retry, defining the retry parameters, implementing the retry logic, testing and refining the logic, and monitoring and logging retries. Follow these best practices to build resilient and scalable applications that meet the needs of your users."
+    />
+    <meta
+      property="twitter:url"
+      content="https://bloggrammer.com/implement-retry-logic-csharp.html"
+    />
+    <meta property="twitter:site" content="@Bloggrammer" />
+    <meta
+      property="twitter:image"
+      content="https://bloggrammer.com/assets/img/post/retry-policy.png"
+    />
+    <meta property="twitter:image:type" content="image/png" />
+    <meta name="twitter:creator" content="@Bloggrammer" />
+    <meta name="twitter:domain" content="bloggrammer.com" />
+    <title>
+      Recovering from Transient Failures with Retry Logic - Bloggrammer
+    </title>
+    <link
+      rel="canonical"
+      href="https://bloggrammer.com/implement-retry-logic-csharp.html"
+    />
+    <!--#include file="/include/static/site-css.shtml" -->
+    <!--#include file="/include/static/post-css.shtml" -->
+    <!--#include file="/include/static/post-js.shtml" -->
+  </head>
+  <body>
+    <div class="container">
+      <!--#include file="/include/header.shtml" -->
+
+      <div class="post-header">
+        <time datetime="2023-04-19T02:00:00+01:00" class="post-date"
+          >19.04.2023</time
+        >
+        <div class="post-share">
+          Share:&nbsp;
+          <a
+            href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbloggrammer.com%2Fimplement-retry-logic-csharp.html&title=Linux%20Command%20for%20Beginners"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-share"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="social-share_icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbloggrammer.com%2Fimplement-retry-logic-csharp.html"
+            target="_blank"
+            class="social-share"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="social-share_icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fbloggrammer.com%2Fimplement-retry-logic-csharp.html&text=Linux%20Command%20for%20Beginners"
+            target="_blank"
+            class="social-share"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="social-share_icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?text=https://bloggrammer.com/implement-retry-logic-csharp.html"
+            target="_blank"
+            class="social-share"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="social-share_icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://bloggrammer.com/implement-retry-logic-csharp.html"
+            class="social-share"
+            onclick="copyLinkShare()"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="social-share_icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"
+              />
+              <path
+                d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="blog-post-content">
+        <h1>How to Implement Retry Logic in C#</h1>
+        <h5>Recovering from Transient Failures .NET Applications</h5>
+        <p>
+          When developing applications, errors are inevitable. Whether it&#39;s
+          a server outage, a database connection failure, or a timeout issue,
+          errors can cause frustration for users and damage the reputation of
+          your application.
+        </p>
+        <p>
+          One way to
+          <a
+            href="https://learn.microsoft.com/en-us/azure/architecture/best-practices/transient-faults"
+            target="_blank"
+            rel="noopener noreferrer"
+            >handle transient errors</a
+          >
+          gracefully and improve the user experience is to implement retry logic
+          in your C# code.
+        </p>
+        <p>
+          In this guide, we&#39;ll explore what retry logic is, why it&#39;s
+          important, and how to implement it effectively in your C#
+          applications.
+        </p>
+
+        <h2>What is Retry Logic?</h2>
+
+        <p>
+          Retry logic is a technique used to automatically retry an operation
+          that has failed, with the goal of eventually succeeding. When an error
+          occurs, instead of giving up immediately, the application waits for a
+          certain period of time, then tries again. This process continues until
+          either the operation succeeds or a maximum number of retries is
+          reached.
+        </p>
+        <div style="text-align: center">
+          <img
+            src="http://localhost/assets/img/post/try-again.gif"
+            alt="if at first you don't succeed try try again"
+          />
+        </div>
+        <p>&nbsp;</p>
+        <h2>Why is Retry Logic Important?</h2>
+
+        <p>
+          Implementing retry logic in your C# applications can help improve the
+          user experience and increase the reliability and scalability of your
+          application.
+        </p>
+        <p>Here are some of the key benefits of using retry logic:</p>
+
+        <ol>
+          <li>
+            <p>
+              <strong>Improved user experience:</strong> Retry logic can help
+              your application handle errors gracefully, providing a better user
+              experience for your customers. Instead of seeing an error message,
+              they can simply wait a few seconds and try again.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Increased reliability:</strong> Retry logic can help
+              ensure that critical operations, such as database writes, are
+              completed successfully. By retrying the operation if it fails, you
+              can increase the overall reliability of your application.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Scalability:</strong> Retry logic can help your
+              application handle high loads and spikes in traffic. By retrying
+              requests that failed due to temporary issues, you can reduce the
+              number of failed requests and improve the overall scalability of
+              your application.
+            </p>
+          </li>
+        </ol>
+
+        <h2>How to Implement Retry Logic in C#</h2>
+        <figure style="text-align: center">
+          <img
+            src="http://localhost/assets/img/post/retry-policy.png"
+            alt="Retry Policy"
+            title="How to Implement Retry Logic in C#"
+          />
+          <figcaption>
+            Image Credit:
+            <a
+              href="https://www.c-sharpcorner.com/UploadFile/vendettamit/retrypolicy-using-microsoft-practices-enterprise-library/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >c-sharpcorner.com</a
+            >
+          </figcaption>
+        </figure>
+        <p>
+          Now that you understand the benefits of retry logic, let&#39;s explore
+          how to implement it in your C# applications. Here are the steps:
+        </p>
+
+        <h3>Step 1: Identify the Operation to Retry</h3>
+
+        <p>
+          The first step in implementing retry logic is to identify the
+          operation that needs to be retried. This could be a database write, a
+          network request, or any other operation that may fail due to temporary
+          issues.
+        </p>
+
+        <h3>Step 2: Define the Retry Parameters</h3>
+
+        <p>
+          Once you&#39;ve identified the operation to retry, you need to define
+          the retry parameters. This includes the maximum number of retries, the
+          delay between retries, and any additional parameters that are needed.
+        </p>
+        <h3>Step 3: Implement the Retry Logic</h3>
+
+        <p>
+          With the retry parameters defined, you can now implement the retry
+          logic. This involves wrapping the operation in a try-catch block, and
+          then retrying the operation if an exception is caught. Here are some
+          example of retry pattern in C# to get you started:
+        </p>
+        <h4><strong>Retry Logic with Waiting Time</strong></h4>
+        <pre class="line-numbers">
+            <code class="language-cs match-braces"> 
+    public static void WaitAndRetry(Action action, int maxRetries, TimeSpan retryInterval)
+    {
+        var retryCount = 0;
+        while (retryCount < maxRetries)
+        {
+            try
+            {
+                action(); // Perform the operation here
+                break;  // If the operation succeeds, exit the loop
+            }
+            catch (Exception ex)
+            {
+                // Log the exception here
+                // If the maximum number of retries has been reached, rethrow the exception
+                if (++retryCount >= maxRetries)
+                {
+                    throw new Exception($"Getting Exception : {ex.Message} after {retryCount} retries.", ex);
+                }
+
+                // Wait for a certain period of time before retrying
+                Thread.Sleep(retryInterval);
+            }
+        }
+    }
+              </code></pre>
+        <p>&nbsp;</p>
+        <h4><strong>Retry Logic without Waiting Time</strong></h4>
+        <pre class="line-numbers">
+<code class="language-cs match-braces"> 
+public static void Retry(Action action, int maxRetries)
+{
+    var retryCount = 0;
+    while (true)
+    {
+        try
+        {
+            action();
+            return;
+        }
+        catch when (retryCount < maxRetries)
+        {
+            retryCount++;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Getting Exception : {ex.Message} after {retryCount} retries.", ex);
+        }
+    }
+}
+</code></pre>
+        <p>&nbsp;</p>
+        <h4><strong>Retry Logic with Waiting Time and Return Type</strong></h4>
+        <pre class="line-numbers">
+<code class="language-cs match-braces"> 
+public static T WaitAndRetry&lt;T&gt;(Func&lt;T&gt; func, int maxRetries, TimeSpan retryInterval)
+{
+    var retryCount = 0;
+    while (retryCount < maxRetries - 1)
+    {
+        try
+        {
+            return func();
+        }
+        catch (Exception ex)
+        {
+            // Log the exception here
+            // If the maximum number of retries has been reached, rethrow the exception
+            if (++retryCount >= maxRetries)
+            {
+                throw new Exception($"Getting Exception : {ex.Message} after {retryCount} retries.", ex);
+            }
+
+            // Wait for a certain period of time before retrying
+            Thread.Sleep(retryInterval);
+        }
+    }
+    return func();
+}
+</code></pre>
+        <p>&nbsp;</p>
+        <h4>
+          <strong>Retry Logic without Waiting Time and Return Type</strong>
+        </h4>
+        <pre class="line-numbers">
+<code class="language-cs match-braces"> 
+public static T Retry&lt;T&gt;(Func&lt;T&gt; func, int maxRetries)
+{
+    var retryCount = 0;
+    while (true)
+    {
+        try
+        {
+            return func();
+        }
+        catch when (retryCount < maxRetries)
+        {
+            retryCount++;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Getting Exception : {ex.Message} after {retryCount} retries.", ex);
+        }
+    }
+}
+</code></pre>
+        <p>&nbsp;</p>
+        <h4><strong> Asynchronous Retry Logic without Waiting Time</strong></h4>
+        <pre class="line-numbers">
+<code class="language-cs match-braces"> 
+public static async Task RetryAsync(Func&lt;Task&gt; func, int maxRetries)
+{
+    for (var i = 0; i < maxRetries; i++)
+    {
+        try
+        {
+            await func();
+            break;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Failed {i + 1}: Getting Exception : {ex.Message}");
+        }
+    }
+}
+</code></pre>
+        <p>&nbsp;</p>
+        <h4><strong> Asynchronous Retry Logic with Waiting Time</strong></h4>
+        <pre class="line-numbers">
+<code class="language-cs match-braces"> 
+public static async Task WaitAndRetryAsync(Func&lt;Task&gt; func, int maxRetries, TimeSpan retryInterval)
+{
+    for (var i = 0; i < maxRetries; i++)
+    {
+        try
+        {
+            await func();
+            break;
+        }
+        catch when (i < maxRetries)
+        {
+            await Task.Delay(retryInterval);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Failed {i + 1}: Getting Exception : {ex.Message}");
+        }
+    }
+}
+</code></pre>
+
+        <p>&nbsp;</p>
+        <h4>
+          <strong
+            >Asynchronous Retry Logic without Waiting Time and Return
+            Type</strong
+          >
+        </h4>
+        <pre class="line-numbers">
+<code class="language-cs match-braces"> 
+public static async Task&lt;T&gt; RetryAsync&lt;T&gt;(Func&lt;Task&lt;T&gt;&gt; func, int maxRetries)
+{
+    for (var i = 0; i < maxRetries; i++)
+    {
+        try
+        {
+            await func();
+            break;
+        }
+        catch (Exception ex) when (i < maxRetries)
+        {
+            throw new Exception($"Failed {i + 1}: Getting Exception : {ex.Message}");
+        }
+    }
+    return await func();
+}
+</code></pre>
+        <p>&nbsp;</p>
+        <h4>
+          <strong
+            >Asynchronous Retry Logic with Waiting Time and Return Type</strong
+          >
+        </h4>
+        <pre class="line-numbers">
+<code class="language-cs match-braces"> 
+public static async Task&lt;T&gt; WaitAndRetryAsync&lt;T&gt;(Func&lt;Task&lt;T&gt;&gt; func, int maxRetries, TimeSpan retryInterval)
+{
+    for (var i = 0; i < maxRetries; i++)
+    {
+        try
+        {
+            await func();
+            break;
+        }
+        catch when (i < maxRetries)
+        {
+            await Task.Delay(retryInterval);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Failed {i + 1}: Getting Exception : {ex.Message}");
+        }
+    }
+    return await func();
+}
+</code></pre>
+
+        <h3>Step 4: Test and Refine the Retry Logic</h3>
+
+        <p>
+          Once you&#39;ve implemented the retry logic, it&#39;s important to
+          test it thoroughly and refine it as needed. Make sure to test the
+          retry logic under different scenarios, such as high loads and network
+          outages, to ensure that it works as expected. If you encounter any
+          issues, refine the retry parameters or the implementation itself to
+          improve its effectiveness.
+        </p>
+        <pre class="line-numbers">
+        <code class="language-cs match-braces"> 
+public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        Console.WriteLine("App Started");
+
+        await RetryAsync(3);
+
+        Console.WriteLine("App Completed");
+        Console.ReadKey();
+    }
+
+    public static async Task RetryAsync(int maxRetries)
+    {
+
+        for (var i = 0; i < maxRetries; i++)
+        {
+            try
+            {
+                await DoSomethingAsync();
+                break;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed {i + 1}: {ex.Message}");
+            }
+        }
+    }
+    public static async Task DoSomethingAsync()
+    {
+        //Processing something cool
+        await Task.Delay(500);
+        //Throwing Exception so that retry will work
+        throw new Exception("Exception Occurred while Processing...");
+    }
+}
+
+//Output:
+/**
+App Started
+Failed 1: Exception Occurred while Processing...
+Failed 2: Exception Occurred while Processing...
+Failed 3: Exception Occurred while Processing...
+App Completed
+    **/
+            </code></pre>
+        <h3>Step 5: Monitor and Log Retries</h3>
+
+        <p>
+          Finally, it&#39;s important to monitor and log retries in your
+          application. This can help you identify issues and refine the retry
+          logic over time. You can use your application&#39;s
+          <a
+            href="https://serilog.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >logging framework</a
+          >
+          to log retry attempts, along with any relevant information such as the
+          operation that was retried, the number of retries, and the delay
+          between retries.
+        </p>
+
+        <h2>Conclusion</h2>
+
+        <p>
+          Implementing retry logic in your C# applications can help you handle
+          errors gracefully, improve the user experience, and increase the
+          reliability and scalability of your application. By following the
+          steps outlined in this guide, you can implement effective retry logic
+          that will help your application recover from temporary issues and
+          continue to provide value to your users.
+        </p>
+
+        <p>
+          Remember to test and refine your retry logic over time, and to monitor
+          retries to identify any issues that may arise. With these best
+          practices in place, you can build resilient and scalable applications
+          that meet the needs of your users.
+        </p>
+      </div>
+      <div class="post-header">
+        <div class="post-share">
+          Share:&nbsp;
+          <a
+            href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbloggrammer.com%2Fimplement-retry-logic-csharp.html&title=Linux%20Command%20for%20Beginners"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-share"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="social-share_icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbloggrammer.com%2Fimplement-retry-logic-csharp.html"
+            target="_blank"
+            class="social-share"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="social-share_icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fbloggrammer.com%2Fimplement-retry-logic-csharp.html&text=Linux%20Command%20for%20Beginners"
+            target="_blank"
+            class="social-share"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="social-share_icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?text=https://bloggrammer.com/implement-retry-logic-csharp.html"
+            target="_blank"
+            class="social-share"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="social-share_icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://bloggrammer.com/implement-retry-logic-csharp.html"
+            class="social-share"
+            onclick="copyLinkShare()"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="social-share_icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"
+              />
+              <path
+                d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <section>
+        <p>&nbsp;</p>
+        <h3>Related Posts:</h3>
+
+        <div class="post-list">
+          <a
+            class="post-title"
+            href="https://learn.microsoft.com/en-us/azure/architecture/best-practices/transient-faults"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Best practices for Handling Transient Fault</a
+          >
+        </div>
+      </section>
+      <section class="comment-area w-100" style="margin-bottom: 2rem">
+        <!--#include file="/include/comment.shtml" -->
+      </section>
+
+      <!--#include file="/include/footer.shtml" -->
+    </div>
+
+    <!--#include file="/include/static/site-js.shtml" -->
+  </body>
+</html>

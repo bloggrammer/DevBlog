@@ -400,7 +400,7 @@ progress {
   background: var(--bg-hover-color);
 }
 .post-list .post-title {
-  width: 80%;
+  width: 100%;
   color: var(--primary-font-color);
   font-weight: 600;
 }

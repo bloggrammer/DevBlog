@@ -37,6 +37,12 @@
   <description>Discover the power of HTML5 data attributes and JavaScript in this ultimate guide to using custom element data for improved functionality, performance, and dynamic web development. Learn how to create interactive web pages, enhance user experience, and employ advanced techniques for customizing your web elements in modern web development.</description>
   <category>HTML</category>
   </item>
+   <item>
+   <title>Recovering from Transient Failures with Retry Logic</title>
+  <link>https://bloggrammer.com/implement-retry-logic-csharp.html</link>
+  <description>Learn how to implement retry logic in your C# applications to handle errors gracefully, improve the user experience, and increase reliability and scalability. This guide outlines the steps involved, including identifying the operation to retry, defining the retry parameters, implementing the retry logic, testing and refining the logic, and monitoring and logging retries.</description>
+  <category>CSharp</category>
+  </item>
 </channel>
 
 </rss>
