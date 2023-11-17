@@ -6,7 +6,8 @@ lang: en_US
 locale: en_US
 localeAlt: en_GB
 timezone: UTC
-url: 'http://127.0.0.1:4000'
+# url: 'http://127.0.0.1:4000'
+url: https://bloggrammer.com
 permalink: pretty
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
