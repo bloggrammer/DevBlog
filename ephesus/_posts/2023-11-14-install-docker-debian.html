@@ -1,0 +1,188 @@
+---
+title: How to Install Docker Debian on VPS
+date: 2023-11-14T00:00:00+00:00
+author: John Ansa
+layout: post
+permalink: install-docker-debian
+categories: Web Hosting, App Hosting, App Deployment
+tags: [linux, docker]
+image: assets/img/post/install-docker.png
+description: Learn how to install Docker on Debian in a few simple steps on your Virtual Private Server (VPS)
+keywords: how to install docker, install docker, install docker debian, install docker for linux, install docker in debian, install docker on debian, Docker installation on Debian, Docker setup on VPS, VPS Docker installation guide, Debian Docker installation steps, Docker setup on Virtual Private Server
+---
+
+<p>
+  <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer">Docker</a> is a powerful containerization platform that simplifies
+  application deployment and management. If you're running a Virtual Private Server (VPS) with Debian as your operating system, this guide will walk
+  you through a step-by-step process on how to install Docker debian on your VPS.
+</p>
+
+<figure>
+  <img src="{{ site.url }}/assets/img/post/install-docker.png" alt="install docker debian" title="Installing Docker on Debian VPS" />
+</figure>
+
+<h2>Prerequisites to Install Docker on Debian VPS</h2>
+
+<p>Before you begin, ensure that you have:</p>
+
+<ul>
+  <li>A VPS running Debian 12.</li>
+  <li>A 64-bit System.</li>
+  <li>SSH access to your VPS with administrative privileges.</li>
+</ul>
+
+<p>
+  If you don't already have a VPS, <a href="https://www.vultr.com/?ref=9328282" target="_blank" rel="noopener noreferrer">sign up</a> on Vultr and get
+  $100 of credit.
+</p>
+
+<h2>Steps to Install Docker Debian Steps</h2>
+<figure>
+  <img src="{{ site.url }}/assets/img/post/coding.jpg" alt="man coding" title="coding" />
+</figure>
+<p>&nbsp;</p>
+<h3>Step 1: Update the System</h3>
+
+<p>It&#39;s essential to update your system packages.</p>
+
+<p>Login to your VPS from the terminal and run the command below to update your existing list of packages.</p>
+
+<pre>
+<code class="language-bash">sudo apt update
+</code></pre>
+<p>This command is mostly run after a fresh system install or before installing a new software package.</p>
+<p>
+  The <code>apt update</code> command updates the local package index of a Linux system or package list,&nbsp;which is a database of available
+  packages and their versions. It does not actually install any updates; it only refreshes the information about available packages from the
+  repositories.
+</p>
+<p>&nbsp;</p>
+<h3>Step 2: Upgrade the System</h3>
+
+<p>Need to upgrade your software packages to their latest versions? Then <code>apt upgrade</code> is the command to execute.</p>
+
+<pre>
+<code class="language-bash">sudo apt upgrade</code></pre>
+
+<p>The <code>apt upgrade</code> command, without any arguments, upgrades all outdated packages residing on your system to their latest versions.</p>
+
+<p>To list packages that are due for an upgrade, you run the&nbsp;<code>apt list --upgradable</code> command.</p>
+<p>&nbsp;</p>
+<h3>Step 3: Reboot the System</h3>
+
+<p>Depending on the packages you have installed. It&#39;s advisable to reboot the system.</p>
+
+<pre>
+    <code class="language-bash">reboot</code></pre>
+
+<p>After the system reboots, you have to log back into your Debian VPS.</p>
+<p>&nbsp;</p>
+<h3>Step 4: Install Required Dependencies</h3>
+
+<p>Docker requires some dependencies to be installed. Install them using the following command:</p>
+
+<pre>
+<code class="language-bash">sudo apt -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common</code></pre>
+
+<p>These dependencies let apt use packages over HTTPS.</p>
+<p>&nbsp;</p>
+<h3>Step 5: Add Docker Repository</h3>
+
+<p>To install Docker, you&#39;ll need to add the Docker repository to your system.</p>
+
+<p>Add the GPG key for the official Docker repository to your system:</p>
+
+<pre>
+<code class="language-bash">curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</code></pre>
+
+<p>Add the Docker repository to APT sources:</p>
+
+<pre>
+<code class="language-bash">echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list</code></pre>
+
+<p>&nbsp;</p>
+
+<h3>Step 6: Update packages</h3>
+
+<p>Update the package index with the Docker packages from the newly added repo:</p>
+
+<pre>
+<code class="language-bash">sudo apt update</code></pre>
+
+<p>After updating the packages list you are now ready to install Docker Debian on your VPS.</p>
+<p>&nbsp;</p>
+<h3>Step 7: Install Docker Engine</h3>
+
+<p>Now, it&#39;s time to install Docker on your VPS:</p>
+
+<pre>
+    <code class="language-bash">sudo apt install -y docker-ce docker-ce-cli containerd.io</code></pre>
+
+<p>Docker Engine and CLI are now installed on your VPS running Debian.&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Step 8: Start and Enable Docker</h3>
+
+<p>To ensure Docker starts automatically after system reboots:</p>
+
+<pre>
+<code class="language-bash">sudo systemctl enable docker
+sudo systemctl start docker
+</code></pre>
+<p>&nbsp;</p>
+<h3>Step 9: Verify Docker Installation</h3>
+
+<p>Check if Docker is installed correctly by running the following command:</p>
+
+<pre>
+<code class="language-bash">sudo docker --version
+</code></pre>
+<p>You should see the Docker version information displayed, confirming a successful installation.</p>
+<p>&nbsp;</p>
+<h3>Step 10: Allow a Local User to Run Docker Command (Optional)</h3>
+
+<p>
+  The&nbsp;<code>docker</code>&nbsp;command by default can only be run by the&nbsp;<code>root</code>&nbsp;user or by a user in
+  the&nbsp;<code>docker</code>&nbsp;group.
+</p>
+
+<p>
+  To allow a local user to run docker commands without prefixing it with&nbsp;<code>sudo</code>, add the user to the docker group using the&nbsp;<a
+    href="{{ site.url }}/linux-commands"
+    title="Linux Command"
+    >usermod command</a
+  >:
+</p>
+
+<pre>
+<code class="language-bash">sudo usermod -aG docker ${USER}</code></pre>
+
+<p>&nbsp;</p>
+
+<h3>Step 11: Run a Test Container</h3>
+
+<p>Let&#39;s run a simple test container to verify Docker&#39;s functionality:</p>
+
+<pre>
+<code class="language-bash">sudo docker run hello-world
+</code></pre>
+
+<p>
+  This command will pull a small test image and run it. If successful, you&#39;ll see a message indicating that your installation appears to be
+  working correctly.
+</p>
+<p>&nbsp;</p>
+<h2>Conclusion</h2>
+
+<p>
+  Congratulations! You&#39;ve successfully installed Docker on your Debian-based VPS. You&#39;re now ready to leverage the power of containerization
+  to deploy and manage your applications efficiently.
+</p>
+
+<p>
+  In this tutorial, we covered how to install Docker on Debian, and you&#39;re now equipped with the knowledge to explore and utilize Docker for your
+  development and deployment needs.
+</p>
+
+<p>Remember to manage your containers, images, and resources efficiently as you build and scale your applications using Docker.</p>
+
+<p>Now you can harness the full potential of Docker for Linux, as you&#39;ve successfully learned how to install Docker on Debian.</p>

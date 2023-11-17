@@ -1,0 +1,431 @@
+I"�8<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;h5&gt;Recovering from Transient Failures .NET Applications&lt;/h5&gt;
+    &lt;p&gt;
+      When developing applications, errors are inevitable. Whether it&amp;#39;s
+      a server outage, a database connection failure, or a timeout issue,
+      errors can cause frustration for users and damage the reputation of
+      your application.
+    &lt;/p&gt;
+    &lt;p&gt;
+      One way to
+      &lt;a
+        href="https://learn.microsoft.com/en-us/azure/architecture/best-practices/transient-faults"
+        target="_blank"
+        rel="noopener noreferrer"
+        &gt;handle transient errors&lt;/a
+      &gt;
+      gracefully and improve the user experience is to implement retry logic
+      in your C# code.
+    &lt;/p&gt;
+    &lt;p&gt;
+      In this guide, we&amp;#39;ll explore what retry logic is, why it&amp;#39;s
+      important, and how to implement it effectively in your C#
+      applications.
+    &lt;/p&gt;
+
+    &lt;h2&gt;What is Retry Logic?&lt;/h2&gt;
+
+    &lt;p&gt;
+      Retry logic is a technique used to automatically retry an operation
+      that has failed, with the goal of eventually succeeding. When an error
+      occurs, instead of giving up immediately, the application waits for a
+      certain period of time, then tries again. This process continues until
+      either the operation succeeds or a maximum number of retries is
+      reached.
+    &lt;/p&gt;
+    &lt;div style="text-align: center"&gt;
+      &lt;img
+        src="http://localhost:4000/assets/img/post/try-again.gif"
+        alt="if at first you don't succeed try try again"
+      /&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+    &lt;h2&gt;Why is Retry Logic Important?&lt;/h2&gt;
+
+    &lt;p&gt;
+      Implementing retry logic in your C# applications can help improve the
+      user experience and increase the reliability and scalability of your
+      application.
+    &lt;/p&gt;
+    &lt;p&gt;Here are some of the key benefits of using retry logic:&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;
+          &lt;strong&gt;Improved user experience:&lt;/strong&gt; Retry logic can help
+          your application handle errors gracefully, providing a better user
+          experience for your customers. Instead of seeing an error message,
+          they can simply wait a few seconds and try again.
+        &lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;
+          &lt;strong&gt;Increased reliability:&lt;/strong&gt; Retry logic can help
+          ensure that critical operations, such as database writes, are
+          completed successfully. By retrying the operation if it fails, you
+          can increase the overall reliability of your application.
+        &lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;
+          &lt;strong&gt;Scalability:&lt;/strong&gt; Retry logic can help your
+          application handle high loads and spikes in traffic. By retrying
+          requests that failed due to temporary issues, you can reduce the
+          number of failed requests and improve the overall scalability of
+          your application.
+        &lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;h2&gt;How to Implement Retry Logic in C#&lt;/h2&gt;
+    &lt;figure style="text-align: center"&gt;
+      &lt;img
+        src="http://localhost:4000/assets/img/post/retry-policy.png"
+        alt="Retry Policy"
+        title="How to Implement Retry Logic in C#"
+      /&gt;
+      &lt;figcaption&gt;
+        Image Credit:
+        &lt;a
+          href="https://www.c-sharpcorner.com/UploadFile/vendettamit/retrypolicy-using-microsoft-practices-enterprise-library/"
+          target="_blank"
+          rel="noopener noreferrer"
+          &gt;c-sharpcorner.com&lt;/a
+        &gt;
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;p&gt;
+      Now that you understand the benefits of retry logic, let&amp;#39;s explore
+      how to implement it in your C# applications. Here are the steps:
+    &lt;/p&gt;
+
+    &lt;h3&gt;Step 1: Identify the Operation to Retry&lt;/h3&gt;
+
+    &lt;p&gt;
+      The first step in implementing retry logic is to identify the
+      operation that needs to be retried. This could be a database write, a
+      network request, or any other operation that may fail due to temporary
+      issues.
+    &lt;/p&gt;
+
+    &lt;h3&gt;Step 2: Define the Retry Parameters&lt;/h3&gt;
+
+    &lt;p&gt;
+      Once you&amp;#39;ve identified the operation to retry, you need to define
+      the retry parameters. This includes the maximum number of retries, the
+      delay between retries, and any additional parameters that are needed.
+    &lt;/p&gt;
+    &lt;h3&gt;Step 3: Implement the Retry Logic&lt;/h3&gt;
+
+    &lt;p&gt;
+      With the retry parameters defined, you can now implement the retry
+      logic. This involves wrapping the operation in a try-catch block, and
+      then retrying the operation if an exception is caught. Here are some
+      example of retry pattern in C# to get you started:
+    &lt;/p&gt;
+    &lt;h4&gt;&lt;strong&gt;Retry Logic with Waiting Time&lt;/strong&gt;&lt;/h4&gt;
+    &lt;pre class="line-numbers"&gt;
+        &lt;code class="language-cs match-braces"&gt;
+public static void WaitAndRetry(Action action, int maxRetries, TimeSpan retryInterval)
+{
+    var retryCount = 0;
+    while (retryCount &lt; maxRetries)
+    {
+        try
+        {
+            action(); // Perform the operation here
+            break;  // If the operation succeeds, exit the loop
+        }
+        catch (Exception ex)
+        {
+            // Log the exception here
+            // If the maximum number of retries has been reached, rethrow the exception
+            if (++retryCount &gt;= maxRetries)
+            {
+                throw new Exception($"Getting Exception : {ex.Message} after {retryCount} retries.", ex);
+            }
+
+            // Wait for a certain period of time before retrying
+            Thread.Sleep(retryInterval);
+        }
+    }
+}
+          &lt;/code&gt;&lt;/pre&gt;
+    &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+    &lt;h4&gt;&lt;strong&gt;Retry Logic without Waiting Time&lt;/strong&gt;&lt;/h4&gt;
+    &lt;pre class="line-numbers"&gt;
+</code></pre></div></div>
+
+<p><code class="language-cs match-braces"> 
+public static void Retry(Action action, int maxRetries)
+{
+    var retryCount = 0;
+    while (true)
+    {
+        try
+        {
+            action();
+            return;
+        }
+        catch when (retryCount &lt; maxRetries)
+        {
+            retryCount++;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Getting Exception : {ex.Message} after {retryCount} retries.", ex);
+        }
+    }
+}
+</code>&lt;/pre&gt;
+        &lt;p&gt; &lt;/p&gt;
+        &lt;h4&gt;<strong>Retry Logic with Waiting Time and Return Type</strong>&lt;/h4&gt;
+        &lt;pre class="line-numbers"&gt;
+<code class="language-cs match-braces"> 
+public static T WaitAndRetry&lt;T&gt;(Func&lt;T&gt; func, int maxRetries, TimeSpan retryInterval)
+{
+    var retryCount = 0;
+    while (retryCount &lt; maxRetries - 1)
+    {
+        try
+        {
+            return func();
+        }
+        catch (Exception ex)
+        {
+            // Log the exception here
+            // If the maximum number of retries has been reached, rethrow the exception
+            if (++retryCount &gt;= maxRetries)
+            {
+                throw new Exception($"Getting Exception : {ex.Message} after {retryCount} retries.", ex);
+            }</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        // Wait for a certain period of time before retrying
+        Thread.Sleep(retryInterval);
+    }
+}
+return func();
+</code></pre></div></div>
+
+<p>}
+&lt;/code&gt;&lt;/pre&gt;</p>
+
+<p>&nbsp;</p>
+<h4>
+<strong>Retry Logic without Waiting Time and Return Type</strong>
+</h4>
+<pre class="line-numbers">
+<code class="language-cs match-braces">
+public static T Retry&lt;T&gt;(Func&lt;T&gt; func, int maxRetries)
+{
+var retryCount = 0;
+while (true)
+{
+try
+{
+return func();
+}
+catch when (retryCount &lt; maxRetries)
+{
+retryCount++;
+}
+catch (Exception ex)
+{
+throw new Exception($"Getting Exception : {ex.Message} after {retryCount} retries.", ex);
+        }
+    }
+}
+</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+    &lt;h4&gt;&lt;strong&gt; Asynchronous Retry Logic without Waiting Time&lt;/strong&gt;&lt;/h4&gt;
+    &lt;pre class="line-numbers"&gt; &lt;code class="language-cs match-braces"&gt;  public static async Task RetryAsync(Func&amp;lt;Task&amp;gt; func, int maxRetries) {
+for (var i = 0; i &lt; maxRetries; i++)
+{
+    try
+    {
+        await func();
+        break;
+    }
+    catch (Exception ex)
+    {
+        throw new Exception($"Failed {i + 1}: Getting Exception : {ex.Message}"); } } } &lt;/code&gt;&lt;/pre&gt;
+</code></pre></div></div>
+<p>&nbsp;</p>
+<h4><strong> Asynchronous Retry Logic with Waiting Time</strong></h4>
+<pre class="line-numbers">
+<code class="language-cs match-braces">
+public static async Task WaitAndRetryAsync(Func&lt;Task&gt; func, int maxRetries, TimeSpan retryInterval)
+{
+for (var i = 0; i &lt; maxRetries; i++)
+{
+try
+{
+await func();
+break;
+}
+catch when (i &lt; maxRetries)
+{
+await Task.Delay(retryInterval);
+}
+catch (Exception ex)
+{
+throw new Exception($"Failed {i + 1}: Getting Exception : {ex.Message}");
+}
+}
+}
+</code></pre>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+    &lt;h4&gt;
+      &lt;strong
+        &gt;Asynchronous Retry Logic without Waiting Time and Return
+        Type&lt;/strong
+      &gt;
+    &lt;/h4&gt;
+    &lt;pre class="line-numbers"&gt;
+</code></pre></div></div>
+
+<p><code class="language-cs match-braces"> 
+public static async Task&lt;T&gt; RetryAsync&lt;T&gt;(Func&lt;Task&lt;T&gt;&gt; func, int maxRetries)
+{
+    for (var i = 0; i &lt; maxRetries; i++)
+    {
+        try
+        {
+            await func();
+            break;
+        }
+        catch (Exception ex) when (i &lt; maxRetries)
+        {
+            throw new Exception($"Failed {i + 1}: Getting Exception : {ex.Message}");
+        }
+    }
+    return await func();
+}
+</code>&lt;/pre&gt;
+        &lt;p&gt; &lt;/p&gt;
+        &lt;h4&gt;
+          <strong>Asynchronous Retry Logic with Waiting Time and Return Type</strong>
+        &lt;/h4&gt;
+        &lt;pre class="line-numbers"&gt;
+<code class="language-cs match-braces"> 
+public static async Task&lt;T&gt; WaitAndRetryAsync&lt;T&gt;(Func&lt;Task&lt;T&gt;&gt; func, int maxRetries, TimeSpan retryInterval)
+{
+    for (var i = 0; i &lt; maxRetries; i++)
+    {
+        try
+        {
+            await func();
+            break;
+        }
+        catch when (i &lt; maxRetries)
+        {
+            await Task.Delay(retryInterval);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Failed {i + 1}: Getting Exception : {ex.Message}");
+        }
+    }
+    return await func();
+}
+</code>&lt;/pre&gt;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;h3&gt;Step 4: Test and Refine the Retry Logic&lt;/h3&gt;
+
+    &lt;p&gt;
+      Once you&amp;#39;ve implemented the retry logic, it&amp;#39;s important to
+      test it thoroughly and refine it as needed. Make sure to test the
+      retry logic under different scenarios, such as high loads and network
+      outages, to ensure that it works as expected. If you encounter any
+      issues, refine the retry parameters or the implementation itself to
+      improve its effectiveness.
+    &lt;/p&gt;
+    &lt;pre class="line-numbers"&gt;
+    &lt;code class="language-cs match-braces"&gt;
+</code></pre></div></div>
+
+<p>public class Program
+{
+public static async Task Main(string[] args)
+{
+Console.WriteLine(“App Started”);</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    await RetryAsync(3);
+
+    Console.WriteLine("App Completed");
+    Console.ReadKey();
+}
+
+public static async Task RetryAsync(int maxRetries)
+{
+
+    for (var i = 0; i &lt; maxRetries; i++)
+    {
+        try
+        {
+            await DoSomethingAsync();
+            break;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed {i + 1}: {ex.Message}");
+        }
+    }
+}
+public static async Task DoSomethingAsync()
+{
+    //Processing something cool
+    await Task.Delay(500);
+    //Throwing Exception so that retry will work
+    throw new Exception("Exception Occurred while Processing...");
+}
+</code></pre></div></div>
+
+<p>}</p>
+
+<p>//Output:
+/**
+App Started
+Failed 1: Exception Occurred while Processing…
+Failed 2: Exception Occurred while Processing…
+Failed 3: Exception Occurred while Processing…
+App Completed
+**/
+&lt;/code&gt;&lt;/pre&gt;</p>
+
+<h3>Step 5: Monitor and Log Retries</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;p&gt;
+      Finally, it&amp;#39;s important to monitor and log retries in your
+      application. This can help you identify issues and refine the retry
+      logic over time. You can use your application&amp;#39;s
+      &lt;a
+        href="https://serilog.net/"
+        target="_blank"
+        rel="noopener noreferrer"
+        &gt;logging framework&lt;/a
+      &gt;
+      to log retry attempts, along with any relevant information such as the
+      operation that was retried, the number of retries, and the delay
+      between retries.
+    &lt;/p&gt;
+
+    &lt;h2&gt;Conclusion&lt;/h2&gt;
+
+    &lt;p&gt;
+      Implementing retry logic in your C# applications can help you handle
+      errors gracefully, improve the user experience, and increase the
+      reliability and scalability of your application. By following the
+      steps outlined in this guide, you can implement effective retry logic
+      that will help your application recover from temporary issues and
+      continue to provide value to your users.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      Remember to test and refine your retry logic over time, and to monitor
+      retries to identify any issues that may arise. With these best
+      practices in place, you can build resilient and scalable applications
+      that meet the needs of your users.
+    &lt;/p&gt;
+</code></pre></div></div>
+:ET

@@ -1,0 +1,98 @@
+site: Bloggrammer
+title: Bloggrammer
+keywords: HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Data Science, Machine Learning, ML, W3.CSS, XML, MySQL, Icons, Node.js, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, Examples, Learn to code, Source code, Demos, Tips, Website
+description: Bloggrammer is a tech blog for developers, covering all the aspects of software development and programming.
+lang: en_US
+locale: en_US
+localeAlt: en_GB
+timezone: UTC
+url: 'http://127.0.0.1:4000'
+permalink: pretty
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/favicon.ico'
+paginate: 20
+paginate_path: '/page/:num'
+# feed_items: 10
+feed_update_period: daily
+feed_update_frequency: 1
+google_verify: XXX # Put your Google Verification here
+google_analytics: G-L15SMN0B06 # Put your Google Analytics code
+discus: XXX
+
+author:
+  name: John Ansa
+  bio: C# .NET | MERN | DevOps | LLMs
+  picture: assets/img/john_ansa.jpeg
+  github: bloggrammer # github username
+  twitter: bloggrammer # twitter username
+  facebook: XXX # facebook username
+  instagram: bloggrammer # instagram username
+  youtube: bloggrammer
+  linkedin: johnansa # linkedin username
+  email: bloggrammer # email adress
+
+  john:
+    name: John Ansa
+    bio: C# .NET | MERN | DevOps | LLMs
+    picture: assets/img/john_ansa.jpeg
+    github: bloggrammer # github username
+    twitter: bloggrammer # twitter username
+    facebook: XXX # facebook username
+    instagram: bloggrammer # instagram username
+    youtube: bloggrammer
+    linkedin: johnansa # linkedin username
+    email: bloggrammer # email adress
+
+social:
+  instagram: https://www.instagram.com
+  facebook: https://www.facebook.com/
+  twitter: https://twitter.com/bloggrammer
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  # - jekyll-relative-links
+  # - jekyll-feed
+
+exclude:
+  - .jekyll-cache
+  - .obsidian
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - CONTRIBUTING.md
+  - links
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:slug
+
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: 'default'
+  - scope:
+      path: ''
+      type: 'pages'
+    values:
+      layout: 'page'
+  - scope:
+      path: ''
+      type: 'posts'
+    values:
+      layout: 'post'
+
+relative_links:
+  enabled: true
+  collections: false

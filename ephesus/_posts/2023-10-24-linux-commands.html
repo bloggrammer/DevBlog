@@ -1,0 +1,173 @@
+---
+title: Linux Commands for Beginners
+date: 2023-10-24T00:00:00+00:00
+author: John Ansa
+layout: post
+permalink: linux-commands
+categories: Web Hosting
+tags: [linux, cli]
+image: assets/img/post/linux-command.png
+description: Looking to get started with Linux? Check out our beginner's guide to Linux commands! Learn how to navigate the file system, copy and move files, create and delete directories, view file contents, and more. Master the basics of the Linux command line and take your skills to the next level
+keywords: Linux, command line, beginners, file system, commands, navigation, copy, move, delete, create, directories, view file contents, basics, tutorial
+---
+
+<p>
+  The Linux command line is a powerful tool that allows you to perform various tasks and operations on a Linux-based operating system. With practice,
+  you can accomplish almost anything using the command line compared to using the graphical user interface (GUI) of your operating system.
+</p>
+
+<p>In this post, I&rsquo;ll explore some of the most commonly used Linux commands and how to use them.</p>
+
+<figure>
+  <img src="{{site.url}}/assets/img/post/linux-command.png" alt="Linux Command" title="Linux Shred" />
+  <figcaption>
+    Image Credit:
+    <a href="https://blog.ssdnodes.com/blog/basic-linux-commands-for-beginners/" target="_blank" rel="noopener noreferrer">blog.ssdnodes.com</a>
+  </figcaption>
+</figure>
+<ol>
+  <li>
+    <p><strong>Accessing the Command Line</strong></p>
+  </li>
+</ol>
+
+<p>
+  The first step in using the Linux command line is to access it. This is typically done through a terminal emulator program, which can be found in
+  the applications menu of your operating system.
+</p>
+
+<ol start="2">
+  <li>
+    <p><strong>Navigating the File System</strong></p>
+  </li>
+</ol>
+
+<p>The Linux file system is organized into a hierarchical structure, with the root directory at the top and subdirectories branching off from it.</p>
+
+<p>
+  To navigate the file system, you&rsquo;ll use the &ldquo;cd&rdquo; (change directory) command. For example, if you want to move from your home
+  directory to the &ldquo;Documents&rdquo; directory, you would use the following command:
+</p>
+<pre class="command-line language-bash">
+      <code class="language-bash">
+        <span class="token function">cd</span> Documents
+        </code>
+      </pre>
+
+<ol start="3">
+  <li><strong>Listing the Contents of a Directory</strong></li>
+</ol>
+
+<p>
+  To see the contents of a directory, you can use the &ldquo;ls&rdquo; (list) command. For example, if you want to see the contents of the
+  &ldquo;Documents&rdquo; directory, you would use the following command:
+</p>
+
+<pre>
+    <code class="language-bash">ls Documents</code></pre>
+
+<ol start="4">
+  <li><strong>Displaying the Current Directory</strong></li>
+</ol>
+
+<p>To see the full path of the current working directory, you can use the &ldquo;pwd&rdquo; (print working directory) command. For example:</p>
+
+<pre>
+    <code class="language-bash">pwd</code></pre>
+
+<ol start="5">
+  <li><strong>&nbsp;Copying Files</strong></li>
+</ol>
+
+<p>
+  The &ldquo;cp&rdquo; (copy) command is used to copy files from one location to another. For example, if you want to copy the file
+  &ldquo;file.txt&rdquo; from the &ldquo;Documents&rdquo; directory to the &ldquo;Downloads&rdquo; directory, you would use the following command:
+</p>
+
+<pre>
+    <code class="language-bash">cp Documents/file.txt Downloads/</code></pre>
+
+<ol start="6">
+  <li><strong>&nbsp;Moving or Renaming Files</strong></li>
+</ol>
+
+<p>
+  The &ldquo;mv&rdquo; (move) command is used to move or rename files. For example, if you want to rename the file &ldquo;file.txt&rdquo; in the
+  &ldquo;Documents&rdquo; directory to &ldquo;newfile.txt&rdquo;, you would use the following command:
+</p>
+
+<pre>
+    <code class="language-bash">mv Documents/file.txt Documents/newfile.txt
+    </code></pre>
+
+<ol start="7">
+  <li><strong>Deleting Files&nbsp;</strong></li>
+</ol>
+
+<p>
+  The &ldquo;rm&rdquo; (remove) command is used to remove (delete) files. For example, if you want to delete the file &ldquo;newfile.txt&rdquo; in the
+  &ldquo;Documents&rdquo; directory, you would use the following command:
+</p>
+
+<pre>
+    <code class="language-bash">rm Documents/newfile.txt
+    </code></pre>
+
+<ol start="8">
+  <li><strong>Creating Directories&nbsp;</strong></li>
+</ol>
+
+<p>
+  The &ldquo;mkdir&rdquo; (make directory) command is used to create a new directory. For example, if you want to create a new directory called
+  &ldquo;newdir&rdquo; in the &ldquo;Documents&rdquo; directory, you would use the following command:
+</p>
+
+<pre>
+    <code class="language-bash">mkdir Documents/newdir
+    </code></pre>
+
+<ol start="9">
+  <li><strong>Deleting Directories&nbsp;</strong></li>
+</ol>
+
+<p>
+  The &ldquo;rmdir&rdquo; (remove directory) command is used to remove (delete) an empty directory. For example, if you want to delete the directory
+  &ldquo;newdir&rdquo; in the &ldquo;Documents&rdquo; directory, you would use the following command:
+</p>
+
+<pre>
+    <code class="language-bash">rmdir Documents/newdir
+    </code></pre>
+
+<ol start="10">
+  <li><strong>Viewing File Content&nbsp;</strong></li>
+</ol>
+
+<p>
+  The &ldquo;cat&rdquo; (concatenate) command is used to display the contents of a file. For example, if you want to see the contents of the file
+  &ldquo;newfile.txt&rdquo; in the &ldquo;Documents&rdquo; directory, you would use the following command:
+</p>
+
+<pre>
+    <code class="language-bash">cat Documents/newfile.txt</code></pre>
+
+<ol start="11">
+  <li><strong>Creating Empty Files&nbsp;</strong></li>
+</ol>
+
+<p>
+  The &ldquo;touch&rdquo; command is used to create a new empty file. For example, if you want to create a new empty file called
+  &ldquo;newfile.txt&rdquo; in the &ldquo;Documents&rdquo; directory, you would use the following command:
+</p>
+
+<pre>
+    <code class="language-bash">touch Documents/newfile.txt
+    </code></pre>
+
+<h3>Conclusion</h3>
+
+<p>
+  This tutorial has provided an introduction to the Linux command line and covered some of the most commonly used commands. With a little bit of
+  practice, you can start using the command line to perform various tasks and operations on your Linux-based operating system. Remember to take your
+  time and experiment with the commands to get a feel for how they work.
+</p>

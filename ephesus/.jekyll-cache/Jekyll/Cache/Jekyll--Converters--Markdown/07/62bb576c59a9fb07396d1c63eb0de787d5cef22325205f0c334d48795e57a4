@@ -1,0 +1,189 @@
+I" <h5>How to Use Custom Element Data for Improved Functionality</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;p&gt;
+      &lt;a href="http://localhost:4000/html-data-attributes"
+        &gt;HTML5 data attributes&lt;/a
+      &gt;
+      allow developers to add custom data to HTML elements. Data attributes
+      are extremely useful for storing extra information about an element
+      that isn&amp;#39;t appropriate to store in any other HTML attribute. This
+      additional data can then be used by JavaScript to manipulate the
+      element or perform other actions.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      In this blog post, we&amp;#39;ll explore how to use HTML5 data attributes
+      with JavaScript.
+    &lt;/p&gt;
+    &lt;img
+      src="http://localhost:4000/assets/img/post/html-data-attributes.jpg"
+      alt="HTML5 data attributes"
+      title="HTML5 data attributes"
+    /&gt;
+
+    &lt;h2&gt;What are HTML5 data attributes?&lt;/h2&gt;
+
+    &lt;p&gt;
+      Data attributes are HTML attributes that start with the prefix
+      &lt;code&gt;data-&lt;/code&gt;. The value of a data attribute can be any valid
+      string and can be set to any element in the HTML document.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      For example, let&amp;#39;s say we have an HTML element with the class name
+      &lt;code&gt;user&lt;/code&gt;:
+    &lt;/p&gt;
+
+    &lt;pre&gt;
+    &lt;code class="language-java"&gt;&amp;lt;div class="user"&amp;gt;John Ansa&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;
+      We can add a custom data attribute called &lt;code&gt;id&lt;/code&gt; to this
+      element by using the &lt;code&gt;data-&lt;/code&gt; prefix:
+    &lt;/p&gt;
+
+    &lt;pre&gt;
+    &lt;code class="language-java"&gt;&amp;lt;div class="user" data-id="123"&amp;gt;John Ansa&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;
+      In this example, we&amp;#39;ve added a custom
+      &lt;code&gt;data-id&lt;/code&gt; attribute to the &lt;code&gt;div&lt;/code&gt; element, with a
+      value of &lt;code&gt;123&lt;/code&gt;.
+    &lt;/p&gt;
+
+    &lt;h2&gt;How to access data attributes with JavaScript&lt;/h2&gt;
+
+    &lt;p&gt;
+      To access data attributes with JavaScript, we can use the
+      &lt;code&gt;getAttribute()&lt;/code&gt; method on the element. For example,
+      let&amp;#39;s say we want to get the value of the
+      &lt;code&gt;data-id&lt;/code&gt; attribute for the &lt;code&gt;div&lt;/code&gt; element above.
+      We can do this using the following JavaScript code:
+    &lt;/p&gt;
+
+    &lt;pre class="line-numbers"&gt;
+    &lt;code class="language-javascript match-braces"&gt;const userElement = document.querySelector('.user');
+    const userId = userElement.getAttribute('data-id');
+    // Line 2 can also be written as below:
+    // const userId = userElement.dataset.id;
+    console.log(userId); // Output: "123"&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;
+      In this example, we first select the &lt;code&gt;div&lt;/code&gt; element with the
+      class name &lt;code&gt;user&lt;/code&gt; using the
+      &lt;code&gt;querySelector()&lt;/code&gt; method. We then use the
+      &lt;code&gt;getAttribute()&lt;/code&gt; method to get the value of the
+      &lt;code&gt;data-id&lt;/code&gt; attribute for the selected element and assign it
+      to the &lt;code&gt;userId&lt;/code&gt; variable.
+    &lt;/p&gt;
+
+    &lt;h2&gt;How to set data attributes with JavaScript&lt;/h2&gt;
+
+    &lt;p&gt;
+      To set data attributes with JavaScript, we can use the
+      &lt;code&gt;setAttribute()&lt;/code&gt; method on the element. For example,
+      let&amp;#39;s say we want to change the value of the
+      &lt;code&gt;data-id&lt;/code&gt; attribute for the &lt;code&gt;div&lt;/code&gt; element above
+      to &lt;code&gt;456&lt;/code&gt;. We can do this using the following JavaScript
+      code:
+    &lt;/p&gt;
+
+    &lt;pre class="line-numbers"&gt;
+    &lt;code class="language-javascript match-braces"&gt;const userElement = document.querySelector('.user');
+    userElement.setAttribute('data-id', '456');&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;
+      In this example, we first select the &lt;code&gt;div&lt;/code&gt; element with the
+      class name &lt;code&gt;user&lt;/code&gt; using the
+      &lt;code&gt;querySelector()&lt;/code&gt; method. We then use the
+      &lt;code&gt;setAttribute()&lt;/code&gt; method to set the value of the
+      &lt;code&gt;data-id&lt;/code&gt; attribute for the selected element to
+      &lt;code&gt;456&lt;/code&gt;.
+    &lt;/p&gt;
+
+    &lt;h2&gt;How to use data attributes in JavaScript event listeners&lt;/h2&gt;
+    &lt;img
+      src="http://localhost:4000/assets/img/post/coding.jpg"
+      alt="Man coding"
+      title="programming"
+    /&gt;
+    &lt;p&gt;
+      Data attributes can be extremely useful when working with JavaScript
+      event listeners. Let&amp;#39;s say we want to attach a click event
+      listener to the &lt;code&gt;div&lt;/code&gt; element above, and we want to perform
+      a different action depending on the value of the
+      &lt;code&gt;data-id&lt;/code&gt; attribute.
+    &lt;/p&gt;
+
+    &lt;p&gt;We can do this using the following JavaScript code:&lt;/p&gt;
+
+    &lt;pre class="line-numbers"&gt;
+    &lt;code class="language-javascript match-braces"&gt;const userElement = document.querySelector('.user');
+    userElement.addEventListener('click', function() {
+      const userId = this.getAttribute('data-id');
+      if (userId === '123') {
+        console.log('Clicked on John Ansa');
+      } else if (userId === '456') {
+        console.log('Clicked on Jane Doe');
+      } else {
+        console.log('Clicked on an unknown user');
+      }
+    });&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;
+      In this example, we attach a click event listener to the
+      &lt;code&gt;div&lt;/code&gt; element with the class name &lt;code&gt;user&lt;/code&gt; using
+      the &lt;code&gt;addEventListener()&lt;/code&gt; method. We then use the
+      &lt;code&gt;getAttribute()&lt;/code&gt; method to get the value of the
+      &lt;code&gt;data-id&lt;/code&gt; attribute for the selected element, and assign it
+      to the &lt;code&gt;userId&lt;/code&gt; variable.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      Finally, we use a conditional statement to check the value of
+      &lt;code&gt;userId&lt;/code&gt; and perform a different action based on that
+      value.
+    &lt;/p&gt;
+
+    &lt;h3&gt;Conclusion&lt;/h3&gt;
+
+    &lt;p&gt;
+      HTML5 data attributes are a powerful and easy-to-use feature that
+      allows developers to add
+      &lt;a
+        href="https://www.geeksforgeeks.org/what-are-custom-attributes-in-html5/"
+        target="_blank"
+        rel="noopener noreferrer"
+        &gt;custom data to HTML elements&lt;/a
+      &gt;. With JavaScript, we can easily access and manipulate these data
+      attributes to perform various actions on the elements.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      Data attributes can be used in many ways, such as to store additional
+      information about an element, to perform conditional actions based on
+      the value of the attribute, or to attach data to an element that can
+      be accessed later in the application.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      In this blog post, we&amp;#39;ve explored some of the basics of using
+      HTML5 data attributes with JavaScript. By using the
+      &lt;code&gt;getAttribute()&lt;/code&gt; and &lt;code&gt;setAttribute()&lt;/code&gt; methods,
+      you can easily access and modify data attributes for any HTML element.
+      And by using data attributes in conjunction with
+      &lt;a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"
+        target="_blank"
+        rel="noopener noreferrer"
+        &gt;JavaScript event listeners&lt;/a
+      &gt;, you can create more sophisticated and interactive web applications
+      that provide a better user experience for your users.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      Overall, HTML5 data attributes are a valuable tool in a
+      developer&amp;#39;s toolbox and should be considered when working with
+      JavaScript and HTML.
+    &lt;/p&gt;
+</code></pre></div></div>
+:ET
