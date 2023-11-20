@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://bloggrammer.com/sitemap.xml
-Sitemap: https://www.bloggrammer.com/sitemap.xml
