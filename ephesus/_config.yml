@@ -56,7 +56,7 @@ kramdown:
 
 plugins:
   - jekyll-paginate
-  - jekyll-sitemap
+  # - jekyll-sitemap
   # - jekyll-relative-links
   # - jekyll-feed
 
