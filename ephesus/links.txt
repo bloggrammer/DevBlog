@@ -3,6 +3,7 @@ https://github.com/planetjekyll/awesome-jekyll-plugins
 
 ---
 title: 'Ephesus Jekyll Blog Theme'
+seotitle:
 date: 2021-09-22T00:00:00+00:00
 author: John Ansa
 layout: post
