@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <!-- Meta  -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me - Bloggrammer</title>
+    <!--#include file="/include/static/site-css.shtml" -->
+  </head>
+  <body>
+    <div class="container">
+      <!--#include file="/include/header.shtml" -->
+      <div class="post-container">
+        <div class="post-list">
+          <span class="post-title">Contact Me</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <h1>Contact Me</h1>
+        <div class="w-100">
+          <p>
+            👾 Condimentum natoque sagittis scelerisque a morbi tristique
+            adipiscing adipiscing adipiscing consectetur vehicula feugiat a ac
+            sit aenean eleifend.Blandit parturient lacus nam nibh vestibulum
+            adipiscing vestibulum a a bibendum vivamus volutpat molestie
+            ultrices aptent nisi potenti dictumst vestibulum curabitur
+            sapien.Curae praesent sodales erat ullamcorper adipiscing ac
+            consectetur sit placerat condimentum lobortis hac sed.
+          </p>
+          <form
+            action="https://formsubmit.co/6bdf99a6ed3cc9f8c8748b9a73b60d9f"
+            method="POST"
+          >
+            <p>
+              <label>
+                Your Name (required)<br />
+                <span
+                  ><input size="40" type="text" name="name" required
+                /></span>
+              </label>
+            </p>
+            <p>
+              <label>
+                Your Email (required)<br />
+                <span
+                  ><input size="40" type="email" name="email" required
+                /></span>
+              </label>
+            </p>
+            <p>
+              <label>
+                Subject<br />
+                <span
+                  ><input
+                    size="40"
+                    aria-invalid="false"
+                    value=""
+                    type="text"
+                    name="_subject"
+                /></span>
+              </label>
+            </p>
+            <p>
+              <label>
+                Your Message<br />
+                <span>
+                  <textarea
+                    cols="40"
+                    rows="10"
+                    aria-invalid="false"
+                    name="message"
+                    spellcheck="false"
+                  ></textarea>
+                </span>
+              </label>
+            </p>
+            <p>
+              <input
+                type="hidden"
+                name="_blacklist"
+                value="spammy pattern, banned term, phrase"
+              />
+
+              <input type="hidden" name="_template" value="box" />
+              <input
+                type="hidden"
+                name="_next"
+                value="http://localhost/contact-thanks.html"
+              />
+            </p>
+            <p>
+              <input type="submit" value="Send" /><span class="spinner"></span>
+            </p>
+          </form>
+        </div>
+      </div>
+      <!--#include file="/include/footer.shtml" -->
+    </div>
+    <!--#include file="/include/static/site-js.shtml" -->
+  </body>
+</html>

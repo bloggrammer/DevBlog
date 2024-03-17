@@ -1,9 +1,0 @@
-<div id="category">
-	<select id="ca-selector">
-		<option value="1">Select Category</option>
-		<option value="2">Recent Posts</option>
-		<option value="3">Articles</option>
-		<option value="4">Tutorials</option>
-		<option value="5">Videos</option>
-	</select>
-</div>

@@ -1,0 +1,25 @@
+<div style="width: 100%">
+  <!-- <script
+		src="https://utteranc.es/client.js"
+		repo="Blogrammer/blogrammer"
+		issue-term="url"
+		theme="github-dark"
+		crossorigin="anonymous"
+		asyn
+	></script> -->
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="Blogrammer/DevBlog"
+    data-repo-id="R_kgDOGw7seQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOGw7sec4CBEOW"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="dark"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+  ></script>
+</div>

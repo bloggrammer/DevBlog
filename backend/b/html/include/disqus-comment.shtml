@@ -1,0 +1,47 @@
+<div
+  id="disqus_thread"
+  style="display: flex; justify-content: center; margin-top: 1em"
+>
+  <button id="disqus_empty" class="btn btn-primary mb-4">View Comments</button>
+</div>
+<script>
+  function load_disqus(disqus_shortname) {
+    // Prepare the trigger and target
+    var d = document;
+    var is_disqus_empty = d.getElementById('disqus_empty'),
+      disqus_target = d.getElementById('disqus_thread'),
+      disqus_embed = d.createElement('script'),
+      disqus_hook =
+        d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0];
+
+    // Load script asynchronously only when the trigger and target exist
+    if (disqus_target && is_disqus_empty) {
+      disqus_embed.type = 'text/javascript';
+      disqus_embed.async = true;
+      disqus_embed.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      disqus_hook.appendChild(disqus_embed);
+      is_disqus_empty.remove();
+      var sp = document.getElementById('spinner');
+      if (sp) sp.style.display = 'block';
+    }
+  }
+
+  /*
+   * Load disqus only when the document is scrolled till the top of the
+   * section where comments are supposed to appear.
+   */
+  var executed = false;
+  document.getElementById('disqus_empty').addEventListener('click', () => {
+    var disqus_target = document.getElementById('disqus_thread');
+
+    if (disqus_target && !executed) {
+      load_disqus('eduansa');
+      executed = true;
+      document.getElementById('disqus_spinner')?.remove();
+    }
+  });
+</script>
+<noscript>
+  Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>

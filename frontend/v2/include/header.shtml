@@ -1,0 +1,86 @@
+<header class="header text-center">
+	<div class="force-overflow">
+		<!-- <div class="typist">
+			<div
+				>Coding is <span class="typed-text"></span
+				><span class="cursor">&nbsp;</span></div
+			>
+		</div> -->
+		<h1 class="blog-name pt-lg-4 mb-0">
+			<a class="no-text-decoration" href="http://localhost:8000">Blog<span class="blog-grama">grammer</span>
+			</a>
+		</h1>
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation"
+				aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column">
+				<div class="profile-section pt-3 pt-lg-0">
+					<img class="profile-image mb-3 rounded-circle mx-auto"
+						src="http://localhost:8000/assets/img/profile.png" alt="image" />
+
+					<div class="bio mb-3">
+						<p>
+							Hi, my name is John Ansa and I'm an experienced
+							software engineer who constantly seeks out
+							innovative solutions to everyday problems.
+						</p>
+						<p>When asked what he likes to do in his spare time, he replies, "Programming".</p>
+						<p>
+							You can read more about me
+							<span><a class="me-link" href="http://localhost:8000/about">here</a></span>
+						</p>
+					</div>
+
+					<ul class="social-list list-inline py-2 mx-auto">
+						<li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
+					</ul>
+					<hr />
+				</div>
+
+				<ul class="navbar-nav flex-column text-start">
+					<li class="nav-item">
+						<a class="nav-link" href="http://localhost:8000"><i class="fas fa-user fa-fw me-2"></i>About
+							Me<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://localhost:8000/resume"><i
+								class="fas fa-file-lines fa-fw me-2"></i>Resume</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://localhost:8000/portfolio"><i
+								class="fas fa-laptop-code fa-fw me-2"></i>Portfolio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://localhost:8000/blog"><i
+								class="fas fa-blog fa-fw me-2"></i>Blog</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://localhost:8000/tutorials"><i
+								class="fas fa-video fa-fw me-2"></i>Tutorials</a>
+					</li>
+				</ul>
+
+				<div class="my-2">
+					<a class="btn btn-primary" href="-http://localhost:8000/contact" target="_blank"><i
+							class="fas fa-paper-plane me-2"></i>Get in Touch</a>
+				</div>
+
+				<div class="dark-mode-toggle text-center w-100">
+					<hr class="mb-4" />
+					<h4 class="toggle-name mb-3"><i class="fas fa-adjust me-1"></i>Dark Mode</h4>
+
+					<input class="toggle" id="darkmode" type="checkbox" checked />
+					<label class="toggle-btn mx-auto mb-0" for="darkmode"></label>
+				</div>
+
+			</div>
+		</nav>
+	</div>
+</header>

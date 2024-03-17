@@ -1,0 +1,70 @@
+//@import url('http://fonts.cdnfonts.com/css/cascadia-mono');
+// @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,900;1,200;1,300;1,400;1,600;1,900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+$primary-color: #333;
+$secondary-color: #ffce00;
+$bg-black: #2b2b2b;
+$bg-hover: #f90;
+$light-gray: #ddd;
+$white-color: #fff;
+$black-color: #000;
+$red-color: #cc0000;
+$bg-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+$mark-bg: #fcf8e3 !default;
+$pink: #d63384 !default;
+$code-color: $pink;
+$gray-900: #212529 !default;
+$gray-600: #6c757d !default;
+$gray-300: #c4c4c4 !default;
+// $font-stack: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,
+// 	Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell,
+// 	Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji,
+// 	Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+$font-stack: Roboto, Verdana, Arial, Helvetic;
+$show-home-image: true !default;
+$home-image: url(../img/background.jfif);
+$portrait-image: url(../img/portrait.png);
+$portrait-small: url(../img/portrait_small.png);
+$background-opacity: 0.7;
+
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+
+$spacer: 1rem !default;
+$font-size-root: null !default;
+$small-font-size: 0.875em !default;
+$enable-smooth-scroll: true !default;
+
+// $font-family-sans-serif: system-ui, -apple-system, 'Segoe UI', Roboto,
+//   'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
+//   'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+// $font-family-sans-serif: 'Cascadia Mono', sans-serif;
+// $font-family-sans-serif: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-sans-serif: $font-stack;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+	'Liberation Mono', 'Courier New', monospace !default;
+
+$font-family-base: $font-family-sans-serif !default;
+$font-family-code: $font-family-monospace !default;
+
+$font-size-base: 1rem !default;
+
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+$headings-margin-bottom: $spacer * 0.5 !default;
+$headings-font-family: $font-family-sans-serif !default;
+$headings-font-style: null !default;
+$headings-font-weight: $font-weight-bold !default;
+$headings-line-height: 1.2 !default;
+$headings-color: null !default;
+
+$enable-button-pointers: true !default;

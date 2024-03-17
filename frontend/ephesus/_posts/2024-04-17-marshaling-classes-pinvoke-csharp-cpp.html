@@ -1,0 +1,294 @@
+---
+title: Marshaling C++ Classes - P/Invoke with C#
+date: 2024-03-04T00:00:00+00:00
+author: John Ansa
+layout: post
+permalink: marshaling-classes-pinvoke
+categories: Programming, App Development, .NET
+tags: [pinvoke, C++, C#, marshaling, p/invoke]
+image: assets/img/post/marshalling-dot-net.jpg
+description: Learn how to seamlessly integrate C++ classes and functions into your C# applications using PInvoke! Our tutorial provides step-by-step guidance, complete with examples and explanations.
+keywords: Pinvoke C# Example, Pinvoke .NET Core, Pinvoke C++, C# p invoke C++ dll, P/Invoke C# tutorial, Marshaling C++ classes with P/Invoke, Interoperability between C++ and C#, .NET Core P/Invoke examples, C# P/Invoke C++ DLL, Integrating native code with managed environments, C++ to C# interoperability, P/Invoke best practices, C# calling C++ functions, .NET Core marshaling techniques.
+---
+
+<p>
+  Marshaling C++ classes for use in C# through Platform Invoke (P/Invoke) &nbsp;can be a complex yet powerful technique when integrating managed C#
+  code with unmanaged C++ libraries.&nbsp;
+</p>
+<p>
+  Marshaling essentially involves translating data between managed and unmanaged memory spaces, allowing interoperability between the two
+  environments.
+</p>
+<p>In this tutorial, we'll explore the steps to marshal C++ classes to be consumed by C# code using P/Invoke.</p>
+
+<figure>
+  <img src="{{site.url}}/assets/img/post/marshalling-dot-net.jpg" alt="Marshaling in .NET" title="Marshaling in .NET" />
+  <figcaption>
+    Image Credit:
+    <a
+      href="https://medium.com/@iammanolov98/what-is-marshalling-in-net-mid-to-senior-software-interview-9030530694bb"
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      >What is Marshalling in .NET</a
+    >
+  </figcaption>
+</figure>
+
+<br />
+<h2>Prerequisites</h2>
+<p>To follow this tutorial, you should have:</p>
+<ul>
+  <li>Basic knowledge of C++ and C# programming languages.</li>
+  <li>Visual Studio or any other preferred IDE for C# development.</li>
+  <li>Familiarity with P/Invoke and its concepts.</li>
+</ul>
+
+<h2>Understanding P/Invoke</h2>
+<p>
+  <a target="_blank" rel="noopener noreferrer nofollow" href="https://learn.microsoft.com/en-us/dotnet/standard/native-interop/pinvoke"
+    >Platform Invocation Services</a
+  >, commonly referred to as P/Invoke is a feature in .NET that allows managed code to call unmanaged functions implemented in dynamic link libraries
+  (DLLs). It provides a way for managed code to interact with native code, enabling seamless integration between managed and unmanaged environments.
+</p>
+<h2>Marshaling C++ Classes</h2>
+<p>
+  Marshaling C++ classes involves translating the structure and behavior of C++ classes into a format that can be understood and used by C#. This
+  process requires careful consideration of data types, memory allocation, and function signatures.
+</p>
+<br />
+<h2>Project Setup</h2>
+<h3>Setting Up the C++ DLL Project:</h3>
+<ol>
+  <li><strong>Open Visual Studio:</strong> Launch Visual Studio and select "Create a new project."</li>
+  <li>
+    <strong>Select Project Type:</strong> In the "Create a new project" window, choose "Visual C++" from the left panel, then select "Dynamic-Link
+    Library (DLL)" from the available templates. Name your project (e.g., "ExampleLibrary") and choose a location to save it.
+  </li>
+  <figure>
+    <img
+      src="{{ site.url }}/assets/img/post/cpp dll in visual studio.jpg"
+      alt="Create C++ DLL in Visual Studio"
+      title="Create C++ DLL in Visual Studio"
+    />
+  </figure>
+  <li>
+    <strong>Add Source Files:</strong> Right-click on the newly created project in the Solution Explorer, select "Add" &gt; "New Item...". Choose "C++
+    File (.cpp)" and give it a meaningful name (e.g., "ExampleClass.cpp"). Add your C++ class implementation to this file.
+  </li>
+  <li>
+    <strong>Add Header File:</strong> Similarly, add a header file for your C++ class. Right-click on the project, select "Add" &gt; "New Item...",
+    then choose "Header File (.h)" and provide a name (e.g., "ExampleClass.h"). Define your class interface in this header file.
+  </li>
+  <li>
+    <strong>Build Configuration:</strong> Ensure that your project is configured to produce a DLL. Right-click on the project in Solution Explorer,
+    choose "Properties," navigate to "Configuration Properties" &gt; "General," and set "Configuration Type" to "Dynamic Library (.dll)".
+  </li>
+  <li><strong>Build:</strong>Build your project to ensure there are no compilation errors.</li>
+</ol>
+<h3>Setting Up the C# Console App:</h3>
+<ol>
+  <li><strong>Open Visual Studio:</strong> Launch Visual Studio and select "Create a new project."</li>
+  <li>
+    <strong>Select Project Type:</strong> In the "Create a new project" window, choose "Visual C#" from the left panel, then select "Console App (.NET
+    Core)" or ".NET Framework" from the available templates. Name your project (e.g., "ExampleApp") and choose a location to save it.
+  </li>
+  <li>
+    <strong>Add Reference to C++ DLL:</strong> Right-click on the project in Solution Explorer, select "Add" &gt; "Reference...". Browse to the
+    location of your C++ DLL (built in the previous steps) and add it as a reference to your C# project.
+  </li>
+  <li><strong>Build and Run:</strong> Build your C# project and ensure that it compiles without errors.</li>
+</ol>
+<figure>
+  <img src="{{ site.url }}/assets/img/post/pinvoke project structure.jpg" alt="pinvoke project" title="pinvoke project" />
+</figure>
+<br />
+<h2>Pinvoke C++ Example</h2>
+<p>
+  Let's consider a simple example where we have a C++ class representing a geometric point with <code>x</code> and <code>y</code> coordinates. We want
+  to create an instance of this class in C# and call its member functions from managed code.
+</p>
+<h3>Step 1: Define the C++ Class</h3>
+<p>
+  Begin by creating or identifying the C++ class you want to use in your C# project. Ensure that the class has appropriate constructors, destructors,
+  methods, and properties.
+</p>
+<pre><code class="language-cpp">// C++ Class: Point.h
+#pragma once
+
+class Point {
+public:
+    Point(int x, int y) : x(x), y(y) {}
+    int getX();
+    int getY();
+private:
+    int x;
+    int y;
+};</code></pre>
+<pre><code class="language-cpp">// C++ Class: Point.cpp
+#include "pch.h"
+#include "Point.h"
+
+int Point::getX() {
+	return x;
+}
+int Point::getY() {
+	return y;
+}</code></pre>
+<h3>Step 2: Expose C++ Class to C#</h3>
+<p>To use the C++ class in C#, you need to create a C interface that exposes the functionalities of the C++ class.</p>
+<pre><code class="language-cpp">
+
+// C++ Wrapper: PointWrapper.cpp
+
+#include "pch.h"
+#include "Point.h"
+
+extern "C" __declspec(dllexport) Point * CreatePoint(int x, int y) {
+    return new Point(x, y);
+}
+extern "C" __declspec(dllexport)  void DeletePoint(Point * point) {
+
+    // Check if the pointer is not null before deleting 
+    if (point != nullptr)
+    {
+        delete point; // Properly delete the pointer 
+        point = nullptr; // Set to null after deletion to avoid dangling pointer 
+    }
+}
+extern "C" __declspec(dllexport) int GetX(Point * point) {
+    if (point != nullptr)
+    {
+        return point-&gt;getX();
+    }
+
+}
+extern "C" __declspec(dllexport) int GetY(Point * point) {
+    if (point != nullptr)
+    {
+        return point-&gt;getY();
+    }
+}</code></pre>
+<br />
+<h2>Pinvoke C# Example</h2>
+<p>Now, we can create a C# program to consume this C++ class through P/Invoke.</p>
+<h3>Step 3: Define P/Invoke Signatures in C#</h3>
+<p><br />Now, in your C# project, declare the P/Invoke signatures to call the C++ functions.</p>
+<pre><code class="language-cs">
+// C# Point: Point.cs
+    
+using System.Runtime.InteropServices;
+
+namespace CSharpApp
+{
+    public class Point : IDisposable
+    {
+        public Pointer(int x, int y)
+        {
+            _pointer = CreatePoint(x, y);
+        }
+        // This finalizer will run when Garbage collection occurs, but
+        // only if the IDisposable.Dispose() method wasn't already called.
+        // It gives your base class the opportunity to finalize.
+        // Do not provide finalizer in types derived from this class.
+        ~Pointer()
+        {
+            Dispose(disposing: false);            
+        }
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            // This object will be cleaned up by the Dispose method.
+            // Therefore, you should call GC.SuppressFinalize to
+            // take this object off the finalization queue
+            // and prevent finalization code for this object
+            // from executing a second time.
+            GC.SuppressFinalize(this);
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            // Check to see if Dispose has already been called.
+            if (!_disposed)
+            {
+                // If disposing equals true, dispose all managed
+                // and unmanaged resources.
+                if (disposing)
+                {
+                    // Dispose managed resources (C# objects).
+
+                }
+
+                // Call the appropriate methods to clean up
+                // unmanaged resources here.
+                // If disposing is false,
+                // only the following code is executed.
+                DeletePoint(_pointer);
+                _pointer = IntPtr.Zero;
+
+                // Note disposing has been done.
+                _disposed = true;
+            }
+        }
+        [DllImport("MarshalExample.dll")]
+        public static extern IntPtr CreatePoint(int x, int y);
+
+        [DllImport("MarshalExample.dll")]
+        public static extern void DeletePoint(IntPtr point);
+
+        [DllImport("MarshalExample.dll")]
+        public static extern int GetX(IntPtr point);
+
+        [DllImport("MarshalExample.dll")]
+        public static extern int GetY(IntPtr point);
+
+        
+        public int Y
+        {
+            get { return GetX(_pointer); }
+        }
+        public int X
+        {
+            get { return GetY(_pointer); }
+        }
+        private IntPtr _pointer;
+        private bool _disposed = false;
+    }
+}
+ </code></pre>
+
+<h3>Step 4: Use the C++ Class in C#</h3>
+<p>Now, you can utilize the C++ class in your C# code as follows:</p>
+<pre><code class="language-cs">// C# Program: Program.cs
+
+namespace CSharpApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //var point = new Point(3, 4);
+            //Console.WriteLine($"X coordinate: {point.X}");
+            //Console.WriteLine($"Y coordinate: {point.Y}");
+            //point.Dispose();
+
+            using var point = new Point(3, 4);
+            Console.WriteLine($"X coordinate: {point.X}");
+            Console.WriteLine($"Y coordinate: {point.Y}");
+        }
+    }
+}
+</code></pre>
+
+<h2>Pinvoke .NET Core</h2>
+<p>If you're using .NET Core or .NET 5+, the process is the same, but you'll need to ensure compatibility with your target platforms.</p>
+<br />
+<h2>Conclusion</h2>
+<p>
+  Marshaling C++ classes for use in C# via P/Invoke provides a powerful mechanism for integrating native code with managed environments. However, it's
+  essential to note the following:
+</p>
+<ul class="bd-callout bd-callout-warning">
+  <li>Ensure the C++ project is compiled with the correct architecture (x86/x64) to match your C# project.</li>
+  <li>Be cautious with memory management; ensure proper cleanup of resources to prevent memory leaks.</li>
+  <li>Handle exceptions gracefully, especially when dealing with unmanaged code.</li>
+  <li>Understand the limitations and potential pitfalls of marshaling, especially concerning complex data types and memory layouts.</li>
+</ul>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="{% if site.lang %}{{site.lang}}{% else %}en_US{% endif %}" data-theme="light">
+  {% include meta.html %}
+  <body>
+    <main class="container">
+      {% include header.html %} {{ content }} {% if page.layout == "post" %}
+      <section class="comment-area w-100" style="margin-bottom: 2rem">{% include comment.html %}</section>
+      {% endif %} {% include footer.html %}
+    </main>
+    {% include js.html %}
+  </body>
+</html>
