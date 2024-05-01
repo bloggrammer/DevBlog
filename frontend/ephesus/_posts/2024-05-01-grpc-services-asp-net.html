@@ -1,0 +1,454 @@
+---
+title: Implementing gRPC Services in .NET
+seotitle: How to Implement gRPC Services in C# .NET - A Step-by-Step Guide
+date: 2024-05-01T00:00:00+00:00
+author: John Ansa
+layout: post
+permalink: grpc-services
+categories: Web Services
+tags: [grpc, .net, c#]
+image: assets/img/post/implement-grpc-services.jpg
+description: Learn how to implement gRPC services in C# .NET with this step-by-step guide. This tutorial covers everything you need to know to get started with gRPC in .NET.
+keywords: gRPC services in C#, gRPC implementation guide, C# .NET gRPC tutorial, Protobuf in C#, Microservices with gRPC, gRPC communication in .NET
+---
+
+<p>This blog post will walk you through the process of implementing gRPC services in C# .NET, providing a clear, step-by-step approach.</p>
+<br />
+<h2>What is gRPC?</h2>
+<p>Before we get our hands dirty with code, let's grasp the core concepts of gRPC.&nbsp;</p>
+<img src="{{site.url}}/assets/img/post/grpc-service.png" alt="gRPC Service" title="gRPC Service" />
+<p>
+  gRPC (Google <strong>Remote Procedure Call</strong>) is a high-performance, open-source framework for building internal microservices or distributed
+  systems.
+</p>
+<p>
+  It offers features like bidirectional streaming, multiplexing, language-agnosticism, and efficient communication between services using Protocol
+  Buffers (<a href="https://protobuf.dev/programming-guides/proto3/" target="_blank" rel="noopener noreferrer nofollow">Protobuf</a>) for data
+  serialization and HTTP/2 for transport.
+</p>
+<p>Protobuf offers better performance and smaller message sizes compared to JSON or XML, making it ideal for communication between services.</p>
+<br />
+<h2>The Benefits of gRPC Services</h2>
+<p>gRPC services offer several advantages over traditional communication protocols like REST.</p>
+<p>Here are some of the key benefits:</p>
+
+<p>
+  1. <strong>Efficiency:</strong> gRPC uses HTTP/2 as its transport protocol, allowing it to
+  <a href="https://www.javatpoint.com/multiplexing-in-computer-network" target="_blank" rel="noopener noreferrer nofollow">multiplex</a> multiple
+  requests over a single connection. This reduces latency and improves efficiency, especially for applications with a large number of small requests.
+</p>
+<p>
+  2. <strong>Performance: </strong>With HTTP/2's binary framing, gRPC reduces the amount of data transmitted between clients and servers, resulting in
+  faster communication compared to text-based protocols like REST, which use JSON or XML.
+</p>
+<p>
+  3. <strong>Language Agnostic:</strong> gRPC supports multiple programming languages, including but not limited to C++, C#, Java, Go, Python, and
+  JavaScript. This enables developers to build polyglot applications where different services can be written in different languages, enhancing
+  flexibility and allowing teams to leverage their expertise in various languages.
+</p>
+<p>
+  4. <strong>Strong Typing:</strong> gRPC uses Protocol Buffers (protobuf) as its default
+  <a href="https://en.wikipedia.org/wiki/Interface_description_language" target="_blank" rel="noopener noreferrer">interface description language</a>.
+  Protobuf offers a concise and language-neutral way to define the data format for requests and responses. This ensures type safety and reduces the
+  chance of errors during communication between server and client. &nbsp;Additionally, protobuf's binary format is more compact and efficient than
+  text-based formats like JSON or XML.&nbsp;
+</p>
+<p>
+  5. <strong>Streaming Support:</strong> gRPC supports both unary (single request, single response) and streaming RPCs (multiple requests or responses
+  over a single connection). This enables developers to implement efficient communication patterns such as server streaming (one request, multiple
+  responses) and bidirectional streaming (both client and server can send multiple messages independently).
+</p>
+<p>
+  6. <strong>Error Handling:</strong> gRPC provides
+  <a href="https://grpc.io/docs/guides/error" target="_blank" rel="noopener noreferrer nofollow">rich support for error handling</a>, including
+  standard status codes and metadata, making it easier for developers to diagnose and troubleshoot issues in distributed systems.
+</p>
+<p>
+  7. <strong>Security:</strong> gRPC supports
+  <a
+    href="https://www.ibm.com/docs/en/was-nd/8.5.5?topic=security-securing-web-services-applications-transport-level"
+    target="_blank"
+    rel="noopener noreferrer"
+    >transport-level security (TLS/SSL)</a
+  >
+  by default, ensuring that communication between clients and servers is encrypted and secure. It also provides pluggable authentication mechanisms,
+  allowing developers to integrate with existing identity providers such as OAuth or JWT.
+</p>
+<p>
+  8. <strong>Code Generation:</strong> gRPC generates client and server code from protobuf service definitions, reducing boilerplate code and making
+  it easier to maintain consistency between different parts of an application.
+</p>
+<p>
+  9. <strong>Interoperability:</strong> While gRPC is primarily associated with HTTP/2, it can also be used with other transport protocols such as TCP
+  or WebSocket. This allows gRPC services to communicate with existing systems or devices that may not support HTTP/2.
+</p>
+<br />
+<h2>How gRPC Works</h2>
+<p>Here's a detailed overview of how gRPC works:</p>
+<img src="{{site.url}}/assets/img/post/grpc-basics.png" alt="gRPC Architecture " title="gRPC with ASP.NET Core" />
+<figcaption>
+  Image Credit:
+  <a href="https://www.dotnetcurry.com/aspnet-core/1514/grpc-asp-net-core-3" target="_blank" rel="noopener noreferrer nofollow">DotNetCurry</a>
+</figcaption>
+
+<p>
+  <strong>Server Initialization:</strong><br />The server initializes and starts listening for incoming connections on a specific network address
+  (e.g., IP address and port).
+</p>
+<p>
+  <strong>Service Registration:</strong><br />The server registers one or more gRPC services, each containing one or more RPC methods, defined in
+  <code>.proto</code> files. These services define the operations that clients can invoke remotely.
+</p>
+<p>
+  <strong>Client Connection:</strong><br />When a client wants to interact with the server, it establishes a connection to the server's network
+  address using a gRPC client stub. This stub abstracts the underlying networking details and provides a convenient interface for making RPC calls.
+</p>
+<p>
+  <strong>RPC Invocation:</strong><br />The client invokes a RPC method on the stub, passing any required parameters. This invocation triggers the
+  client-side serialization of the request message into binary format, as defined by the Protocol Buffers schema.
+</p>
+<p>
+  <strong>Transport via HTTP/2:</strong><br />The serialized request message is sent over an HTTP/2 connection to the server. HTTP/2 provides features
+  like multiplexing, header compression, and flow control, enabling efficient communication between the client and server.
+</p>
+<p>
+  <strong>Server Reception:</strong><br />The server receives the incoming request message and performs the necessary deserialization to extract the
+  request parameters. It then routes the request to the appropriate RPC handler method based on the method name specified in the request.
+</p>
+<p>
+  <strong>Execution of RPC Method:</strong><br />The server executes the server-side implementation of the invoked RPC method, which performs the
+  required business logic or data processing. This method may interact with external resources, perform computations, or access databases as needed.
+</p>
+<p>
+  <strong>Response Generation:</strong><br />Once the server-side method execution is complete, the server generates a response message based on the
+  method's return value (if any) and any data it needs to return to the client. This response message is serialized into a binary format using
+  Protocol Buffers.
+</p>
+<p>
+  <strong>Transmission to Client:</strong><br />The serialized response message is sent back to the client over the same HTTP/2 connection. Again,
+  HTTP/2 features like multiplexing ensure efficient transmission of the response alongside other concurrent requests.
+</p>
+<p>
+  <strong>Client Reception:</strong><br />The client receives the response message and deserializes it back into its original format using the
+  Protobuf schema. If the RPC method returns a value, the client-side stub provides this value to the application code that invoked the RPC.
+</p>
+<p>
+  <strong>Completion of RPC Call:</strong><br />The client-side stub notifies the application code that the RPC call has been completed. If the call
+  was successful, the application can now use the returned data or perform any necessary error handling if the call failed.
+</p>
+<br />
+<h2>How to Implement gRPC Services in C# .NET - A Step-by-Step Guide</h2>
+<p>To begin, ensure you have the necessary tools installed. You'll need the latest version of Visual Studio and the .NET SDK.</p>
+
+<img src="{{site.url}}/assets/img/post/implement-grpc-services.jpg" alt="gRPC Service" title="gRPC Service" />
+<p>&nbsp;</p>
+<h3>Prerequisites:</h3>
+<ul>
+  <li>
+    .NET 5.0 or later: Download and install the
+    <a href="https://dotnet.microsoft.com/en-us/download" target="_blank" rel="noopener noreferrer nofollow">latest .NET SDK</a> from the official
+    Microsoft website.
+  </li>
+  <li>
+    Visual Studio 2019 or later: Visual Studio provides a convenient development environment for building gRPC services.
+    <a href="https://visualstudio.microsoft.com/downloads/" target="_blank" rel="noopener noreferrer">Download visual studio.</a>
+  </li>
+</ul>
+
+<h3>Creating a gRPC Service in Visual Studio 2022</h3>
+<h4><strong>Step 1: Open Visual Studio</strong></h4>
+<ul>
+  <li>Double-click the Visual Studio icon on your computer to open the application.</li>
+  <li>Alternatively, you can search for "Visual Studio" in your Start menu (Windows) or Spotlight search (Mac).</li>
+  <li>Click on the “Create a new project”</li>
+</ul>
+<img
+  src="{{site.url}}/assets/img/post/create-new-project-visual-studio.png"
+  alt="create new project visual studio"
+  title="create new project visual studio"
+/>
+<p>&nbsp;</p>
+<h4><strong>Step 2: Choose the Project Template</strong></h4>
+<ul>
+  <li>Select a project template from the list of available templates.</li>
+  <li>Templates provide a starting point for your project, with pre-configured settings and files.</li>
+  <li>Choose a template that matches your project type (e.g., "ASP.NET Core gRPC Service").</li>
+</ul>
+<img src="{{site.url}}/assets/img/post/grpc-project-template.png" alt="grpc project template" title="grpc project template" />
+<p>&nbsp;</p>
+<h4><strong>Step 3: Name Your Project</strong></h4>
+<ul>
+  <li>Enter a name for your project in the "Project name" field.</li>
+  <li>This will be the name of your project in the Solution Explorer and the name of the folder where your project files will be stored.</li>
+</ul>
+<h4><strong>Step 4: Choose the Project Location</strong></h4>
+<ul>
+  <li>Select a location to save your project files.</li>
+  <li>You can choose a folder on your local machine or a network location.</li>
+  <li>Click the "Next" button to select the target framework.</li>
+</ul>
+
+<img src="{{site.url}}/assets/img/post/set-grpc-project-name.png" alt="set grpc project name" title="set-grpc-project-name" />
+<p>&nbsp;</p>
+<h4><strong>Step 5: Create the Project</strong></h4>
+<ul>
+  <li>Select a framework from the dropdown list.</li>
+  <li>Click the "OK" button to create the project.</li>
+  <li>Visual Studio will create a new project with the selected template and settings.</li>
+</ul>
+
+<img
+  src="{{site.url}}/assets/img/post/select-framework-visual-studio.png"
+  alt="select-framework-visual-studio"
+  title="select-framework-visual-studio"
+/>
+<p>&nbsp;</p>
+<h3>Let's Build the Arithmetic Service</h3>
+<p>We'll create a basic gRPC service that performs arithmetic calculations. Here's a breakdown of the steps involved:</p>
+<h4><strong>1. Define the Service Contract (Proto file):</strong></h4>
+<p>Define your gRPC service using Protobuf. Protocol Buffers (Protobuf) define the structure of data exchanged between gRPC services.</p>
+
+<p>
+  Right-click on the <strong>Protos</strong> folder and click the Add. Then click on Add >> New Item (or press <code>Ctrl + Shift + A</code> on
+  Windows or <code>Cmd + Shift + A</code> on Mac).
+</p>
+<img src="{{site.url}}/assets/img/post/add-new-item-visual-studio.png" alt="add-new-item-visual-studio" title="add-new-item-visual-studio" />
+<p>
+  Create a new <code><strong>.proto</strong></code> file (<code>arithmetic.proto</code>) in your project inside the <strong>Protos</strong> folder and
+  define your service message types.
+</p>
+
+<img src="{{site.url}}/assets/img/post/grpc-proto.png" alt="grpc-proto" title="grpc-proto" />
+<p>&nbsp;</p>
+<img src="{{site.url}}/assets/img/post/grpc-proto1.png" alt="grpc-proto" title="grpc-proto" />
+
+<p>
+  For our arithmetic service, we'll define a <code>AddRequest</code>, &nbsp; <code>AddResponse</code>, &nbsp;<code>SubtractRequest</code>, &nbsp;<code>
+    SubtractResponse </code
+  >message, along with a <code>Arithmetic</code>that contains our calculation methods.
+</p>
+<pre><code class="language-java">
+  
+  // arithmetic.proto
+
+  syntax = "proto3";
+
+  package arithmetic;
+  
+  service Arithmetic {
+    rpc AddAsync(AddRequest) returns (AddResponse);
+    rpc SubtractAsync(SubtractRequest) returns (SubtractResponse);
+  }
+  
+  message AddRequest {
+    int32 a = 1;
+    int32 b = 2;
+  }
+  
+  message AddResponse {
+    int32 result = 1;
+  }
+  
+  message SubtractRequest {
+    int32 a = 1;
+    int32 b = 2;
+  }
+  
+  message SubtractResponse {
+    int32 result = 1;
+  }</code></pre>
+
+<p class="bd-callout bd-callout-info">
+  In Protocol Buffers (Protobuf) syntax, field numbers are assigned to each field within the message types. These field numbers are used by Protobuf
+  to serialize and deserialize messages efficiently.
+  <a href="https://protobuf.dev/programming-guides/encoding/" target="_blank" rel="noopener noreferrer nofollow">See here for more details</a>
+</p>
+
+<p>
+  Also Read:
+  <a href="https://protobuf.dev/programming-guides/dos-donts/" target="_blank" rel="noopener noreferrer nofollow">Protobuf Best Practices</a>
+</p>
+
+<h4><strong>Step 2: Generate the gRPC Service Stub</strong></h4>
+<p>
+  Once you've defined your service contact in the .proto file, use the
+  <a
+    target="_blank"
+    rel="noopener noreferrer nofollow"
+    href="https://chromium.googlesource.com/external/github.com/grpc/grpc/+/HEAD/src/csharp/BUILD-INTEGRATION.md"
+    >Protobuf compiler</a
+  >
+  (<code><strong>protoc</strong></code
+  >) to generate C# classes from the .proto file. These generated classes represent your service and message types in C#.&nbsp;
+</p>
+<p>We'll generate the gRPC service stub using Visual Studio build action.</p>
+
+<p>So right-click on the <code>arithmetic.proto</code> file and click on the Properties (or press <code>Alt + Enter</code>).</p>
+<p>&nbsp;</p>
+<img src="{{site.url}}/assets/img/post/proto-properties.png" alt="grpc-proto" title="grpc-proto" />
+<p>Set the following properties:</p>
+<ul>
+  <li><strong>Build Action:</strong> Protobuf compiler</li>
+  <li><strong>Class Access:</strong> Public</li>
+  <li><strong>Compile Protobuf:</strong> Yes</li>
+  <li><strong>gRPC Stub Classes:</strong> Server only</li>
+</ul>
+<img src="{{site.url}}/assets/img/post/proto-properties1.png" alt="grpc-proto" title="grpc-proto" />
+<p>&nbsp;</p>
+<img src="{{site.url}}/assets/img/post/proto-properties2.png" alt="grpc-proto" title="grpc-proto" />
+
+<p>Build the project to generate C# classes from the <code>.proto</code> file.</p>
+
+<p class="bd-callout bd-callout-info">The generated C# code can be found by navigating to the definition of <code>Arithmetic.ArithmeticBase</code></p>
+<h4><strong>Step 3: Implement the gRPC Service</strong></h4>
+
+<p>
+  Create a new C# class (e.g., <code>ArithmeticService</code>) that inherits from the generated service stub, <code>ArithmeticBase </code>class, and
+  overrides the methods defined in your <code>arithmetic.proto</code> file.
+</p>
+<p>Implement the arithmetic calculation logic in these methods.</p>
+<img src="{{site.url}}/assets/img/post/grpc-methods.png" alt="grpc-methods" title="grpc-methods" />
+<pre><code class="language-cs">// ArithmeticService.cs
+
+  public class ArithmeticService : Arithmetic.ArithmeticBase
+  {
+      public override Task&lt;AddResponse&gt; AddAsync(AddRequest request, ServerCallContext context)
+      {
+          var result = request.A + request.B;
+          return Task.FromResult(new AddResponse { Result = result });
+ 
+      }
+ 
+      public override Task&lt;SubtractResponse&gt; SubtractAsync(SubtractRequest request, ServerCallContext context)
+      {
+          var result = request.A - request.B;
+          return Task.FromResult(new SubtractResponse { Result = result });
+ 
+      }
+  }</code></pre>
+
+<p>Register the gRPC Service in the <code>Program.cs</code> file.</p>
+<pre><code class="language-cs">// Program.cs
+
+using GrpcArithmeticService.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddGrpc(o =&gt; {
+    o.EnableDetailedErrors = true;
+});
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+app.MapGrpcService&lt;ArithmeticService&gt;();
+app.MapGet("/", () =&gt; "Communication with gRPC endpoints must be made through a gRPC client.");
+
+app.Run();
+</code></pre>
+<br />
+<h3>Let's Build the Arithmetic Client</h3>
+<h4><strong>Step 4: Implement the gRPC Client:</strong></h4>
+<p>Once your service is up and running, you can create clients to communicate with it.</p>
+<p>
+  gRPC provides first-class support for client generation in various languages, including C#. You use the generated client code to make calls to your
+  service from other applications.
+</p>
+<p>
+  You can create a separate project to implement a gRPC client that calls the <code>ArithmeticService</code> methods on the server. The process
+  involves defining a channel to connect to the server, creating a client stub, and calling the desired methods.&nbsp;
+</p>
+<p>In this tutorial, we'll create a C# .NET Console application to implement the gRPC client.</p>
+
+<img src="{{site.url}}/assets/img/post/create-console-app.png" alt="create-console-app" title="create-console-app" />
+<p>&nbsp;</p>
+
+<h4><strong>Step 5: Add Required NuGet Packages</strong></h4>
+<p>The gRPC client project requires the following NuGet packages:</p>
+<ul>
+  <li>
+    <a href="https://www.nuget.org/packages/Grpc.Net.ClientFactory/" target="_blank" rel="noopener noreferrer">Grpc.Net.ClientFactory</a>, which
+    contains the .NET Core client.
+  </li>
+  <li>
+    <a target="_blank" rel="noopener noreferrer" href="https://www.nuget.org/packages/Google.Protobuf/"> Google.Protobuf</a>, which contains protobuf
+    message APIs for C#.
+  </li>
+  <li>
+    <a target="_blank" rel="noopener noreferrer" href="https://www.nuget.org/packages/Google.Protobuf/"> Grpc.Tools</a>, which contain C# tooling
+    support for protobuf files.
+  </li>
+</ul>
+
+<img src="{{site.url}}/assets/img/post/grpc-nuget.png" alt="grpc-nuget" title="grpc-nuget" />
+<p>&nbsp;</p>
+
+<h4><strong>Step 6: Create a .proto File</strong></h4>
+<p>
+  You can create a separate .proto file for the client app and define the service contract. The process involves defining the structure of data
+  exchanged between the client and the server, creating a client stub, and calling the desired methods.
+</p>
+
+<p>
+  Since the <code>arithmetic.proto</code> file definition has to be the same between the server and the client, we will just copy the file from the
+  server project and paste it onto the client project.
+</p>
+<img src="{{site.url}}/assets/img/post/grpc-client.png" alt="grpc-client" title="grpc-client" />
+
+<p>
+  After you copy the file and paste it into the GrpcArithmeticClient project, right-click on the file and modify the file
+  <strong>gRPC Stub Classes</strong> property to <code>Client only</code>
+</p>
+
+<img src="{{site.url}}/assets/img/post/grpc-client2.png" alt="grpc-client2" title="grpc-client" />
+
+<p>Click the "Apply" and "OK" button to effect changes.</p>
+
+<h4><strong>Step 7: Compile the .proto File</strong></h4>
+
+<p>Rebuild the project to generate C# classes from the <code>.proto</code> file on the client-side.</p>
+
+<h4><strong>Step 8: Write the Client-side Logic</strong></h4>
+
+<pre><code class="language-cs">//Program.cs
+
+  using Grpc.Net.Client;
+  using GrpcArithmeticService.Protos;
+  
+  // The port number must match the port of the gRPC server.
+  var channel = GrpcChannel.ForAddress("http://localhost:5275");
+  
+  var client = new Arithmetic.ArithmeticClient(channel);
+  
+  var addRequest = new AddRequest() { A = 20, B = 60 };
+  var subtractRequest = new SubtractRequest() { A = 320, B = 160 };
+  
+  var addResponse = client.AddAsync(addRequest);
+  var substractResponse = client.SubtractAsync(subtractRequest);
+  
+  Console.WriteLine($"Addition: {addResponse.Result}");
+  Console.WriteLine($"Subtraction: {substractResponse.Result}");
+  Console.WriteLine("Press any key to exit...");
+  Console.ReadKey();
+  
+  channel.Dispose();
+  await channel.ShutdownAsync();</code></pre>
+
+<p>&nbsp;</p>
+<h4><strong>Step 9: Testing and Debugging Your Service:</strong></h4>
+<p>Testing and debugging are crucial steps in any development process.</p>
+<img src="{{site.url}}/assets/img/post/grpc-result.png" alt="grpc-result" title="grpc-result" />
+<p>
+  There are various tools available for testing gRPC services. You can use tools like
+  <a href="https://learn.microsoft.com/en-us/aspnet/core/grpc/test-tools" target="_blank" rel="noopener noreferrer nofollow">gRPCurl and gRPCui</a> in
+  ASP.NET Core to manually test your service endpoints. For debugging, leverage the built-in debugging tools in Visual Studio to step through your
+  code and diagnose any issues.
+</p>
+
+<h2>Conclusion:</h2>
+<p>
+  <a href="{{site.url}}/grpc-services">Implementing gRPC services in C# .NET</a> offers a powerful and efficient way to build microservices-based
+  applications. By leveraging the simplicity of Protobuf and the performance benefits of gRPC, you can create robust and scalable services that meet
+  the demands of modern distributed systems.
+</p>

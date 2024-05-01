@@ -4,5 +4,5 @@ layout: none
 User-agent: *
 Allow: /
 
-Sitemap: {{ site.url }}/sitemap.xml
+Sitemap: https://bloggrammer.com/sitemap.xml
 Sitemap: https://www.bloggrammer.com/sitemap.xml

@@ -56,7 +56,7 @@ Navigate to `127.0.0.1:4000`.
 
 # Command
 
-- bundle exec jekyll serve -drafts
+- bundle exec jekyll serve --drafts
 - bundle exec jekyll serve --port 8080
 - bundle exec jekyll build
 - jekyll serve
